@@ -1,0 +1,135 @@
+.sidebar{
+    position: fixed;
+    left:0;
+    top: 0;
+    z-index: 1;
+    width: 20rem;
+    height: 100%;
+    border-right-style: outset;
+    border-color: #241e1e;
+    background-color: #2e2727;
+}
+
+.headerSidebar{
+    background-color:#4f4c4c;
+    height: 3rem;
+    border-bottom-style: groove;
+    border-color: #2e2727;
+}
+
+.buttonBar{
+    height: 3.1rem;
+    border-radius: 2rem 3rem;
+    position: fixed;
+    top: .1rem;
+    left: 17rem;
+    background-color: black;
+    color: whitesmoke;
+    transform: rotate(90deg);
+    font-weight: 900;
+    text-align: center ;
+   
+}
+
+.sidebar h2{
+    text-align: center;
+    color: grey;
+}
+
+.sidebarMenu li{
+    left: 50%;
+    color: lightgrey;
+}
+
+.headerCalendar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 3rem;
+    background-color: red;
+    border-color: maroon;
+    border-left-style: groove;
+    border-bottom-style: groove;
+    text-align: center;
+}
+
+.headerCalendar li{
+    display: inline;
+}
+
+.containerCalendar{
+    position: fixed;
+    top: 3rem;
+    right: 0;
+    width: 83.2%;
+    height: 100%;
+    border-left-style: groove;
+    border-color: #2e2727;
+}
+
+.calendarMain{
+    border-style: none;
+    width: 45rem;
+    height: 45.3rem;
+}
+
+.noteContain{
+    border-style: solid;
+    width: 22.5rem;
+    height: 45.15rem;
+}
+
+.noteList{
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+.center-header{
+    text-align: center;
+}
+
+.footer{
+    position: fixed;
+    width: 100%;
+    bottom:0;
+    left: 0;
+    z-index: 2;
+    background-color: maroon;
+    border-top-style: groove;
+    border-color: #241e1e;
+    /*border-style: solid;*/
+    height: 6%;
+}
+
+.menu{
+    align-items: center;
+    text-align: center;
+}
+.menu li{
+    display:inline;
+}
+
+.menu li a {
+    color: black;
+    font-weight: 900;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+  }
+
+.menuTop{
+    align-items: center;
+    text-align: center;
+}
+.menuTop li{
+    display:inline;
+}
+
+.menuTop li a {
+    color: black;
+    font-weight: 900;
+    font-size: 1.3rem;
+    text-align: center;
+    padding-right: 200px;
+    text-decoration: none;
+  }
