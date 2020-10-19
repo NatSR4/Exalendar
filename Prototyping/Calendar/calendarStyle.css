@@ -8,11 +8,6 @@ html{
     font-size: 100%;
 }
 /*Formatting for the "Exalendar" title*/
-.title{
-    color: #FFFFFF;
-    font-size: 2rem;
-    font-weight: 100;
-}
 
 .divright{
     border-style: solid;
@@ -29,8 +24,8 @@ html{
 }
 
 .calendar{
-    width: 45rem;
-    height: 45.3rem;
+    width: 76.45rem;
+    height: 51.8rem;
     background-color: #EFFFFF;
     border-style: solid;
     border-width: thin;
@@ -39,7 +34,7 @@ html{
 /*The area in which the title, month name and date are stored.*/
 .month{
     width: 100%;
-    height: 10rem;
+    height: 5rem;
     background-color: #F10020;
     align-items: center;
     padding: 0 2rem;
@@ -47,10 +42,16 @@ html{
     display: flex;
 }
 
+.date{
+    position: fixed;
+    right: 45%;
+    align-self: center;
+}
+
 /*Here are the arrows at the side of the main calendar*/
 .arrow {
     border: solid black;
-    border-width: 0 .5rem .5rem 0;
+    border-width: 0 .35rem .35rem 0;
     display: inline-block;
     padding: .5rem;
   }
@@ -58,44 +59,48 @@ html{
 .right {
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
+    position: fixed;
+    left: 56.2%
   }
-  
+
 .left {
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
+    position: fixed;
+    left: 40%
   }
+
 /*Arrows Stuff ends....*/
 
 /*The Month itself "September" etc.*/
 .month h2{
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 400;
-    text-transform: capitalize;
     letter-spacing: 0.2rem;
 }
 
 /*The Date "Sun September 27, 2020"*/
 .month p{
-    font-size: 1.6rem;
+    font-size: 1rem;
     font-weight: 200;
-    text-transform: capitalize;
-    margin-bottom: .5rem;
+    margin-bottom: .3rem;
 }
 /*weekdays container*/
 .weekdays{
     width: 100%;
-    height: 4.5rem;
+    height: 3rem;
     padding: 0 0.4rem;
     display: flex;
     align-items: center;
 }
+
 
 /*27      28      29    ...etc*/
 .weekdays div{
     font-size: 1.5rem;
     font-weight: 400;
     letter-spacing: .1rem;
-    width: calc(44.2rem/7); 
+    width: calc(76.05rem/7); 
     /*the main container width (minus the weekdays padding) divided by the number of days in a week*/
 
     display: flex;
@@ -113,9 +118,15 @@ html{
 
 .days div{
     font-size: 1.4rem;
-    width: calc(44rem/7);
-    height: 6rem;
+    width: calc(75.45rem/7);
+    height: calc(43.05rem/5);
 }
+
+.event {
+    padding: .4rem;
+    list-style-type: none;
+}
+
 .active{
     background-color: #F8D4FF;
 }
@@ -126,4 +137,8 @@ html{
 }
 .note{
     text-align: center;
+}
+
+.bodCal{
+    background-color: grey;
 }
