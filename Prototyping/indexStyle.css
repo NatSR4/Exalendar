@@ -1,3 +1,14 @@
+.all{
+    background-color: #2b2b2b;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Secular One', sans-serif;
+}
+
 .sidebar{
     position: fixed;
     left:0;
@@ -5,37 +16,46 @@
     z-index: 1;
     width: 20rem;
     height: 100%;
-    border-right-style: outset;
-    border-color: #241e1e;
-    background-color: #2e2727;
+    border-right-style: solid;
+    border-width: thick;
+    border-color: black;
+    background-color: rgb(199, 33, 33);
 }
 
 .headerSidebar{
-    background-color:#4f4c4c;
+    text-align: center;
+    background-color:maroon;
     height: 3rem;
     border-bottom-style: groove;
     border-color: #2e2727;
 }
 
 .buttonBar{
-    height: 3.1rem;
-    border-radius: 2rem 3rem;
+    width: 1.7rem;
+    height: 1.7rem;
     position: fixed;
-    top: .1rem;
-    left: 17rem;
-    background-color: black;
-    color: whitesmoke;
-    transform: rotate(90deg);
-    font-weight: 900;
-    text-align: center ;
+    top: .65rem;
+    left: 17.5rem;
+    background-color: white;
+    color: black;
+    font-size: 1rem;
    
 }
 
 .sidebar h2{
     text-align: center;
+    font-weight: 400;
     color: grey;
 }
+.sidebarMenu ul{
+    padding-left: 3rem;
+    list-style-type: none;
+}
 
+.menuIcon{
+    height: 1.3rem;
+    width: 1.3rem;
+}
 .sidebarMenu li{
     left: 50%;
     color: lightgrey;
@@ -46,8 +66,8 @@
     top: 0;
     width: 100%;
     height: 3rem;
-    background-color: red;
-    border-color: maroon;
+    background-color: transparent;
+    border-color: transparent;
     border-left-style: groove;
     border-bottom-style: groove;
     text-align: center;
@@ -68,20 +88,43 @@
 }
 
 .calendarMain{
-    border-style: none;
-    width: 45rem;
-    height: 45.3rem;
+    width: 76.45rem;
+    height: 51.8rem;
+    border-style: solid;
 }
 
 .noteContain{
+    border-top-width: medium;
+    background-color: whitesmoke;
     border-style: solid;
-    width: 22.5rem;
-    height: 45.15rem;
+    border-right-width: thick;
+    width: 22.7rem;
+    height: 51.8rem;
 }
 
 .noteList{
     padding-top: .5rem;
     padding-bottom: .5rem;
+}
+
+.noteContain label{   
+    text-align: center;
+}
+
+.noteLeft{
+    position:relative;
+    left: 1rem;
+    width: calc(2.89*20.7rem/4);
+}
+
+.noteRight{
+    position:relative;
+    width: calc(25.7rem/4);
+}
+
+.noteRight li{
+    text-align: center;
+    list-style-type: none;
 }
 
 .center-header{
@@ -110,8 +153,10 @@
 }
 
 .menu li a {
-    color: black;
-    font-weight: 900;
+    position: relative;
+    top:1rem;
+    color: rgb(75, 72, 72);
+    font-weight: 400;
     text-align: center;
     padding: 16px;
     text-decoration: none;
@@ -123,13 +168,24 @@
 }
 .menuTop li{
     display:inline;
+    text-align: center;
 }
 
-.menuTop li a {
+.timeSpan {
+    border-style: thin;
+    border-color: black;
+    border-bottom-color: maroon;
+
     color: black;
     font-weight: 900;
     font-size: 1.3rem;
     text-align: center;
+
+    align-items: center;
     padding-right: 200px;
-    text-decoration: none;
+
+    background-color: #F10020;
+
+    position: relative;
+    top: 1rem;
   }
