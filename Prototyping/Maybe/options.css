@@ -1,0 +1,44 @@
+.grid-container {
+    width: 90vw;
+    margin: 0 auto;
+    height: 90vh;
+    display: flex;
+    border: 2px solid rgba(0, 0, 0, .4);
+    transition: 1s ease;
+  }
+  
+  .sidebar {
+    width: 30%;
+    height: 100%;
+    background-color: rgb(51, 85, 170);
+    transition: 1s ease;
+    position: relative;
+  }
+  
+  .main-content {
+    width: 70%;
+    height: 100%;
+    background-color: rgb(145, 24, 24);
+    transition: 1s ease;
+  }
+  
+  .main-content_large {
+    width: 90%;
+  }
+  
+  .sidebar_small {
+    width: 10%;
+  }
+  
+  button {
+    position: absolute;
+    border: none;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    box-shadow: 0px 1px 4px 1px rgba(0 ,0, 0, .3);
+    left: 100%;
+    top: 2rem;
+    transform: translateX(-50%);
+    cursor: pointer;
+  }
