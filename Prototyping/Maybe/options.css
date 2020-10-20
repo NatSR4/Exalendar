@@ -8,7 +8,10 @@
   }
   
   .sidebar {
-    width: 30%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 20rem;
     height: 100%;
     background-color: rgb(51, 85, 170);
     transition: 1s ease;
@@ -16,22 +19,22 @@
   }
   
   .main-content {
-    width: 70%;
+    width: 80rem;
     height: 100%;
     background-color: rgb(145, 24, 24);
     transition: 1s ease;
   }
   
   .main-content_large {
-    width: 90%;
+    width: 55rem;
   }
   
   .sidebar_small {
-    width: 10%;
+    width: 45rem;
+    background-color: darkgreen;
   }
   
   button {
-    position: absolute;
     border: none;
     height: 40px;
     width: 40px;
