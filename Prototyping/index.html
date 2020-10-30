@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+    <head>
+        <meta charset = "">
+        <meta name = "viewport" 
+        content = "width =device-width, 
+        initial-scale = 1.0"> 
+        <title>Exalendar</title>
+        <link rel = "stylesheet" href="indexStyle.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+    </head>
+    <body class = "all">  <!---------------------------------------------------MAIN CONTENTS BEGIN-------------------------------------------------------------------------------->
+            <div class = "mainContents">
+                <!--SIDEBAR-->
+                <div class = sidebar>
+                    <header class = "headerSidebar">
+
+                        <button class = "buttonBar" style="float:right">☰</button>
+                    </header>
+                    <div class = "sidebarMenu">
+                        <h2>Exalendar Menu</h2>
+                        <ul>
+                            <li><img src= "50x50.png" class = "menuIcon">&nbsp;&nbsp; Dashboard</li>
+                            <li><img src= "50x50.png" class = "menuIcon">&nbsp;&nbsp;Calendar</li>
+                            <li><img src= "50x50.png" class = "menuIcon">&nbsp;&nbsp;Other Page</li>
+                        </ul>
+                        <h2>Other Menu</h2>
+                        <ul>
+                            <li><img src= "settings-icon.png" class = "menuIcon">&nbsp;&nbsp;Preferences</li>
+                            <li><img src= "signout.png" class = "menuIcon">&nbsp;&nbsp;Logout</li>
+                        </ul>
+                    </div>
+                </div>
+                <!--SIDEBAR END-->
+                <header class = "headerCalendar">
+                    <nav class = "menuTop">
+                        <ul>
+                            <li><button class = "timeSpan">Monthly</button></li>
+                            <li><button class = "timeSpan">Weekly</button></li>
+                            <li><button class = "timeSpan">Daily</button></li>
+                        </ul>
+                    </nav>
+                </header>
+                
+                <div class = "containerCalendar" style = "float: right">
+                    <div style= "float: left;">
+                        <iframe class = "calendarMain" src="Calendar/calendar.html" scrolling="no" style = "overflow: hidden;"></iframe>
+                    </div>
+                    <div class = "noteContain" style = "float: left;">
+                        <h2 class = "center-header">10/18/2020</h2>
+                        <hr>
+                        <div class = "noteLeft" style = "float: left;">
+                            <ul>
+                                <label class = "noteList"><h3>Events</h3></label>
+                                <li class = "noteList">Event 1 - all day</li>
+                                <li class = "noteList">Event 2 - 12PM - 3PM</li>
+                                <li class = "noteList"> </li>
+                                <li class = "noteList"> </li>
+                                <li class = "noteList"> </li>
+                            </ul>
+                        </div>
+                        <div class = "noteRight" style = "float: right;">
+                            <ul>
+                                <label class = "noteList"><h3>Tier</h3></label>
+                                <li class = "noteList">Low</li>
+                                <li class = "noteList">High</li>
+                                <li class = "noteList"> </li>
+                                <li class = "noteList"> </li>
+                                <li class = "noteList"> </li>
+                            </ul>
+                        
+                        </div>
+                    </div>
+                </div>
+                <div>
+
+                </div>
+            </div>
+            <!---------------------------------------------------MAIN CONTENTS EMD---------------------------------------------------------------------------------->
+        </body>
+        <footer class = "footer">
+            <nav class = "menu">
+                <ul>
+                    <li><a>Home</a></li>
+                    <li><a>About</a></li>
+                    <li><a href= "https://github.com/NatSR4/Exalendar" target = "_blank">GitHub</a></li>
+                    <li><a href= "https://rcos.io/" target= "_blank">RCOS</a></li>
+                </ul>
+            </nav>
+        </footer>
+</html>

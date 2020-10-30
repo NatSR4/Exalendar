@@ -38,6 +38,14 @@ app.get("/contact", (req,res) => {
   res.sendFile(views + 'contact.html');
 });
 
+app.get("/login", (req,res) => {
+  res.sendFile(views + 'login.html');
+});
+
+app.get("/signup", (req,res) => {
+  res.sendFile(views + 'signup.html');
+});
+
 app.get("*", (req,res) => {
   res.sendFile(views + '404.html');
 });

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Login Page</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+  <!-- Custom styles for this page -->
+  <link rel="stylesheet" href="/logincss">
+</head>
+
+<body>
+  <form class="form-signin" method="post">
+    <div class="auth-form-header text-center">
+      <a href="/"><img class="mb-4" src="/img"></a>
+      <h2><a href="/" style="text-decoration: none; color: black;">Exalendar</a></h2>
+      <h4>Please sign in using your RPI email.</h4>
+    </div>
+    <div class="auth-form-body">
+      <label for="inputEmail">Email address</label>
+      <input type="email" name = "inputEmail" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+
+      <label for="inputPassword">Password</label>
+      <input type="password" name = "password" id="inputPassword" class="form-control" placeholder="Password" required>
+      <label for="ERROR"></label>
+      <div class="checkbox mb-2">
+        <label><input type="checkbox" class="form-check" value="remember-me"> Remember me</label>
+        <a class="label-link" href="#">Forgot password?</a>
+      </div>
+      
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
+    </div>
+    <hr>
+    <p class="mt-5 mb-3 text-center">Don't have an account? <a href="/signup">Create an account.</a></p>
+    <br>
+    <p class="mt-5 mb-3 text-muted text-center">&copy; Spring 2020</p>
+  </form>
+</body>
+</html>
