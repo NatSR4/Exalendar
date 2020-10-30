@@ -1,7 +1,9 @@
 const result = require("dotenv").config();
 
 const express = require("express");
-var mysql = require("mysql");
+const mysql = require("mysql");
+const queries = require('./Query');
+let DBQuery = queries.Query;
 
 const app = express();
 const port = process.env.PORT || 8000;
@@ -21,10 +23,14 @@ connection.connect(function(err) {
     console.error('error connecting: ' + err.stack);
     return;
   }
- 
   console.log('connected as id ' + connection.threadId);
 });
 
+//query testing
+let query1 = new DBQuery(connection);
+let fields = ['first_name', 'last_name', 'username', 'password']
+let values = ['"test"', '"test"' , '"test"', '"asdkfhasd"']
+query1.simple_insert('users', fields, values);
 
 app.get("/", (req,res)=>{
   res.sendFile(views + 'index.html');
