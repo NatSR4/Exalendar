@@ -25,7 +25,6 @@ connection.connect(function(err) {
   }
   console.log('connected as id ' + connection.threadId);
 	db_tool = new db_tools(connection);
-	db_tool.create_user('Nicholas', 'Desmarais', 'njdesmarais', 'nicholas22');
 });
 
 app.get("/", (req,res)=>{
