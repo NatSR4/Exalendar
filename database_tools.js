@@ -19,8 +19,7 @@ class Database_Tools {
       else hashed_pass = hash;
 
       let fields = ['first_name', 'last_name', 'username', 'password'];
-      let values = [`"${first}"`, `"${last}"`, `"${username}"`, `"${hashed_pass}"`];
-
+      let values = [first, last, username, hashed_pass];
       // Inserts user into table, and calls cerate_user_settings if success
       this.query_tool.simple_insert('users', fields, values, (err, result) => {
         if(err) return console.error(err);
@@ -39,7 +38,25 @@ class Database_Tools {
     // Inserts into user_settings table,
     this.query_tool.simple_insert('user_settings', fields, values, (err, result) => {
       if(err) return console.error(err);
-      else console.log('success');
+    });
+  }
+
+  verify_user(username, password_attempt, callback) {
+    let columns = ['password'];
+    let condition = `username = ?`;
+    let values = username;
+
+    // Selects password from database where username = provided username
+    this.query_tool.simple_select('users', columns, condition, values, (err, result) => {
+      if(err) return console.error(err);
+      else {
+        if (result.length == 0) return callback(false);
+        // compare password and hash, callback result
+        bcrypt.compare(password_attempt, result[0].password, (err2, res) => {
+          if(err2) return console.error(err2);
+          else callback(res)
+        });
+      }
     });
   }
 }
