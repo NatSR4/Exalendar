@@ -3,12 +3,17 @@ const result = require("dotenv").config();
 const express = require("express");
 const mysql = require("mysql");
 const db_tools = require('./database_tools');
+const bodyParser = require("body-parser");
 var db_tool;
 
 const app = express();
 const port = process.env.PORT || 8000;
 
 const views = `${__dirname}/views/`;
+
+//middleware
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
 
 // Database Connection
 var connection = mysql.createConnection({
@@ -45,6 +50,14 @@ app.get("/login", (req,res) => {
 
 app.get("/signup", (req,res) => {
   res.sendFile(views + 'signup.html');
+});
+
+app.post("/signup", (req,res) => {
+  if (req.body.password !== req.body.password2){
+    res.return(500);
+  } 
+  db_tool.create_user(req.body.firstname,req.body.lastname,req.body.inputEmail,req.body.password);
+  res.redirect("/");
 });
 
 app.get("*", (req,res) => {
