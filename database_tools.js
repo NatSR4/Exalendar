@@ -31,7 +31,6 @@ class Database_Tools {
     });
   }
 
-/* creates an entry in the user_settings table with the provided id */
   create_user_settings(id) {
     let fields = ['user_id'];
     let values = [id];
@@ -42,7 +41,6 @@ class Database_Tools {
     });
   }
 
-/* Verifies a username and password combo, returns true if match, false if not */
   verify_user(username, password_attempt, callback) {
     let columns = ['password'];
     let condition = `username = ?`;
@@ -61,7 +59,6 @@ class Database_Tools {
       }
     });
   }
-
 }
 
 module.exports = Database_Tools;
