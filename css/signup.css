@@ -13,14 +13,19 @@ body {
   background-color: #f5f5f5;
 }
 
-hr {
-  display: block;
+h1 {
+ /* display: block;
   margin-top: 20px;
   margin-bottom: 10px;
   margin-left: auto;
   margin-right: auto;
   border-style: inset;
   border-width: 1px;
+  color: rgb(255, 60, 50);*/
+  font-family: Dancing Script;
+  font-weight: bold;
+  font-size: 5em;
+  color:red;
 }
 
 .form-signin {
@@ -28,6 +33,7 @@ hr {
   max-width: 400px;
   padding: 15px;
   margin: auto;
+  /*color: rgb(255, 99, 71);*/
 }
 
 .form-signin img{
@@ -38,9 +44,10 @@ hr {
 
 .form-signin .auth-form-body {
   padding: 20px;
-  background-color: white;
+  background-color: rgb(255, 40, 40);*/
   border-top: 1px solid #d8dee2;
   border-radius: 5px;
+  color: rgb(240, 240, 240);
 }
 .form-signin .checkbox {
   font-weight: 400;
@@ -55,8 +62,9 @@ hr {
   position: relative;
   box-sizing: border-box;
   height: auto;
-  padding: 10px;
-  font-size: 16px;
+  padding: 8px;
+  font-size: 14px;
+  /*color: rgb(255, 99, 71);*/
 }
 .form-signin .form-control:focus {
   z-index: 2;
@@ -72,7 +80,7 @@ hr {
   border-top-right-radius: 0;
 }
 .form-signin input[type="password2"] {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
