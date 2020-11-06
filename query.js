@@ -25,11 +25,27 @@ simple_insert(table_name, fields, values) {
 
 /* Creates an SQL SELECT statement with the specified table_name, columns, and
 *  condition. Returns sql errors if any occur, otherwise returns results */
-simple_select(table_name, columns, condition, values) {
+simple_select(table_name, columns, condition) {
   return new Promise((resolve, reject) => {
     // create query with input values
     let query = `SELECT ${columns} FROM ${table_name} WHERE ${condition}`;
-    this.connection.query(query, values, (error, results, fields) => {
+    this.connection.query(query, (error, results, fields) => {
+      if(error)
+        reject(error);
+      else
+        resolve(results);
+    });
+  });
+}
+
+/* Creates an SQL SELECT statement with the specified table_name, columns,
+*  join condition, and condition. Returns sql errors if any occur, otherwise
+*  returns results */
+join_select(table_name, join_stmt, columns, condition) {
+  return new Promise((resolve, reject) => {
+    // create query with input values
+    let query = `SELECT ${columns} FROM ${table_name} INNER JOIN ${join_stmt} WHERE ${condition}`;
+    this.connection.query(query, (error, results, fields) => {
       if(error)
         reject(error);
       else

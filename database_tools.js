@@ -72,6 +72,7 @@ async create_class(class_name, teacher_usrname) {
   }
 }
 
+/* creates an entry in the user_classes table with the users id and classes id */
 async enroll_user(class_name, username) {
   try {
     let user_select = await this.query_tool.simple_select('users', ['id'], `username = "${username}"`);
@@ -92,8 +93,30 @@ async enroll_user(class_name, username) {
   }
 }
 
-async get_students() {
+/* gets a list of all the students enrolled in the specified class */
+async get_students(class_name) {
+  try {
+    let join_stmt = 'users ON users.id = user_classes.user_id '
+                   +'INNER JOIN classes ON classes.id = user_classes.class_id ';
+    let select =  await this.query_tool.join_select('user_classes', join_stmt, ['username'], `name = "${class_name}"`);
+    return select;
+  }
+  catch (err) {
+    throw new Error(err);
+  }
+}
 
+/* gets a list of all classes the specified student is entrolled in */
+async get_classes(username) {
+  try {
+    let join_stmt = 'users ON users.id = user_classes.user_id '
+                   +'INNER JOIN classes ON classes.id = user_classes.class_id ';
+    let select =  await this.query_tool.join_select('user_classes', join_stmt, ['name'], `username = "${username}"`);
+    return select;
+  }
+  catch (err) {
+    throw new Error(err);
+  }
 }
 }
 
