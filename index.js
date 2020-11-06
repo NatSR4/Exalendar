@@ -55,8 +55,10 @@ app.get("/signup", (req,res) => {
 app.post("/signup", (req,res) => {
   if (req.body.password !== req.body.password2){
     res.return(500);
-  } 
-  db_tool.create_user(req.body.firstname,req.body.lastname,req.body.inputEmail,req.body.password);
+  }
+  db_tool.create_user(req.body.firstname,req.body.lastname,req.body.inputEmail,req.body.password)
+	.then((result) => {console.log(result); })
+	.catch((err) => {console.log(err); });
   res.redirect("/");
 });
 
