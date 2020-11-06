@@ -25,7 +25,7 @@ simple_insert(table_name, fields, values) {
 
 /* Creates an SQL SELECT statement with the specified table_name, columns, and
 *  condition. Returns sql errors if any occur, otherwise returns results */
-simple_select(table_name, columns, condition, values, callback) {
+simple_select(table_name, columns, condition, values) {
   return new Promise((resolve, reject) => {
     // create query with input values
     let query = `SELECT ${columns} FROM ${table_name} WHERE ${condition}`;

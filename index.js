@@ -30,6 +30,9 @@ connection.connect(function(err) {
   }
   console.log('connected as id ' + connection.threadId);
 	db_tool = new db_tools(connection);
+	db_tool.enroll_user('fake_class', 'njdesmarais@gmail.com')
+	.then((result) => {console.log(result); })
+	.catch((err) => {console.log(err); });
 });
 
 app.get("/", (req,res)=>{

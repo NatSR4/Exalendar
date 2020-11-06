@@ -16,7 +16,7 @@ async create_user(first, last, username, password) {
     let fields = ['first_name', 'last_name', 'username', 'password'];
     let values = [first, last, username, hashed_pass];
     // Inserts user into table, and calls cerate_user_settings if success
-    let results = await this.query_tool.simple_insert('users', fields, values);
+    await this.query_tool.simple_insert('users', fields, values);
     await this.create_user_settings(results.insertId);
     return 'User Created';
   }
@@ -38,7 +38,7 @@ async create_user_settings(id) {
   }
 }
 
-/* Verifies a username and password combo, returns true if match, false if not */
+/* Verifies a username and password combo, returns true if match, false if not*/
 async verify_user(username, password_attempt) {
   try {
     let columns = ['password'];
@@ -47,8 +47,8 @@ async verify_user(username, password_attempt) {
 
     // Selects password from database where username = provided username
     let select = await this.query_tool.simple_select('users', columns, condition, values);
-    if (select.length == 0) throw new Error('No mathing users');
-    // compare password and hash, callback result
+    if (select.length == 0) throw new Error('SQL EMPTY SET: No matching users');
+    // compare password and hash, return result
     return await bcrypt.compare(password_attempt, select[0].password);
   }
   catch (err) {
@@ -56,6 +56,45 @@ async verify_user(username, password_attempt) {
   }
 }
 
+/* creates an entry in the classes table with the specified name and teacher */
+async create_class(class_name, teacher_usrname) {
+  try {
+    let select = await this.query_tool.simple_select('users', ['id'], `username = "${teacher_usrname}"`);
+    if (select.length == 0) throw new Error('SQL EMPTY SET: No matching users');
+    let teacher_id = select[0].id;
+    let fields = ['name', 'teacher_id'];
+    let values = [class_name, teacher_id];
+    await this.query_tool.simple_insert('classes', fields, values);
+    return 'Class Created';
+  }
+  catch (err) {
+    throw new Error(err);
+  }
+}
+
+async enroll_user(class_name, username) {
+  try {
+    let user_select = await this.query_tool.simple_select('users', ['id'], `username = "${username}"`);
+    let class_select = await this.query_tool.simple_select('classes', ['id'], `name = "${class_name}"`);
+    if (user_select.length == 0)
+      throw new Error('SQL EMPTY SET: No matching users');
+    if (class_select.length == 0)
+      throw new Error('SQL EMPTY SET: No matching classes');
+    let user_id = user_select[0].id;
+    let class_id = class_select[0].id;
+    let fields = ['user_id', 'class_id'];
+    let values = [user_id, class_id];
+    await this.query_tool.simple_insert('user_classes', fields, values);
+    return `${username} added to class: ${class_name}`;
+  }
+  catch (err) {
+    throw new Error(err);
+  }
+}
+
+async get_students() {
+
+}
 }
 
 module.exports = Database_Tools;
