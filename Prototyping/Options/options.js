@@ -1,12 +1,11 @@
 const sidebar     = document.querySelector('.sidebar');
 const mainContent = document.querySelector('.main-content');
 const button      = document.getElementById('sideButton');
-const resetButton = document.getElementById('submitNewPW');
-const addButton  = document.getElementById('addEntry');
+const changePW    = document.getElementById('SubButt');
+const addButton   = document.getElementById('addEntry');
 const delButton   = document.getElementById('removeEntry');
 const exitButton  = document.getElementById('goodbye');
-
-
+const debug       = document.getElementById('debugUser');
 
 button.onclick = function() {
   sidebar.classList.toggle('sidebar_small'); 
@@ -20,8 +19,23 @@ button.onclick = function() {
   }
 }
 
-resetButton.onclick = function() {
-  alert("Button (1) has been pressed");
+changePW.onclick = function() {
+  var pw1 = document.getElementById("myPwd").value;
+  var pw2 = document.getElementById("myPwdPart2").value;
+  if( pw1.length < 1 || pw2.length < 1) {
+    return;
+  }
+  if (pw1 != pw2) {
+    alert("Your passwords don't match, try again");
+    return;
+  }
+  var newPW = document.getElementById("newPwd").value;
+  if( newPW.length > 0)  {
+    alert("This is where I would change your password. But I'm a dumdum")
+  } else {
+    alert("hey! You gotta put in a new password!");
+  }
+  return;
 }
 
 addButton.onclick = function() {
@@ -34,4 +48,8 @@ delButton.onclick = function() {
 
 exitButton.onclick = function() {
   alert("Button (4) has been pressed");
+}
+
+debug.onclick = function() {
+  alert("hello, the prototype user has the following information;\nNothing yet");
 }

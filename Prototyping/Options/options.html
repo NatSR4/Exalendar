@@ -13,6 +13,7 @@
         <h1>
           Options Page
         </h1>
+        <button type="button" id=debugUser>Student Information</button>
       </div>
 
       <!--SIDEBAR-->
@@ -44,13 +45,21 @@
 
       <div class="option-do">
         <p>goodbye world</p>
-        
-        <label>Password</label>
-        <input type = "password"
-                id = "myPwd"
-                value = "secret">
-        
-        <button id="submitNewPW">Submit</button>
+        <form>
+          <label>Enter Password</label>
+          <input  id = "myPwd"
+                  value = "">
+          <p></p>
+          <label>Confirm Password</label>
+          <input  id = "myPwdPart2"
+                  value = "">
+          <p></p>
+          <label>New Password</label>
+          <input  id = "newPwd"
+                  value = "">
+          
+          <input type="Submit" id=SubButt Value="Submit">
+        </form>
         <button id="addEntry">New Entry</button>
         <p></p>
         <button id="removeEntry">Remove Entry</button>
@@ -64,5 +73,6 @@
     </div>
     <!--END MAIN CONTENT-->
     <script src="options.js"></script>
+    <script src="../../database_tools.js"></script>
   </body>
 </html>
