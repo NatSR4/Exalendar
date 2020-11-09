@@ -65,6 +65,16 @@ app.post("/signup", (req,res) => {
   res.redirect("/");
 });
 
+app.post("/login", (req, res) => {
+  db_tool.verify_user(req.body.inputEmail, req.body.password)
+    .then((result) => {
+      res.redirect("/");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
 app.get("*", (req,res) => {
   res.sendFile(views + '404.html');
 });
