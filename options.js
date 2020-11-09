@@ -1,3 +1,4 @@
+
 const sidebar     = document.querySelector('.sidebar');
 const mainContent = document.querySelector('.main-content');
 const button      = document.getElementById('sideButton');
