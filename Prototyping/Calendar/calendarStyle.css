@@ -130,6 +130,15 @@ html{
 .active{
     background-color: #F8D4FF;
 }
+
+.next-date{
+    color: grey;
+}
+
+.prev-date{
+    color: lightgrey;
+}
+
 .days div:hover{
     border-style: solid;
     border-width: thin;
