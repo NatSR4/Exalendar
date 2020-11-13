@@ -7,17 +7,23 @@
     height: 100%;
     z-index: -1;
     background-color: rgb(181, 159, 159);
-    position: absolute;
+    position: fixed;
+    transition: margin-left .5s;
+    padding: 0px;
   }
   
   .sidebar {
     float: left;
     left: 0%;
+    top: 0;
+    position: fixed;
     z-index: 1;
-    width: 16.66%;
-    height: 90%;
-    background-color: rgb(199, 43, 43);
-    transition: 1s ease;
+    width: 0%;
+    height: 100%;
+    background-color: rgb(255, 45, 50);
+    transition: 0.5s ease;
+    color:white;
+    overflow-x: hidden;
   }
 
   .sidebar_small {
@@ -37,11 +43,16 @@
   }
 
   .header {
-    height: 15%;
+    height: 13%;
     width: 100%;
     z-index: -1;
     float: right;
-    background-color: rosybrown;
+    background-color: white;
+    font-family: Dancing Script;
+    font-weight: bold;
+    font-size: 4em;
+    color:red;
+    text-align:center;
   }
 
   [class*="option-"] {
@@ -62,4 +73,11 @@
   body { 
     margin: 0; 
     padding: 0; 
+  }
+
+    h1 {
+    font-family: Dancing Script;
+    font-weight: bold;
+    font-size: 5em;
+    color:red;
   }

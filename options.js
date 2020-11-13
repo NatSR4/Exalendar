@@ -20,7 +20,7 @@ button.onclick = function() {
   else {
     div.style.display = 'block';
   }
-}
+}*/
 
 changePW.onclick = function() {
   var pw1 = document.getElementById("myPwd").value;
@@ -58,6 +58,18 @@ debug.onclick = function() {
   // It would seem all alerts happen before a write
   alert("This is a debug button. Do not include if you're changing the visuals")
   alert("hello, the prototype user has the following information;\nNothing yet");
-  document.write(phrase);
-  alert("Testing two alerts at once");
+}
+
+/* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+function openNav() {
+  document.getElementById("sidebarMenu").style.width = "250px";
+  document.getElementById("main-content").style.marginLeft = "250px";
+//  document.getElementByClassName("option-").style.marginLeft = "250px";
+}
+
+/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+function closeNav() {
+  document.getElementById("sidebarMenu").style.width = "0";
+  document.getElementById("main-content").style.marginLeft = "0";
+  //document.getElementByClassName(*"option-").style.marginLeft = "0px";
 }
