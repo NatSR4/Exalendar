@@ -2,13 +2,52 @@
 <html>
   <head>
     <link rel="stylesheet" href="../options.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
   </head>
+
   <body>
-    <div class="header">
-      <h1>
-        Options Page
-      </h1>
-      <button type="button" id=debugUser>Student Information</button>
+    <button class="openbtn" onclick="openNav()" type="button" id="sideButton">Menu</button> 
+      <!--SIDEBAR-->
+      <div class="sidebar" id="sidebarMenu">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <h2 class>Exalendar</h2>
+          <ul class>
+            <li>Dashboard</li>
+              <li>Calendar</li>
+              <li>Other Page</li>
+            </ul>
+            <h2 class>Other Menu</h2>
+            <ul class>
+              <li>Preferences</li>
+              <li>Logout</li>
+            </ul>  
+      </div>
+      <!--MAIN BODY STUFF-->
+    <div class="header"> Settings Page </div>
+    
+    <div class="main-content"></div>
+
+    <div class="option-buffer"></div>
+
+    <div class = "option-do">Reset Password
+      <form>
+        <label>Enter Password</label>
+        <input  id = "myPwd"
+                value = "">
+        <p></p>
+        <label>Confirm Password</label>
+        <input  id = "myPwdPart2"
+                value = "">
+        <p></p>
+        <label>New Password</label>
+        <input  id = "newPwd"
+                value = "">
+        
+        <input type="Submit" id=SubButt Value="Submit">
+      </form>
     </div>
+  
+    <script src="../../../options.js"></script>
+    <script src="../../../database_tools.js"></script>
   </body>
 </html>

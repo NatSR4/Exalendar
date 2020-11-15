@@ -6,11 +6,8 @@ const changePW    = document.getElementById('SubButt');
 const addButton   = document.getElementById('addEntry');
 const delButton   = document.getElementById('removeEntry');
 const exitButton  = document.getElementById('goodbye');
-const debug       = document.getElementById('debugUser');
 
-const phrase = "This phrase will change if you \"Change your password\". This is a test function idk";
-
-button.onclick = function() {
+/*button.onclick = function() {
   sidebar.classList.toggle('sidebar_small'); 
 
   var div = document.getElementById("sidebarMenu");
@@ -54,7 +51,7 @@ exitButton.onclick = function() {
 }
 
 // This button is for testing little things I might want to know/do
-debug.onclick = function() {
+function testFunction() {
   // It would seem all alerts happen before a write
   alert("This is a debug button. Do not include if you're changing the visuals")
   alert("hello, the prototype user has the following information;\nNothing yet");
