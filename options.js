@@ -19,6 +19,10 @@ const exitButton  = document.getElementById('goodbye');
   }
 }*/
 
+// This function contains a redirect: 
+// Called from  (/Prototyping/Options/reset.html)
+// Directs to   (/Prototyping/Options/options.html)
+// Fix if the relative location of either changes
 changePW.onclick = function() {
   var pw1 = document.getElementById("myPwd").value;
   var pw2 = document.getElementById("myPwdPart2").value;
@@ -32,6 +36,7 @@ changePW.onclick = function() {
   var newPW = document.getElementById("newPwd").value;
   if( newPW.length > 0)  {
     alert("This is where I would change your password. But I'm a dumdum")
+    window.location.href = "options.html";
   } else {
     alert("hey! You gotta put in a new password!");
   }
