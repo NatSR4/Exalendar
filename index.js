@@ -2,13 +2,18 @@ const result = require("dotenv").config();
 
 const express = require("express");
 const mysql = require("mysql");
-const queries = require('./Query');
-let DBQuery = queries.Query;
+const db_tools = require('./database_tools');
+const bodyParser = require("body-parser");
+var db_tool;
 
 const app = express();
 const port = process.env.PORT || 8000;
 
 const views = `${__dirname}/views/`;
+
+//middleware
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
 
 // Database Connection
 var connection = mysql.createConnection({
@@ -24,13 +29,11 @@ connection.connect(function(err) {
     return;
   }
   console.log('connected as id ' + connection.threadId);
+	db_tool = new db_tools(connection);
+	db_tool.get_classes('njdesmarais@gmail.com')
+	.then((result) => {console.log(result); })
+	.catch((err) => {console.log(err); });
 });
-
-//query testing
-let query1 = new DBQuery(connection);
-let fields = ['first_name', 'last_name', 'username', 'password']
-let values = ['"test"', '"test"' , '"test"', '"asdkfhasd"']
-query1.simple_insert('users', fields, values);
 
 app.get("/", (req,res)=>{
   res.sendFile(views + 'index.html');
@@ -50,6 +53,16 @@ app.get("/login", (req,res) => {
 
 app.get("/signup", (req,res) => {
   res.sendFile(views + 'signup.html');
+});
+
+app.post("/signup", (req,res) => {
+  if (req.body.password !== req.body.password2){
+    res.return(500);
+  }
+  db_tool.create_user(req.body.firstname,req.body.lastname,req.body.inputEmail,req.body.password)
+	.then((result) => {console.log(result); })
+	.catch((err) => {console.log(err); });
+  res.redirect("/");
 });
 
 app.get("*", (req,res) => {
