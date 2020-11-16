@@ -1,1 +1,3 @@
 https://stackoverflow.com/questions/5183630/calendar-recurring-repeating-events-best-storage-method
+
+https://dbdiagram.io/d/5fb1fa953a78976d7b7c0442
