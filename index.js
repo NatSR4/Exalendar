@@ -1,10 +1,14 @@
-const result = require("dotenv").config();
+const dotenv = require("dotenv").config();
 
 const express = require("express");
-const mysql = require("mysql");
-const db_tools = require('./database_tools');
 const bodyParser = require("body-parser");
-var db_tool;
+
+const Sequelize = require('sequelize');
+const sequelize = new Sequelize(process.env.DB_NAME,process.env.DB_USER,
+																process.env.DB_PSWD,{ host: process.env.DB_HOST,
+																dialect: 'mysql' })
+const db_tools = require('./database_tools')
+let db_tool = new db_tools(sequelize)
 
 const app = express();
 const port = process.env.PORT || 8000;
@@ -14,23 +18,6 @@ const views = `${__dirname}/views/`;
 //middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
-
-// Database Connection
-var connection = mysql.createConnection({
-	host	: process.env.DB_HOST,
-	user: process.env.DB_USER,
-	password: process.env.DB_PSWD,
-	database: 'exalendar'
-});
-
-connection.connect(function(err) {
-  if (err) {
-    console.error('error connecting: ' + err.stack);
-    return;
-  }
-  console.log('connected as id ' + connection.threadId);
-	db_tool = new db_tools(connection);
-});
 
 app.get("/", (req,res)=>{
   res.sendFile(views + 'index.html');
@@ -55,8 +42,13 @@ app.get("/signup", (req,res) => {
 app.post("/signup", (req,res) => {
   if (req.body.password !== req.body.password2){
     res.return(500);
-  } 
-  db_tool.create_user(req.body.firstname,req.body.lastname,req.body.inputEmail,req.body.password);
+  }
+  db_tool.users.create_user(
+		req.body.firstname,
+		req.body.lastname,
+		req.body.inputEmail,
+		req.body.password
+	);
   res.redirect("/");
 });
 
