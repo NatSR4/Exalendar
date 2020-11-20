@@ -4,6 +4,7 @@ const express = require("express");
 const mysql = require("mysql");
 const db_tools = require('./database_tools');
 const bodyParser = require("body-parser");
+const cookieParser = require('cookie-parser');
 var db_tool;
 
 const app = express();
@@ -14,6 +15,16 @@ const views = `${__dirname}/views/`;
 //middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(cookieParser());
+app.use(session({
+  key: 'user_sid',
+  secret: '323123123',
+  resave: true,
+  saveUninitialized: false,
+  cookie: {
+    expires: 600000
+  } 
+}));
 
 // Database Connection
 var connection = mysql.createConnection({
@@ -60,9 +71,27 @@ app.post("/signup", (req,res) => {
     res.return(500);
   }
   db_tool.create_user(req.body.firstname,req.body.lastname,req.body.inputEmail,req.body.password)
-	.then((result) => {console.log(result); })
-	.catch((err) => {console.log(err); });
+	.then((result) => {
+	  console.log(result);
+	  req.session.user = user._id;
+	  req.session.firstname = user.firstname;
+	  res.redirect('/');
+	})
+	.catch((err) => {
+	  console.log(err); 
+	  res.return(500)
+	});
   res.redirect("/");
+});
+
+app.post("/login", (req, res) => {
+  db_tool.verify_user(req.body.inputEmail, req.body.password)
+    .then((result) => {
+      res.redirect("/");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
 
 app.get("*", (req,res) => {
