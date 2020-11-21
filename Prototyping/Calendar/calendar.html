@@ -1,8 +1,6 @@
-<!--Kyra Sanchez Fall 2020-->
-<!--Your Name SEMESTER YEAR-->
-
 <!DOCTYPE html>
 <html lang = "en">
+
 <head>
    <meta charset = "">
    <meta name = "viewport" 
@@ -16,17 +14,18 @@
     <div class = "container">
         <div class = "calendar">
             <div class = "month">
-                <!--We need a Previous arrow to select the previous month-->
+                <!--We need a Previous arrow-->
                 <i class="arrow left"></i>
-                <div class = "date"><!--This is where the current SELECTED Month's name, and the CURRENT date are displayed on the TOP of the calendar-->
-                    <h2>October</h2> 
-                    <p>Fri October 18, 2020</p><!--Note these are placeholders, the JavaScript file overrides these with the real date-->
+                <div class = "date">
+                   <!----<h1 class = "title">Exalendar - Just the calendar bit</h1>-->
+                    <h2>October</h2>
+                    <p>Fri October 18, 2020</p>
                 </div>
                 <i class="arrow right"></i>
-                <!--We need a NEXT arrow to select the next month-->
+                <!--We need a NEXT arrow-->
             </div>
 
-            <div class = "weekdays"> <!--These are the days of the week that appear at the top of the calendar, corresponding with 7 columns-->
+            <div class = "weekdays">
                 <div>Sun</div>
                 <div>Mon</div>
                 <div>Tue</div>
@@ -37,10 +36,52 @@
             </div>
 
             <div class = "days">
-                <!--The days will go in here, the javaScript file calulates how many days are needed to fill the calendar-->
+                <div class = "prev-date">30</div>
+                <div class = "prev-date">1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div>10</div>
+                <div>11</div>
+                <div>12</div>
+                <div>13</div>
+                <div>14</div>
+                <div>15</div>
+                <div>16</div>
+                <div>17</div>
+                <div class = "active">18
+                    <ul class = "event">
+                        <li>Event 1</li>
+                        <li>Event 2</li>
+                    </ul>
+                </div>
+                <div>19</div>
+                <div>20</div>
+                <div>21</div>
+                <div>22</div>
+                <div>23</div>
+                <div>24</div>
+                <div>25</div>
+                <div>26</div>
+                <div>27</div>
+                <div>28</div>
+                <div>29</div>
+                <div>30</div>
+                <div>31</div>
+                <div class="next-date">1</div>
+                <div class="next-date">2</div>
+                <div class="next-date">3</div>
             </div>
         </div>
     </div>
     <script src = "calendar.js"></script>
+    <p class = "note">This is just a visual test not meant to be pretty or look the way we want the final calendar should be.
+        <br>-K.S.
+    </p>
 </body>
 </html>
