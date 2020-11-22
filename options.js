@@ -2,10 +2,6 @@
 const sidebar     = document.querySelector('.sidebar');
 const mainContent = document.querySelector('.main-content');
 const button      = document.getElementById('sideButton');
-const changePW    = document.getElementById('SubButt');
-const addButton   = document.getElementById('addEntry');
-const delButton   = document.getElementById('removeEntry');
-const exitButton  = document.getElementById('goodbye');
 
 /*button.onclick = function() {
   sidebar.classList.toggle('sidebar_small'); 
@@ -23,7 +19,7 @@ const exitButton  = document.getElementById('goodbye');
 // Called from  (/Prototyping/Options/reset.html)
 // Directs to   (/Prototyping/Options/options.html)
 // Fix if the relative location of either changes
-changePW.onclick = function() {
+function confirmPwChange() {
   var pw1 = document.getElementById("myPwd").value;
   var pw2 = document.getElementById("myPwdPart2").value;
   if( pw1.length < 1 || pw2.length < 1) {
@@ -41,18 +37,6 @@ changePW.onclick = function() {
     alert("hey! You gotta put in a new password!");
   }
   return;
-}
-
-addButton.onclick = function() {
-  alert("Button (2) has been pressed");
-}
-
-delButton.onclick = function() {
-  alert("Button (3) has been pressed");
-}
-
-exitButton.onclick = function() {
-  alert("Button (4) has been pressed");
 }
 
 // This button is for testing little things I might want to know/do
