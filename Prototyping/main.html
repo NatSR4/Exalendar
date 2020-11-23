@@ -14,15 +14,18 @@
         <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
     </head>
     <body class = "all">  <!---------------------------------------------------MAIN CONTENTS BEGIN-------------------------------------------------------------------------------->
-            <div class = "mainContents">
+        
+            
                 <!--SIDEBAR (this contains the menus on the left)-->
-                <div class = sidebar>
+                <div class = "sidebar" id="Sidebar">
                     <header class = "headerSidebar">
 
-                        <button class = "buttonBar" style="float:right">☰</button><!--Generic menu button with 3-bars you know how it be-->
+                        <button class = "buttonBar" onclick="openNav()" style="float:right">☰</button><!--Generic menu button with 3-bars you know how it be-->
                     </header>
-                    <div class = "sidebarMenu">
+                    <!-- <div class = "sidebarMenu"> -->
+                        <a href="javascript:void(0)" class = "closebuttonBar" onclick="closeNav()">&times;</a>
                         <h2>Exalendar Menu</h2>
+
                         <ul> <!--The 50x50.png does not actually exist here, fill with actual image file name/path-->
                             <li><img src= "50x50.png" class = "menuIcon">&nbsp;&nbsp; Dashboard</li>
                             <li><img src= "50x50.png" class = "menuIcon">&nbsp;&nbsp;Calendar</li>
@@ -35,10 +38,10 @@
                             <li><img src= "signout.png" class = "menuIcon">&nbsp;&nbsp;Logout</li>
                             <!--feel free to add to the list and fill with relevant links and icons to other pages-->
                         </ul>
-                    </div>
+                 <!--    </div> -->
                 </div>
                 <!--SIDEBAR END-->
-
+                <div class = "mainContents" id="main">
                 <header class = "headerCalendar"> 
                     <!--This is on top of the actual calendar, once there are HTML/CSS/JavaScript for and an option to switch between views (weekly & daily) these can toggle which is shown-->
                     <nav class = "menuTop">
@@ -50,7 +53,7 @@
                     </nav>
                 </header>
                 
-                <div class = "containerCalendar" style = "float: right"> <!--Contains the Calendar AND the Events & Notes bar to the side-->
+                <div class = "containerCalendar" style = "float: right" id="containCalendar"> <!--Contains the Calendar AND the Events & Notes bar to the side-->
                     <div style= "float: left;"> <!--Calendar is on the left side of this div-->
                         <iframe class = "calendarMain" src="Calendar/calendar.html" scrolling="no" style = "overflow: hidden;"></iframe>
                     </div>
