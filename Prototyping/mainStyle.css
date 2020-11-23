@@ -10,7 +10,7 @@
 }
 
 .sidebar{
-    position: absolute;
+    position: fixed;
     left:0;
     top: 0;
     z-index: 1;
@@ -20,11 +20,6 @@
     border-width: thick;
     border-color: black;
     background-color: rgb(199, 33, 33);
-    transition: 1s ease;
-}
-
-.sidebar_small{
-    width: 5rem;
 }
 
 .headerSidebar{
@@ -35,16 +30,16 @@
     border-color: #2e2727;
 }
 
-button{
+.buttonBar{
     width: 1.7rem;
     height: 1.7rem;
-    position: absolute;
-    top: 0.7rem;
-    right: 0.7rem;
+    position: fixed;
+    top: .65rem;
+    left: 17.5rem;
     background-color: white;
     color: black;
     font-size: 1rem;
-    float: right;
+   
 }
 
 .sidebar h2{
