@@ -92,16 +92,16 @@
 .containerCalendar{
     position: fixed;
     top: 3rem;
-    
-    width: 83.2%;
-    height: 100%;
+    overflow: hidden;
+    width: 70%;
+    height: 80%;
     border-left-style: groove;
     border-color: #2e2727;
 }
 
 .calendarMain{
-    width: 76.45rem;
-    height: 51.8rem;
+   /* width: 76.45rem;
+    height: 51.8rem;*/
     border-style: solid;
 }
 
@@ -153,7 +153,7 @@
     border-top-style: groove;
     border-color: #241e1e;
     /*border-style: solid;*/
-    height: 6%;
+    height: 12%;
 }
 
 .menu{

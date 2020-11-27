@@ -17,12 +17,12 @@
         
             
                 <!--SIDEBAR (this contains the menus on the left)-->
+                <!--At the moment only the calendar moves, notes do not. The header with monthly/weekly etc. does not move yet-->
                 <div class = "sidebar" id="Sidebar">
                     <header class = "headerSidebar">
 
                         <button class = "buttonBar" onclick="openNav()" style="float:right">☰</button><!--Generic menu button with 3-bars you know how it be-->
                     </header>
-                    <!-- <div class = "sidebarMenu"> -->
                         <a href="javascript:void(0)" class = "closebuttonBar" onclick="closeNav()">&times;</a>
                         <h2>Exalendar Menu</h2>
 
@@ -38,7 +38,6 @@
                             <li><img src= "signout.png" class = "menuIcon">&nbsp;&nbsp;Logout</li>
                             <!--feel free to add to the list and fill with relevant links and icons to other pages-->
                         </ul>
-                 <!--    </div> -->
                 </div>
                 <!--SIDEBAR END-->
                 <div class = "mainContents" id="main">
@@ -54,10 +53,11 @@
                 </header>
                 
                 <div class = "containerCalendar" style = "float: right" id="containCalendar"> <!--Contains the Calendar AND the Events & Notes bar to the side-->
-                    <div style= "float: left;"> <!--Calendar is on the left side of this div-->
-                        <iframe class = "calendarMain" src="Calendar/calendar.html" scrolling="no" style = "overflow: hidden;"></iframe>
-                    </div>
-                    <div class = "noteContain" style = "float: left;"><!--Notes and Events are on the right of this div-->
+
+                     <!--CALENDAR IS CORRECT, THE DAYS AND WEEK WORK CORRECTLY, THERE IS AN ISSUE WITH THE DIMENSIONS THAT MAKE IT LOOK LIKE IT ISNT. DO NOT CHANGE THE JS IT WORKS PERFECTLY-->
+                        <iframe class = "calendarMain" src="Calendar/calendar.html" style = " width: 100%;height: 100%"></iframe>
+                   </div>
+                    <div class = "noteContain" style = "float: right;"><!--Notes and Events are on the right of this div-->
                         <h2 class = "center-header"><span id = "noteDate">a<span></span></h2> <!--javaScript changes displayed date MM/DD/YYYY to current (by default) OR selected day-->
                         <!--Please Note that this sidebar intends to display events happening on the current/selected day, so remember to add functionality to that and connect it to some database for the user's events-->
                         <hr>
