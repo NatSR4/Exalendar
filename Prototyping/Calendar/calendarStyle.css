@@ -24,8 +24,8 @@ html{
 }
 
 .calendar{
-    width: 76.45rem;
-    height: 51.8rem;
+    width: 100%;
+    height: 100%;
     background-color: #EFFFFF;
     border-style: solid;
     border-width: thin;
@@ -130,6 +130,15 @@ html{
 .active{
     background-color: #F8D4FF;
 }
+
+.next-date{
+    color: grey;
+}
+
+.prev-date{
+    color: lightgrey;
+}
+
 .days div:hover{
     border-style: solid;
     border-width: thin;

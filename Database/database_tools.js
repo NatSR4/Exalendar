@@ -1,7 +1,7 @@
 const initModels = require('./models/init-models.js');
-const user_tools = require('./user_tools.js');
-const class_tools = require('./class_tools.js');
-const setting_tools = require('./setting_tools.js');
+const user_tools = require('./tools/user_tools.js');
+const class_tools = require('./tools/class_tools.js');
+const setting_tools = require('./tools/setting_tools.js');
 
 class Database_Tools {
 /* This class holds instances for each of the tools classes. This is so their
