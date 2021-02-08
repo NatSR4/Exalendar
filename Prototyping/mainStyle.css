@@ -184,8 +184,8 @@
 }
 
 .timeSpan {
-    border-style: thin;
-    border-color: black;
+    border-style: ridge;
+    border-color: #000000;
     border-bottom-color: maroon;
 
     color: black;

@@ -21,9 +21,8 @@
                 <div class = "sidebar" id="Sidebar">
                     <header class = "headerSidebar">
 
-                        <button class = "buttonBar" onclick="openNav()" style="float:right">☰</button><!--Generic menu button with 3-bars you know how it be-->
+                        <button class = "buttonBar" onclick="opencloseNav()" style="float:right">☰</button><!--Generic menu button with 3-bars you know how it be-->
                     </header>
-                        <a href="javascript:void(0)" class = "closebuttonBar" onclick="closeNav()">&times;</a>
                         <h2>Exalendar Menu</h2>
 
                         <ul> <!--The 50x50.png does not actually exist here, fill with actual image file name/path-->
@@ -58,7 +57,7 @@
                         <iframe class = "calendarMain" src="Calendar/calendar.html" style = " width: 100%;height: 100%"></iframe>
                    </div>
                     <div class = "noteContain" style = "float: right;"><!--Notes and Events are on the right of this div-->
-                        <h2 class = "center-header"><span id = "noteDate">a<span></span></h2> <!--javaScript changes displayed date MM/DD/YYYY to current (by default) OR selected day-->
+                        <h2 class = "center-header"><span id = "noteDate">a</span></h2> <!--javaScript changes displayed date MM/DD/YYYY to current (by default) OR selected day-->
                         <!--Please Note that this sidebar intends to display events happening on the current/selected day, so remember to add functionality to that and connect it to some database for the user's events-->
                         <hr>
                         <div class = "noteLeft" style = "float: left;">
