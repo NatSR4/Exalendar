@@ -7,7 +7,7 @@ const Sequelize = require('sequelize');
 const sequelize = new Sequelize(process.env.DB_NAME,process.env.DB_USER,
 																process.env.DB_PSWD,{ host: process.env.DB_HOST,
 																dialect: 'mysql' })
-const db_tools = require('./database_tools')
+const db_tools = require('./Database/database_tools')
 let db_tool = new db_tools(sequelize)
 
 const app = express();
