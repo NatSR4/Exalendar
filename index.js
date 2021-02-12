@@ -1,11 +1,14 @@
-const result = require("dotenv").config();
+const dotenv = require("dotenv").config();
 
 const express = require("express");
-const mysql = require("mysql");
-const db_tools = require('./database_tools');
 const bodyParser = require("body-parser");
-const cookieParser = require('cookie-parser');
-var db_tool;
+
+const Sequelize = require('sequelize');
+const sequelize = new Sequelize(process.env.DB_NAME,process.env.DB_USER,
+																process.env.DB_PSWD,{ host: process.env.DB_HOST,
+																dialect: 'mysql' })
+const db_tools = require('./Database/database_tools')
+let db_tool = new db_tools(sequelize)
 
 const app = express();
 const port = process.env.PORT || 8000;
@@ -18,33 +21,13 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(cookieParser());
 app.use(session({
   key: 'user_sid',
-  secret: '323123123'
+  secret: '323123123',
   resave: true,
   saveUninitialized: false,
   cookie: {
     expires: 600000
   } 
 }));
-
-// Database Connection
-var connection = mysql.createConnection({
-	host	: process.env.DB_HOST,
-	user: process.env.DB_USER,
-	password: process.env.DB_PSWD,
-	database: 'exalendar'
-});
-
-connection.connect(function(err) {
-  if (err) {
-    console.error('error connecting: ' + err.stack);
-    return;
-  }
-  console.log('connected as id ' + connection.threadId);
-	db_tool = new db_tools(connection);
-	db_tool.get_classes('njdesmarais@gmail.com')
-	.then((result) => {console.log(result); })
-	.catch((err) => {console.log(err); });
-});
 
 app.get("/", (req,res)=>{
   res.sendFile(views + 'index.html');
@@ -70,17 +53,12 @@ app.post("/signup", (req,res) => {
   if (req.body.password !== req.body.password2){
     res.return(500);
   }
-  db_tool.create_user(req.body.firstname,req.body.lastname,req.body.inputEmail,req.body.password)
-	.then((result) => {
-	  console.log(result);
-	  req.session.user = user._id;
-	  req.session.firstname = user.firstname;
-	  res.redirect('/');
-	})
-	.catch((err) => {
-	  console.log(err); 
-	  res.return(500)
-	});
+  db_tool.users.create_user(
+		req.body.firstname,
+		req.body.lastname,
+		req.body.inputEmail,
+		req.body.password
+	);
   res.redirect("/");
 });
 

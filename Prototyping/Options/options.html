@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="options.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <button class="openbtn" onclick="openNav()" type="button" id="sideButton">Menu</button> 
+      <!--SIDEBAR-->
+      <div class="sidebar" id="sidebarMenu">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <h2 class>Exalendar</h2>
+          <ul class>
+            <li>Dashboard</li>
+              <li><a href="../index.html">Calender</a></li>
+              <li>Other Page</li>
+            </ul>
+            <h2 class>Other Menu</h2>
+            <ul class>
+              <li><a href="./options.html">Preferences</a></li>
+              <li>Logout</li>
+            </ul>  
+      </div>
+    <!--MAIN CONTENT-->
+    <div class="main-content">
+      
+      <div class="header">
+        Settings Page
+        <button type="button" onclick="testFunction()">Student Information</button>
+      </div>
+
+      <div class="option-buffer">This Column left intentionally blank</div>
+      
+      <div class="option-desc">
+        <p> This column houses the description of the options</p>
+        <p> change password</p>
+        <p> add event </p>
+        <p> remove event </p>
+        <p> log out </p>
+      </div>
+
+      <div class="option-do">
+        <p>This column has the buttons/forms</p>
+        <a href="reset.html" class="link-button">Reset password link idk</a>
+        <p></p>
+        <a href="myEvents.html" class="link-button">Edit Courses</a>
+        <p></p>
+        <button id="goodbye">Log Out</button>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <!--
+        <button id="yeet">database function test 1</button>
+        -->
+        
+        
+      </div>
+
+      <!--END ROW-->
+    </div>
+    <!--END MAIN CONTENT-->
+    <script src="../../options.js"></script>
+    <script src="../../database_tools.js"></script>
+  </body>
+</html>
