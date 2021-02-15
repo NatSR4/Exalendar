@@ -69,30 +69,24 @@
 
   [class*="option-"] {
     float: left;
-    width: 23%;
     height: 90%;
-    padding: 15px;
+    padding: 20px;
     border-style: solid;
-    border-width: thin;
+    border-width: 2px;
+    border-top: 0px;
     background-color: #e5dcdc;
   }
 
-  .option-buffer{
-    width: 250px;
-    background-color: transparent;
-  }
-  
-  /* This block handles the two columns of text on the 
-   * options page. Uncomment when you feel 1 column must
-   * have different formatting than the other
-
   .option-desc {
+    width: 30%;
+    margin-left: 20%;
+    border-right: 0px;
   }
 
   .option-do {
-
+    width: 30%;
+    margin-right: 20%;
   }
-  */
 
   body { 
     margin: 0; 
