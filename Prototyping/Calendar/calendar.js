@@ -7,11 +7,11 @@ const monthDays = document.querySelector('.days')
 
 const lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate(); //gets the last day of the month
 
-const prevLastDay = new Date(date.getFullYear(), date.getMonth(), 0).getDate(); //gets the last day of the PREVIOUS month
+const prevLastDay = new Date(date.getFullYear(), date.getMonth() - 1, 0).getDate(); //gets the last day of the PREVIOUS month
 
-const firstDayIndex = new Date(date.getFullYear, date.getMonth, 1).getDay(); //gets the day of the week of the FIRST DAY of the month (so that we know if we need to draw prev month days, to fill space)
+const firstDayIndex = new Date(date.getFullYear(), date.getMonth(), 1).getDay(); //gets the day of the week of the FIRST DAY of the month (so that we know if we need to draw prev month days, to fill space)
 
-const lastDayIndex = new Date(date.getFullYear(), date.getMonth()+1, 0).getDay(); //gets the day of the week of the LAST DAY of the month (so we know if we need to draw NEXT month days, to fill space)
+const lastDayIndex = new Date(date.getFullYear(), date.getMonth()+  1, 0).getDay(); //gets the day of the week of the LAST DAY of the month (so we know if we need to draw NEXT month days, to fill space)
 
 const nextDays = 7 - lastDayIndex -1;//basically how many days after the end of the month we need to print in order to have it line up properly. (the additional -1 is there because index starts at 0, not 1)
 

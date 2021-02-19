@@ -100,7 +100,7 @@ html{
     font-size: 1.5rem;
     font-weight: 400;
     letter-spacing: .1rem;
-    width: calc(76.05rem/7); 
+    width: calc(76.05rem/6); 
     /*the main container width (minus the weekdays padding) divided by the number of days in a week*/
 
     display: flex;
@@ -118,7 +118,7 @@ html{
 
 .days div{
     font-size: 1.4rem;
-    width: calc(75.45rem/7);
+    width: calc(75.45rem/6);
     height: calc(43.05rem/5);
 }
 
