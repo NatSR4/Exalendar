@@ -1,36 +1,40 @@
 /**Kyra Sanchez Fall 2020**/
+//Declaring the current date
 const date = new Date();
-
-//This section contains the variables needed to calculate how to draw the calendar//
-
-const monthDays = document.querySelector('.days')
-
-const lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate(); //gets the last day of the month
-
-const prevLastDay = new Date(date.getFullYear(), date.getMonth() - 1, 0).getDate(); //gets the last day of the PREVIOUS month
-
-const firstDayIndex = new Date(date.getFullYear(), date.getMonth(), 1).getDay(); //gets the day of the week of the FIRST DAY of the month (so that we know if we need to draw prev month days, to fill space)
-
-const lastDayIndex = new Date(date.getFullYear(), date.getMonth()+  1, 0).getDay(); //gets the day of the week of the LAST DAY of the month (so we know if we need to draw NEXT month days, to fill space)
-
-const nextDays = 7 - lastDayIndex -1;//basically how many days after the end of the month we need to print in order to have it line up properly. (the additional -1 is there because index starts at 0, not 1)
 
 ////The months of the year
 const months = [
-    "January",
-    "Feburary",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December"
+  "January",
+  "Feburary",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December"
 ];
+
+//This section contains the variables needed to calculate how to draw the calendar//
+
+monthDays = document.querySelector('.days')
+
+lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate(); //gets the last day of the month
+
+prevLastDay = new Date(date.getFullYear(), date.getMonth() - 1, 0).getDate(); //gets the last day of the PREVIOUS month
+
+firstDayIndex = new Date(date.getFullYear(), date.getMonth(), 1).getDay(); //gets the day of the week of the FIRST DAY of the month (so that we know if we need to draw prev month days, to fill space)
+
+lastDayIndex = new Date(date.getFullYear(), date.getMonth()+  1, 0).getDay(); //gets the day of the week of the LAST DAY of the month (so we know if we need to draw NEXT month days, to fill space)
+
+nextDays = 7 - lastDayIndex -1;//basically how many days after the end of the month we need to print in order to have it line up properly. (the additional -1 is there because index starts at 0, not 1)
+
+
 ////
+
 
 document.querySelector('.date h2').innerHTML = months[date.getMonth()];//selects the larger header in the calendar where the current selected month is and puts into it the name of the current/selected month
 //WHEN SELECTED MONTH FUNCTIONALITY IS ADDED, CHANGE THIS LINE OF CODE IS CHANGED TO WORK WITH IT. It should *not* change the current date, we aren't time travelers, please make a new variable for the selected date. 
