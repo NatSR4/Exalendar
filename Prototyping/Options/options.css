@@ -57,14 +57,15 @@
     height: 13%;
     width: 100%;
     z-index: -1;
-    float: right;
-    background-color: white;
+    float: center;
+    background-color: #111;
     font-family: Dancing Script;
     font-weight: bold;
     font-size: 4em;
     color: red;
     text-align:center;
     border-bottom: 3px solid black;
+
   }
 
   [class*="option-"] {
@@ -99,3 +100,30 @@
     font-size: 5em;
     color:red;
   }
+
+
+  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #000;
+}
+.smaller-text {
+  font-size:1em;
+}
