@@ -5,11 +5,11 @@ function generateProfessorView(){
 	//place authentication here instead of true
 	if(true){
 		var calendarElement = document.getElementsByClassName('calendar')[0];
-		calendar.style.width = "50%";
+		calendarElement.style.width = "50%";
 
 		//create button for adding events
 		var button = document.createElement("Button");
-		var text = document.createTextNode("Add Event(Placeholder name)");
+		var text = document.createTextNode("Add Event");
 		button.appendChild(text);
 		button.onclick= function(){addEvent()};
 		//monthElement coresponds to the upper(red) region of the calendar
