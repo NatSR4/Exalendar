@@ -1,0 +1,65 @@
+/* Harshia Garg Spring 2021 */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/* check out https://fonts.google.com/specimen/Roboto? for info on the different weights available */
+
+.footer {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    position: fixed;
+    width: 100%;
+    bottom:0;
+    left: 0;
+    z-index: 2;
+    background-color: maroon;
+    /* border-top-style: groove;
+    border-color: #241e1e; */
+    /*border-style: solid;*/
+    height: 25px;
+}
+
+.menu {
+	margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    align-items: center;
+    text-align: center;
+}
+
+.menu ul {
+	margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.menu li {
+	margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    display: inline;
+}
+
+.menu a {
+    box-sizing: border-box;
+    position: relative;
+    /* top: 1px; */
+    color: #757575; /* HG: make sure to match gitcat.svg fill colour*/
+    font-size: 10px;
+    padding: 0 1vw 0 1vw;
+    text-decoration: none;
+    /* text-transform: uppercase; */
+    border-style: solid;
+    border-width: 0 1.5px 0 0;
+    margin: -2px;
+    font-weight: 700;
+}
+
+#gitcat {
+	position: relative;
+    top: 2.7px;
+    border: 0;
+}
