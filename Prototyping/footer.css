@@ -15,8 +15,8 @@
     z-index: 2;
     background-color: maroon;
     /* border-top-style: groove;
-    border-color: #241e1e; */
-    /*border-style: solid;*/
+    border-color: #241e1e;
+    border-style: solid; */
     height: 25px;
 }
 
@@ -62,4 +62,20 @@
 	position: relative;
     top: 2.7px;
     border: 0;
+}
+
+.menu span {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    display: inline;
+    box-sizing: border-box;
+    position: fixed;
+    color: #757575; /* HG: make sure to match gitcat.svg fill colour*/
+    font-size: 10px;
+    padding: 0 1vw 0 1vw;
+    text-decoration: none;
+    font-weight: 700;
+    z-index: 3;
+    right: 0;
+    bottom: 6px;
 }

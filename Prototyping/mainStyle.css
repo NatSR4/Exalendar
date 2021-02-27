@@ -13,19 +13,21 @@
     font-family: 'Roboto', sans-serif;
 }
 
-.sidebar{
+#sidebar{
     position: fixed;
     left:0;
     top: 0;
-    z-index: 1;
-    width: 15rem;
+    z-index: 3;
+    width: 0;
     height: 100%;
-    border-right-style: solid;
-    border-width: thick;
-    border-color: black;
-    background-color: rgb(199, 33, 33);
+    /* border-right-style: solid;
+    border-width: thick; */
+    /* border-color: rgb(136, 136, 136);
+    border-style: outset;
+    border-width: 0 10px 0 0; */
+    background-color: var(--sidebar);
     overflow-x: hidden;
-    transition: 0.5s;
+    transition: 0.4s;
 }
 
 .headerSidebar{
@@ -36,17 +38,28 @@
     border-color: #2e2727;
 }
 
-.buttonBar{
-    width: 1.7rem;
-    height: 1.7rem;
+#buttonBar{
+    width: 30px;
+    height: 30px;
     position: fixed;
-    top: .55rem;
-    left: 12.5rem;
-    background-color: white;
+    top: 15px;
+    left: 15px;
+    /* background-color: white;
     color: black;
-    font-size: 1rem;
-   
+    font-size: 1rem; */
+    background-color: white;
+	border: 2px solid white;
+    border: 0;
+    color: black;
+	transition-duration: 0.4s;
+    outline: none;
 }
+
+#buttonBar:hover { /* HG: need to fix how hover effect dissapears after javascript is run */
+	background-color: var(--sidebar);
+	color: white;
+}
+
 .closebuttonBar{
     /*width: 1.7rem;
     height: 1.7rem;*/
@@ -58,10 +71,11 @@
     font-size: 1rem;
    
 }
-.sidebar h2{
+#sidebar h2{
     text-align: center;
-    font-weight: 400;
-    color: grey;
+    color: white;
+    font-size: 20px;
+    font-weight: 100;
 }
 .sidebarMenu ul{
     padding-left: 3rem;
@@ -182,4 +196,8 @@
 #containCalendar {
   transition: margin-left .5s; /* If you want a transition effect */
   
+}
+
+:root {
+    --sidebar: rgb(199, 33, 33);
 }
