@@ -12,7 +12,7 @@
     width: 100%;
     bottom:0;
     left: 0;
-    z-index: 2;
+    z-index: 1;
     background-color: maroon;
     /* border-top-style: groove;
     border-color: #241e1e;
@@ -47,7 +47,6 @@
     box-sizing: border-box;
     position: relative;
     /* top: 1px; */
-    color: #757575; /* HG: make sure to match gitcat.svg fill colour*/
     font-size: 10px;
     padding: 0 1vw 0 1vw;
     text-decoration: none;
@@ -56,6 +55,10 @@
     border-width: 0 1.5px 0 0;
     margin: -2px;
     font-weight: 700;
+}
+
+.menu a, .menu span {
+    color: #757575; /* HG: make sure to match gitcat.svg fill colour*/
 }
 
 #gitcat {
@@ -70,7 +73,6 @@
     display: inline;
     box-sizing: border-box;
     position: fixed;
-    color: #757575; /* HG: make sure to match gitcat.svg fill colour*/
     font-size: 10px;
     padding: 0 1vw 0 1vw;
     text-decoration: none;

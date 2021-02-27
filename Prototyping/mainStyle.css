@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 /* check out https://fonts.google.com/specimen/Roboto? for info on the different weights available */
 
-.all {
+body {
     background-color: #2b2b2b;
+    font-size: 11.5pt;
 }
 
 *{
@@ -13,12 +14,46 @@
     font-family: 'Roboto', sans-serif;
 }
 
+#buttonBar{
+    width: 2.5vw;
+    height: 2.5vw;
+    position: fixed;
+    top: 15px;
+    left: 1vw;
+    background-color: white;
+	border: 2px solid white;
+    border: 0;
+    color: black;
+	transition-duration: 0.4s;
+    font-size: 1.1vw;
+}
+
+#buttonBar:hover {
+	background-color: var(--sidebar);
+	color: white;
+}
+
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4); */
+    /* HG: unsure if i want things to be visibly shaded out */
+}
+
 #sidebar{
     position: fixed;
-    left:0;
+    left: 0;
     top: 0;
+    /* left: 100vw; */
     z-index: 3;
     width: 0;
+    /* width: 250px; */
     height: 100%;
     /* border-right-style: solid;
     border-width: thick; */
@@ -30,62 +65,18 @@
     transition: 0.4s;
 }
 
-.headerSidebar{
-    text-align: center;
-    background-color:maroon;
-    height: 3rem;
-    border-bottom-style: groove;
-    border-color: #2e2727;
-}
-
-#buttonBar{
-    width: 30px;
-    height: 30px;
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    /* background-color: white;
-    color: black;
-    font-size: 1rem; */
-    background-color: white;
-	border: 2px solid white;
-    border: 0;
-    color: black;
-	transition-duration: 0.4s;
-    outline: none;
-}
-
-#buttonBar:hover { /* HG: need to fix how hover effect dissapears after javascript is run */
-	background-color: var(--sidebar);
-	color: white;
-}
-
-.closebuttonBar{
-    /*width: 1.7rem;
-    height: 1.7rem;*/
-    position: fixed;
-    top: .75rem;
-    left: 10.5rem;
-    /*background-color: white;*/
-    color: black;
-    font-size: 1rem;
-   
-}
 #sidebar h2{
     text-align: center;
     color: white;
     font-size: 20px;
     font-weight: 100;
 }
-.sidebarMenu ul{
-    padding-left: 3rem;
-    list-style-type: none;
-}
 
 .menuIcon{
     height: 1.3rem;
     width: 1.3rem;
 }
+
 .sidebarMenu li{
     left: 50%;
     color: lightgrey;
@@ -107,29 +98,30 @@
     display: inline;
 }
 
-.containerCalendar{
-    position: fixed;
-    top: 3rem;
-    overflow: hidden;
-    width: 70%;
-    height: 80%;
-    border-left-style: groove;
-    border-color: #2e2727;
-}
-
-.calendarMain{
+.calendar {
    /* width: 76.45rem;
     height: 51.8rem;*/
-    border-style: solid;
+    /* border-style: solid; */
+    border: none;
+    position: fixed;
+    left: 4.5vw;
+    top: 15px;
+    height: calc(100vh - 55px);
+    width: 62.5vw;
 }
 
 .noteContain{
-    border-top-width: medium;
+    /* border-top-width: medium; */
     background-color: whitesmoke;
-    border-style: solid;
-    border-right-width: thick;
-    width: 22.7rem;
-    height: 51.8rem;
+    /* border-style: solid;
+    border-right-width: thick; */
+    /* width: 22.7rem;
+    height: 51.8rem; */
+    position: fixed;
+    width: 31vw;
+    left: 68vw;
+    top: 15px;
+    height: calc(100vh - 55px);
 }
 
 .noteList{
