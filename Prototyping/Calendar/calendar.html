@@ -18,12 +18,12 @@
             <div class = "month">
                 <div class="header">
                     <!--We need a Previous arrow to select the previous month-->
-                    <i class="arrow left"></i>
+                    <i class="arrow left" onclick="loadPrev()"></i>
                     <div class = "date"><!--This is where the current SELECTED Month's name, and the CURRENT date are displayed on the TOP of the calendar-->
                         <h2>October</h2> 
                         <p>Fri October 18, 2020</p><!--Note these are placeholders, the JavaScript file overrides these with the real date-->
                     </div>
-                    <i class="arrow right"></i>
+                    <i class="arrow right" onclick="loadNext()"></i>
                     <!--We need a NEXT arrow to select the next month-->
                 </div>
             </div>
