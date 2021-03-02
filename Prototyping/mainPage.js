@@ -1,10 +1,6 @@
 /**Kyra Sanchez Fall 2020**/
 // Harshita Garg Spring 2021
 
-window.onload = function() { // for testing :)
-	openNav();
-}
-
 //object with the current Date
 const date = new Date();
 
