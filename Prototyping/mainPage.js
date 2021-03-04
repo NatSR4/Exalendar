@@ -13,13 +13,13 @@ document.getElementById("noteDate").innerHTML = (date.getMonth()+1) + " / " +dat
 function openNav() {
 	let bar = document.getElementById("sidebar");
 	let button = document.getElementById("buttonBar");
-	bar.style.width = "calc(100vw / 6)";
+	bar.style.width = "calc(100vw / 6.87)";
 	// bar.style.left = "0";
 	//document.getElementById("main").style.marginLeft = "250px";
 	//document.getElementById("containCalendar").style.marginLeft="250px";
 	button.style.backgroundColor = "var(--sidebar)";
 	button.style.color = "white";
-	button.style.left = "calc(100vw / 6)";
+	button.style.left = "calc(100vw / 6.87)";
 	button.style.border = "outset white";
 	button.style.borderWidth = "0px 1.5px 1.5px 0px";
 	document.getElementById("main").style.marginLeft = "calc(100vw / 6)";
