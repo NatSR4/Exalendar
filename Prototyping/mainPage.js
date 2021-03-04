@@ -51,3 +51,13 @@ function opencloseNav() {
 	if (document.getElementById("buttonBar").style.color == "white") closeNav();
 	else openNav();
 }
+
+function loadMain() {
+	// Onload, update the sidebar if the user is a professor
+	// TODO: Need to add professor authentication
+	if (true) {
+    	var exalendarMenu = document.getElementById("exalendarMenu");
+		exalendarMenu.innerHTML += `<li><img src="50x50.png"
+			class="menuIcon">&nbsp;&nbsp;Professor</li>`;
+	}
+}
