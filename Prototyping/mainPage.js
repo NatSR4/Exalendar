@@ -52,12 +52,14 @@ function opencloseNav() {
 	else openNav();
 }
 
+// Handle page load (for adding buttons etc.)
+// Adds professor page to sidebar if current user is a professor
 function loadMain() {
 	// Onload, update the sidebar if the user is a professor
 	// TODO: Need to add professor authentication
 	if (true) {
     	var exalendarMenu = document.getElementById("exalendarMenu");
 		exalendarMenu.innerHTML += `<li><img src="50x50.png"
-			class="menuIcon">&nbsp;&nbsp;Professor</li>`;
+			class="menuIcon">&nbsp;&nbsp;<a href="Professor/professor.html">Professor</a></li>`;
 	}
 }
