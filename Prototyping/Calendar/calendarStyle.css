@@ -27,8 +27,6 @@ html{
     width: 100%;
     height: 100%;
     background-color: #EFFFFF;
-    border-style: solid;
-    border-width: thin;
 }
 
 /*The area in which the title, month name and date are stored.*/
@@ -40,18 +38,28 @@ html{
     padding: 0 2rem;
     text-align: center;
     display: flex;
+    position: fixed;
+}
+
+.header{
+    width: 260px;
+    height: 5rem;
+    margin: auto;
 }
 
 .date{
+    /* max width of box is 193.22 and default height is 74.8 */
+    width: 193.22px;
+    margin: 2.6px 33.39px;
+    padding-left: 2.75px;
     position: fixed;
-    right: 45%;
     align-self: center;
 }
 
 /*Here are the arrows at the side of the main calendar*/
 .arrow {
     border: solid black;
-    border-width: 0 .35rem .35rem 0;
+    margin-top: 30px;
     display: inline-block;
     padding: .5rem;
   }
@@ -59,15 +67,17 @@ html{
 .right {
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
+    border-width: 0 .35rem .35rem 0;
+    margin-left: 103.4px;
     position: fixed;
-    left: 56.2%
   }
 
 .left {
-    transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    border-width: 0 0 .35rem .35rem;
+    margin-left: -125.5px;
     position: fixed;
-    left: 40%
   }
 
 /*Arrows Stuff ends....*/
@@ -87,11 +97,14 @@ html{
 }
 /*weekdays container*/
 .weekdays{
+    margin-top: 5rem;
     width: 100%;
     height: 3rem;
     padding: 0 0.4rem;
+    background: #EFFFFF;
     display: flex;
     align-items: center;
+    position: fixed;
 }
 
 
@@ -100,7 +113,7 @@ html{
     font-size: 1.5rem;
     font-weight: 400;
     letter-spacing: .1rem;
-    width: calc(76.05rem/7); 
+    width: calc(100%/7);
     /*the main container width (minus the weekdays padding) divided by the number of days in a week*/
 
     display: flex;
@@ -109,6 +122,7 @@ html{
 }
 
 .days{
+    margin-top: 8rem;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -118,7 +132,7 @@ html{
 
 .days div{
     font-size: 1.4rem;
-    width: calc(75.45rem/7);
+    width: calc(100%/7);
     height: calc(43.05rem/5);
 }
 
