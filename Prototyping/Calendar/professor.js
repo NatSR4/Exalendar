@@ -4,9 +4,6 @@ function generateProfessorView(){
 	//Check if the current user is a professor
 	//place authentication here instead of true
 	if(true){
-		var calendarElement = document.getElementsByClassName('calendar')[0];
-		calendarElement.style.width = "50%";
-
 		//create button for adding events
 		var button = document.createElement("Button");
 		var text = document.createTextNode("Add Event");
