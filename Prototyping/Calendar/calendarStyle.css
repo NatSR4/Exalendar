@@ -165,3 +165,28 @@ html{
 .bodCal{
     background-color: grey;
 }
+
+/*Month-Week-Day Buttons, no functionality currently - 3-4-2021*/
+.MWD-Buttons{
+    align-items: center;
+    width: 15vw;
+    height: 3vw;
+}
+
+.buttonList li{
+    display: inline;
+    padding-right: 0.01vw;
+}
+
+.MWD{
+    width: calc(5vw - 0.01vw);
+    height: 3vw;
+    border-style: outset;
+    border-width: bold;
+    background-color:#F10020;
+    border-color: #be041d;
+}
+
+.MWD:hover{
+    border-style: inset;
+}
