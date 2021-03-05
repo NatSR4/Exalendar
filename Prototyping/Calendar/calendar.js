@@ -2,7 +2,9 @@
 //Declaring globals needed to draw the calendar
 const monthDays = document.querySelector('.days'); //The days shown on the page
 
-const today = new Date();
+const today = new Date(); // holds the current date
+
+document.querySelector('.date p').innerHTML = today.toDateString(); //puts into the smaller text in the calendar header where the current date is and puts into it the current date
 
 var date; //stores the date
 
@@ -14,7 +16,15 @@ var firstDayIndex; //gets the day of the week of the FIRST DAY of the month (so 
 
 var lastDayIndex; //gets the day of the week of the LAST DAY of the month (so we know if we need to draw NEXT month days, to fill space)
 
-var nextDays;//basically how many days after the end of the month we need to print in order to have it line up properly. (the additional -1 is there because index starts at 0, not 1)
+var nextDays; //basically how many days after the end of the month we need to print in order to have it line up properly. (the additional -1 is there because index starts at 0, not 1)
+
+var firstWeekDay; //gets the first day of the week
+
+var lastWeekDay; //gets the last day of the week
+
+var monthBool = true; //tells the program that the calendar is in month mode
+
+var weekBool = false; //tells the program that the calendar is in week mode
 
 ////The months of the year
 const months = [
@@ -35,31 +45,54 @@ const months = [
 //Calling initial calendar draw funciton
 loadToday();
 
+//Function to load week mode
+function changeWeek() {
+  monthBool = false;
+  weekBool = true;
+  loadCalendarWeek();
+}
+
+//Function to load month mode
+function changeMonth() {
+  monthBool = true;
+  weekBool = false;
+  loadCalendarMonth();
+}
+
 //Function to get the current date and load the calendar
 function loadToday() {
   date = today;
 
-  document.querySelector('.date p').innerHTML = today.toDateString();//puts into the smaller text in the calendar header where the current date is and puts into it the current date
-
-  loadCalendar();
+  loadCalendarMonth();
 }
 
-//Fucntion to get the next month and load the calendar
+//Fucntion to get the next month or week and load the calendar
 function loadNext() {
-  date.setMonth(date.getMonth()+1);
-
-  loadCalendar();
+  if (monthBool) {
+    date.setMonth(date.getMonth()+1);
+    loadCalendarMonth();
+  }
+  else if (weekBool) {
+    date = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 7);
+    loadCalendarWeek();
+  }
 }
 
-//Function to get the previous month and load the calendar
+//Function to get the previous month or week and load the calendar
 function loadPrev() {
-  date.setMonth(date.getMonth()-1);
-
-  loadCalendar();
+  if (monthBool) {
+    date.setMonth(date.getMonth()-1);
+    loadCalendarMonth();
+  }
+  else if (weekBool) {
+    date = new Date(date.getFullYear(), date.getMonth(), date.getDate() - 7);
+    loadCalendarWeek();
+  }
 }
 
-//Function to load calendar
-function loadCalendar() {
+//Function to load calendar month
+function loadCalendarMonth() {
+  //changing the global calendar vars
   lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
 
   prevLastDay = new Date(date.getFullYear(), date.getMonth(), 0).getDate();
@@ -88,8 +121,8 @@ function loadCalendar() {
   //selected days.
   for(let i = 1; i <= lastDay; i++){
       if (
-          i === new Date().getDate() &&
-          date.getMonth() === new Date().getMonth()
+          i === today.getDate() &&
+          date.getMonth() === today.getMonth()
         ) {
           days += `<div class="active">${i}</div>`;
         } else{
@@ -104,5 +137,55 @@ function loadCalendar() {
       days += `<div class = "next-date">${j}</div>`;
       monthDays.innerHTML = days;
 
+  }
+}
+
+//Function to load Calendar Week
+function loadCalendarWeek() {
+  //changing the global calendar vars
+  lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+
+  prevLastDay = new Date(date.getFullYear(), date.getMonth(), 0);
+
+  firstWeekDay = new Date(date.getFullYear(), date.getMonth(), date.getDate() - date.getDay());
+
+  lastWeekDay = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 7 - date.getDay());
+
+  document.querySelector('.date h2').innerHTML = months[date.getMonth()];//selects the larger header in the calendar where the current selected month is and puts into it the name of the current/selected month
+
+  //days inner html variable
+  let days = "";
+
+  //looping through dates
+  let i = firstWeekDay.getDate();
+  while (i != lastWeekDay.getDate()) {
+    console.log(i);
+    //case for previous days
+    if (firstWeekDay.getMonth() == prevLastDay.getMonth() && i > 7) {
+      days +=`<div class="prev-date">${i}</div>`;
+    }
+    //case for next days
+    else if (lastWeekDay.getMonth() == lastDay.getMonth() + 1 && i < 7) {
+      days += `<div class = "next-date">${i}</div>`;
+    }
+    //normal case
+    else {
+      days += `<div>${i}</div>`;
+    }
+
+    // updating inner html
+    monthDays.innerHTML = days;
+
+    // setting i to 1 at the edge cases
+    if (i == prevLastDay.getDate() && firstWeekDay.getMonth() == prevLastDay.getMonth()) {
+      i = new Date(date.getFullYear(), date.getMonth(), 1).getDate();
+    }
+    else if (i == lastDay.getDate() && lastWeekDay.getMonth() == lastDay.getMonth() + 1) {
+      i = new Date(date.getFullYear(), date.getMonth() + 1, 1).getDate();
+    }
+    // normal cases
+    else {
+      i++;
+    }
   }
 }
