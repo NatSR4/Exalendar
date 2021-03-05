@@ -26,6 +26,8 @@ var monthBool = true; //tells the program that the calendar is in month mode
 
 var weekBool = false; //tells the program that the calendar is in week mode
 
+var dayBool = false;
+
 ////The months of the year
 const months = [
   "January",
@@ -45,25 +47,41 @@ const months = [
 //Calling initial calendar draw funciton
 loadToday();
 
-//Function to load week mode
-function changeWeek() {
-  monthBool = false;
-  weekBool = true;
-  loadCalendarWeek();
-}
-
 //Function to load month mode
 function changeMonth() {
   monthBool = true;
   weekBool = false;
+  daybool = false;
   loadCalendarMonth();
+}
+
+//Function to load week mode
+function changeWeek() {
+  monthBool = false;
+  weekBool = true;
+  dayBool = false;
+  loadCalendarWeek();
+}
+
+function changeDay() {
+  monthBool = false;
+  weekBool = false;
+  dayBool = true;
+  loadCalendarDay();
 }
 
 //Function to get the current date and load the calendar
 function loadToday() {
   date = today;
-
-  loadCalendarMonth();
+  if (monthBool) {
+    loadCalendarMonth();
+  }
+  else if (weekBool) {
+    loadCalendarWeek();
+  }
+  else if (dayBool) {
+    loadCalendarDay();
+  }
 }
 
 //Fucntion to get the next month or week and load the calendar
@@ -76,6 +94,10 @@ function loadNext() {
     date = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 7);
     loadCalendarWeek();
   }
+  else if (dayBool) {
+    date = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1);
+    loadCalendarDay();
+  }
 }
 
 //Function to get the previous month or week and load the calendar
@@ -87,6 +109,10 @@ function loadPrev() {
   else if (weekBool) {
     date = new Date(date.getFullYear(), date.getMonth(), date.getDate() - 7);
     loadCalendarWeek();
+  }
+  else if (dayBool) {
+    date = new Date(date.getFullYear(), date.getMonth(), date.getDate() -1, 1);
+    loadCalendarDay();
   }
 }
 
@@ -170,7 +196,15 @@ function loadCalendarWeek() {
     }
     //normal case
     else {
-      days += `<div>${i}</div>`;
+      //for active
+      if (i == today.getDate() && 
+      (lastWeekDay.getMonth() == today.getMonth() || lastDay.getMonth() == today.getMonth())) {
+        days += `<div class="active">${i}</div>`;
+      }
+      //normal case
+      else {
+        days += `<div>${i}</div>`;
+      }
     }
 
     // updating inner html
@@ -188,4 +222,12 @@ function loadCalendarWeek() {
       i++;
     }
   }
+}
+
+//Function to load calendar days
+function loadCalendarDay() {
+  console.log(date.getDate());
+  let days = `<div>${date.getDate()}</div>`;
+
+  monthDays.innerHTML = days;
 }
