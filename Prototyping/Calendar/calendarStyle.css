@@ -1,41 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/* check out https://fonts.google.com/specimen/Roboto for info on the different weights available */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+/* https://fonts.google.com/specimen/Dancing+Script */
+
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Secular One', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
-html{
-    font-size: 100%;
+
+html {
+    font-size: 11.5pt;
 }
-/*Formatting for the "Exalendar" title*/
 
 .divright{
     border-style: solid;
 }
 
 .container{
-    width: 100%;
-    height: 100%;
-    /* background-color: #FFFFFF;*/
-    COLOR: #000000;
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .calendar{
-    width: 100%;
+    width: calc(100% - 5vw);
     height: 100%;
-    background-color: #EFFFFF;
+    background-color: white;
+    position: fixed;
+    right: 0;
+    z-index: 2;
+}
+
+.tabs {
+    position: fixed;
+    left: 0;
+    width: 4.3vw;
+    /* top: calc(100% - 15vw - 19px - 55vh); */
+    top: 80px;
+}
+
+.tabs button {
+    z-index: 1;
+    width: 5vw;
+    height: 5vw;
+    padding-right: 40px;
+    padding-left: calc((5vw / 2) - 0.9vw); /* artificially center letter */
+    margin-bottom: 5px;
+    background-color: #2b2b2b;
+    color: white;
+    border: inset white;
+    font-size: 2.2vw;
+    text-shadow: -4px 3px 0 grey;
+    border-radius: 4px;
 }
 
 /*The area in which the title, month name and date are stored.*/
 .month{
-    width: 100%;
-    height: 5rem;
+    width: calc(100% - 5vw);
+    right: 0;
+    height: 80px;
     background-color: #F10020;
     align-items: center;
-    padding: 0 2rem;
     text-align: center;
     display: flex;
     position: fixed;
@@ -43,7 +69,7 @@ html{
 
 .header{
     width: 260px;
-    height: 5rem;
+    height: 80px;
     margin: auto;
 }
 
@@ -67,7 +93,7 @@ html{
 .right {
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
-    border-width: 0 .35rem .35rem 0;
+    border-width: 0 4px 4px 0;
     margin-left: 103.4px;
     position: fixed;
   }
@@ -75,7 +101,7 @@ html{
 .left {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
-    border-width: 0 0 .35rem .35rem;
+    border-width: 0 0 4px 4px;
     margin-left: -125.5px;
     position: fixed;
   }
@@ -85,23 +111,24 @@ html{
 /*The Month itself "September" etc.*/
 .month h2{
     font-size: 2rem;
+    margin-top: 7px;
     font-weight: 400;
-    letter-spacing: 0.2rem;
+    /* font-weight: 700;
+    font-family: 'Dancing Script', 'Roboto', sans-serif; */
 }
 
 /*The Date "Sun September 27, 2020"*/
 .month p{
     font-size: 1rem;
-    font-weight: 200;
-    margin-bottom: .3rem;
+    font-style: italic;
 }
 /*weekdays container*/
 .weekdays{
-    margin-top: 5rem;
-    width: 100%;
-    height: 3rem;
-    padding: 0 0.4rem;
-    background: #EFFFFF;
+    margin: 80px 0 0 1vw;
+    width: calc(100% - 2vw - 5vw);
+    right: 0;
+    height: 40px;
+    background: white;
     display: flex;
     align-items: center;
     position: fixed;
@@ -110,39 +137,40 @@ html{
 
 /*27      28      29    ...etc*/
 .weekdays div{
-    font-size: 1.5rem;
-    font-weight: 400;
-    letter-spacing: .1rem;
-    width: calc(100%/7);
-    /*the main container width (minus the weekdays padding) divided by the number of days in a week*/
-
+    font-size: 1.1rem;
+    font-weight: 500;
+    width: calc(100% / 7); /*the main container width (minus the weekdays padding) divided by the number of days in a week*/
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
 }
 
 .days{
-    margin-top: 8rem;
-    width: 100%;
+    margin: 120px 0 0 1vw;
+    width: calc(100% - 2vw);
     display: flex;
     flex-wrap: wrap;
-    padding: .3rem;
     align-items: center;
 }
 
 .days div{
-    font-size: 1.4rem;
-    width: calc(100%/7);
-    height: calc(43.05rem/5);
+    font-size: 1rem;
+    /* margin-left: calc(1vw / 7); */
+    width: calc(100% / 7);
+    height: calc((100vh - 120px) / 5);
+    border-style: solid;
+    border-width: thin;
+    border-color: white;
 }
 
 .event {
-    padding: .4rem;
+    padding: 2px;
     list-style-type: none;
 }
 
 .active{
-    background-color: #F8D4FF;
+    background-color: #FFD5D5;
+    background-color: rgba(255, 0, 0, 0.17);
 }
 
 .next-date{
@@ -156,18 +184,14 @@ html{
 .days div:hover{
     border-style: solid;
     border-width: thin;
-    border-color: #F10020;
+    border-color: red;
 }
 .note{
     text-align: center;
 }
 
-.bodCal{
-    background-color: grey;
-}
-
 /*Month-Week-Day Buttons, no functionality currently - 3-4-2021*/
-.MWD-Buttons{
+/* .MWD-Buttons{
     align-items: center;
     width: 15vw;
     height: 3vw;
@@ -189,4 +213,4 @@ html{
 
 .MWD:hover{
     border-style: inset;
-}
+} */
