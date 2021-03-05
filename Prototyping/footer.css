@@ -10,13 +10,10 @@
     font-family: 'Roboto', sans-serif;
     position: fixed;
     width: 100%;
-    bottom:0;
+    bottom: 0;
     left: 0;
     z-index: 1;
     background-color: maroon;
-    /* border-top-style: groove;
-    border-color: #241e1e;
-    border-style: solid; */
     height: 25px;
 }
 
@@ -46,11 +43,9 @@
 .menu a {
     box-sizing: border-box;
     position: relative;
-    /* top: 1px; */
     font-size: 10px;
     padding: 0 1vw 0 1vw;
     text-decoration: none;
-    /* text-transform: uppercase; */
     border-style: solid;
     border-width: 0 1.5px 0 0;
     margin: -2px;
