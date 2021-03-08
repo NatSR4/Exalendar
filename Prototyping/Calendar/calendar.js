@@ -1,8 +1,8 @@
 /**Kyra Sanchez Fall 2020**/
 //Declaring globals needed to draw the calendar
 const monthDays = document.querySelector('.days'); //The days shown on the page
-const today = new Date(); // holds the current date
-document.querySelector('.date p').innerHTML = today.toDateString(); //puts into the smaller text in the calendar header where the current date is and puts into it the current date
+const currentDate = new Date(); // holds the current date
+document.querySelector('.date p').innerHTML = currentDate.toDateString(); //puts into the smaller text in the calendar header where the current date is and puts into it the current date
 var date; //stores the date
 var lastDay; //gets the last day of the month
 var prevLastDay; //gets the last day of the PREVIOUS month
@@ -59,7 +59,7 @@ function changeDay() {
 
 //Function to get the current date and load the calendar
 function loadToday() {
-  date = today;
+  date = new Date();
   if (monthBool) {
     loadCalendarMonth();
   }
@@ -110,7 +110,7 @@ function loadCalendarMonth() {
 	lastDayIndex = new Date(date.getFullYear(), date.getMonth()+  1, 0).getDay();
 	nextDays = 7 - lastDayIndex -1;
 
-	document.querySelector('.date h2').innerHTML = months[date.getMonth()];//selects the larger header in the calendar where the current selected month is and puts into it the name of the current/selected month
+	document.querySelector('.date h2').innerHTML = months[date.getMonth()] + ', ' + date.getFullYear();//selects the larger header in the calendar where the current selected month is and puts into it the name of the current/selected month
 	//WHEN SELECTED MONTH FUNCTIONALITY IS ADDED, CHANGE THIS LINE OF CODE IS CHANGED TO WORK WITH IT. It should *not* change the current date, we aren't time travelers, please make a new variable for the selected date.
 
 	let days = "";
@@ -118,15 +118,22 @@ function loadCalendarMonth() {
 	//basically takes the index of the day of the week of the first of the month (ex: 2 = tuesday) and uses the last day of the previous month to print the days before it until sunday of that week. Working back.
 	//ex: if the first day of the month is tuesday (index = 2) then it should print out monday the 31st, then sunday the 30th, then stop. If the first day of the month is Sunday, the index is 0, it should not print other days.
 	for (let i = firstDayIndex; i > 0; i--) {
-		days += `<div class="daybox prev-date">${prevLastDay - i + 1}</div>`;
+    if (prevLastDay - i + 1 === currentDate.getDate() &&
+      ((date.getMonth() - 1 === currentDate.getMonth() && date.getFullYear() == currentDate.getFullYear()) ||
+      (11 === currentDate.getMonth() && date.getFullYear() - 1 == currentDate.getFullYear()))) 
+      {
+      days += `<div class="daybox active">${prevLastDay - i + 1}</div>`;
+    } else {
+      days += `<div class="daybox prev-date">${prevLastDay - i + 1}</div>`;
+    }
 	}
 
 	//prints the days of the current/selected month. (ex: 1 - 30) if the day it's currently printed is TODAY, it's div is of the class "active". Today is visually different than other day and should be different than
 	//selected days.
 	for(let i = 1; i <= lastDay; i++){
-		if (i === today.getDate() &&
-			date.getMonth() === today.getMonth()
-		) {
+		if (i === currentDate.getDate() &&
+      date.getMonth() === currentDate.getMonth() && date.getFullYear() === currentDate.getFullYear())
+   {
 			days += `<div class="daybox active">${i}</div>`;
 		} else {
 			days += `<div class="daybox">${i}</div>`;
@@ -136,16 +143,30 @@ function loadCalendarMonth() {
 	//prints the days of the next month, should the previous month end on a day other than Saturday. If the month ends on a Thursday it should print out Friday the 1st and Saturday the 2nd of the next month, and no more.
 	//next days and previous days should look different than the current/selected month's days
 	for(let i = 1; i <= nextDays; i++){
-		days += `<div class="daybox next-date">${i}</div>`;
+    if (i === currentDate.getDate() && 
+    ((date.getMonth() + 1 === currentDate.getMonth() && date.getFullYear() === currentDate.getFullYear()) || 
+    (0 == currentDate.getMonth() && date.getFullYear() + 1 === currentDate.getFullYear())))
+      {
+      days += `<div class="daybox active">${i}</div>`;
+    } else {
+      days += `<div class="daybox next-date">${i}</div>`;
+    }
 	}
 
-	monthDays.innerHTML = days;
+  //updating inner html
+  monthDays.innerHTML = days;
+  
+  //daybox height calculation
 	let dayboxes = document.getElementsByClassName('daybox');
 	if ((firstDayIndex + lastDay + nextDays) / 7 > 5) {
 		for (let i = 0; i < dayboxes.length; ++i) {
 			dayboxes[i].style.height = "calc((100vh - 120px) / 6)";
 		}
-	} else {
+  } else if (((firstDayIndex + lastDay + nextDays) / 7 < 5)) {
+		for (let i = 0; i < dayboxes.length; ++i) {
+			dayboxes[i].style.height = "calc((100vh - 120px) / 4)";
+		}
+  } else {
 		for (let i = 0; i < dayboxes.length; ++i) {
 			dayboxes[i].style.height = null;
 		}
@@ -159,7 +180,7 @@ function loadCalendarWeek() {
   prevLastDay = new Date(date.getFullYear(), date.getMonth(), 0);
   firstWeekDay = new Date(date.getFullYear(), date.getMonth(), date.getDate() - date.getDay());
   lastWeekDay = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 7 - date.getDay());
-  document.querySelector('.date h2').innerHTML = months[date.getMonth()];//selects the larger header in the calendar where the current selected month is and puts into it the name of the current/selected month
+  document.querySelector('.date h2').innerHTML = months[date.getMonth()] + ', ' + date.getFullYear();//selects the larger header in the calendar where the current selected month is and puts into it the name of the current/selected month
 
   //days inner html variable
   let days = "";
@@ -168,48 +189,71 @@ function loadCalendarWeek() {
   let i = firstWeekDay.getDate();
   while (i != lastWeekDay.getDate()) {
     console.log(i);
+    //for active
+    if (i == currentDate.getDate() && 
+    (firstWeekDay.getMonth() == currentDate.getMonth() || lastWeekDay.getMonth() == currentDate.getMonth()) &&
+    (firstWeekDay.getFullYear() == currentDate.getFullYear() || lastWeekDay.getFullYear() == currentDate.getFullYear()))
+     {
+      days += `<div class="daybox active">${i}</div>`;
+    }
     //case for previous days
-    if (firstWeekDay.getMonth() == prevLastDay.getMonth() && i > 7) {
+    else if (firstWeekDay.getMonth() === prevLastDay.getMonth() && i > 7) {
       days += `<div class="daybox prev-date">${i}</div>`;
     }
     //case for next days
-    else if (lastWeekDay.getMonth() == lastDay.getMonth() + 1 && i < 7) {
+    else if (((lastWeekDay.getMonth() === lastDay.getMonth() + 1) ||
+    lastWeekDay.getMonth() === 0) && i < 7) {
       days += `<div class="daybox next-date">${i}</div>`;
     }
     //normal case
     else {
-      //for active
-      if (i == today.getDate() && 
-      (lastWeekDay.getMonth() == today.getMonth() || lastDay.getMonth() == today.getMonth())) {
-        days += `<div class="daybox active">${i}</div>`;
-      }
-      //normal case
-      else {
-        days += `<div class="daybox">${i}</div>`;
-      }
+      days += `<div class="daybox">${i}</div>`;
     }
-
-    // updating inner html
-    monthDays.innerHTML = days;
 
     // setting i to 1 at the edge cases
-    if (i == prevLastDay.getDate() && firstWeekDay.getMonth() == prevLastDay.getMonth()) {
-      i = new Date(date.getFullYear(), date.getMonth(), 1).getDate();
-    }
-    else if (i == lastDay.getDate() && lastWeekDay.getMonth() == lastDay.getMonth() + 1) {
-      i = new Date(date.getFullYear(), date.getMonth() + 1, 1).getDate();
+    if ((i === prevLastDay.getDate() && firstWeekDay.getMonth() === prevLastDay.getMonth()) ||
+     (i === lastDay.getDate() && lastWeekDay.getMonth() === lastDay.getMonth() + 1) ||
+     (i === lastDay.getDate() && lastWeekDay.getMonth() === 0))
+     {
+      i = 1;
     }
     // normal cases
     else {
       i++;
+      if (i === 33)
+        break;
     }
+  }
+
+  // updating inner html
+  monthDays.innerHTML = days;
+
+  // daybox height calculation
+  let dayboxes = document.getElementsByClassName('daybox');
+  for (let i = 0; i < dayboxes.length; ++i) {
+    dayboxes[i].style.height = "calc(100vh - 120px)";
   }
 }
 
 //Function to load calendar days
 function loadCalendarDay() {
-  console.log(date.getDate());
-  let days = `<div>${date.getDate()}</div>`;
+  // updating month
+  document.querySelector('.date h2').innerHTML = months[date.getMonth()] + ', ' + date.getFullYear();
 
+  // updating day
+  let days;
+  if (date.getDate() === currentDate.getDate()) {
+    days = `<div class="daybox active">${date.getDate()}</div>`;
+  }
+  else {
+    days = `<div class="daybox">${date.getDate()}</div>`;
+  }
+
+  // updating inner html
   monthDays.innerHTML = days;
+
+  // height and width changes
+  let dayboxes = document.getElementsByClassName('daybox');
+  dayboxes[0].style.height = "calc(100vh - 120px)";
+  dayboxes[0].style.width = "100%";
 }

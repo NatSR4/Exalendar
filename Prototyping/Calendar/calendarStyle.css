@@ -69,14 +69,14 @@ html {
 }
 
 .header{
-    width: 260px;
+    width: 329px;
     height: 80px;
     margin: auto;
 }
 
 .date{
-    /* max width of box is 193.22 and default height is 74.8 */
-    width: 193.22px;
+    /* max width of box is 262 and default height is 74.8 */
+    width: 262px;
     margin: 2.6px 33.39px;
     padding-left: 2.75px;
     position: fixed;
@@ -96,7 +96,7 @@ html {
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
     border-width: 0 4px 4px 0;
-    margin-left: 103.4px;
+    margin-left: 140px;
     position: fixed;
     color: rgb(255,255,255);
   }
@@ -105,7 +105,7 @@ html {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
     border-width: 0 0 4px 4px;
-    margin-left: -125.5px;
+    margin-left: -164px;
     position: fixed;
   }
 
