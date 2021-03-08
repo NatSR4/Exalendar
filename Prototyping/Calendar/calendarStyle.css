@@ -12,7 +12,7 @@
 }
 
 html {
-    font-size: 11.5pt;
+    font-size: 13pt;
 }
 
 .divright{
@@ -47,11 +47,11 @@ html {
     padding-right: 40px;
     padding-left: calc((5vw / 2) - 0.9vw); /* artificially center letter */
     margin-bottom: 5px;
-    background-color: #2b2b2b;
-    color: white;
+    background-color: white;
+    color: black;
     border: inset white;
     font-size: 2.2vw;
-    text-shadow: -4px 3px 0 grey;
+    /*text-shadow: -4px 3px 0 grey;*/
     border-radius: 4px;
 }
 
@@ -60,11 +60,12 @@ html {
     width: calc(100% - 5vw);
     right: 0;
     height: 80px;
-    background-color: #F10020;
+    background-color: rgb(225, 40, 40);
     align-items: center;
     text-align: center;
     display: flex;
     position: fixed;
+    color: rgb(255,255,255);
 }
 
 .header{
@@ -84,10 +85,11 @@ html {
 
 /*Here are the arrows at the side of the main calendar*/
 .arrow {
-    border: solid black;
+    border: solid white;
     margin-top: 30px;
     display: inline-block;
     padding: .5rem;
+    color: rgb(255,255,255);
   }
   
 .right {
@@ -96,6 +98,7 @@ html {
     border-width: 0 4px 4px 0;
     margin-left: 103.4px;
     position: fixed;
+    color: rgb(255,255,255);
   }
 
 .left {
@@ -125,10 +128,10 @@ html {
 /*weekdays container*/
 .weekdays{
     margin: 80px 0 0 1vw;
-    width: calc(100% - 2vw - 5vw);
+    width: calc(100% - 5vw);
     right: 0;
     height: 40px;
-    background: white;
+    background: rgba(199, 199, 199,0.65);
     display: flex;
     align-items: center;
     position: fixed;
@@ -143,11 +146,12 @@ html {
     display: flex;
     justify-content: left;
     align-items: center;
+    /*background: rgba(199, 199, 199,0.20);*/
 }
 
 .days{
-    margin: 120px 0 0 1vw;
-    width: calc(100% - 2vw);
+    margin: 120px 0 0 0;
+    width: calc(100% );
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -160,7 +164,7 @@ html {
     height: calc((100vh - 120px) / 5);
     border-style: solid;
     border-width: thin;
-    border-color: white;
+    border-color: rgb(199,199,199,0.65);
 }
 
 .event {
@@ -168,9 +172,10 @@ html {
     list-style-type: none;
 }
 
-.active{
-    background-color: #FFD5D5;
-    background-color: rgba(255, 0, 0, 0.17);
+div .active{
+    background-color: rgba(255,40,40,0.80);
+    border-color: rgba(255,40,40,0.80);
+    color:white;
 }
 
 .next-date{
@@ -189,6 +194,27 @@ html {
 .note{
     text-align: center;
 }
+
+/* DARK MODE THINGS BEGIN-SETUP ONLY, NOT IMPLEMENTED JUST YET*/
+.calendar .darkmode {
+    background-color: rgba(0,0,0,0.9);
+    color:white;
+
+}
+
+div .active .darkmode{
+    background-color: rgba(0,0,0,0.40);
+    border-color: rgba(255,40,40,0.80);
+    color:white;
+}
+
+.weekdays .darkmode {
+    background-color: rgba(199, 199, 199,0.5);
+}
+.days .darkmode{
+    color:white;
+}
+/* DARK MODE THINGS END-IMAGE IS ON THE DISCORD SERVER, GENERAL/PINS*/
 
 /*Month-Week-Day Buttons, no functionality currently - 3-4-2021*/
 /* .MWD-Buttons{
