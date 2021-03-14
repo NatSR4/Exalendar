@@ -57,42 +57,37 @@
     height: 13%;
     width: 100%;
     z-index: -1;
-    float: right;
-    background-color: white;
+    float: center;
+    background-color: #111;
     font-family: Dancing Script;
     font-weight: bold;
     font-size: 4em;
     color: red;
     text-align:center;
     border-bottom: 3px solid black;
+
   }
 
   [class*="option-"] {
     float: left;
-    width: 23%;
     height: 90%;
-    padding: 15px;
+    padding: 20px;
     border-style: solid;
-    border-width: thin;
+    border-width: 2px;
+    border-top: 0px;
     background-color: #e5dcdc;
   }
 
-  .option-buffer{
-    width: 250px;
-    background-color: transparent;
-  }
-  
-  /* This block handles the two columns of text on the 
-   * options page. Uncomment when you feel 1 column must
-   * have different formatting than the other
-
   .option-desc {
+    width: 30%;
+    margin-left: 20%;
+    border-right: 0px;
   }
 
   .option-do {
-
+    width: 30%;
+    margin-right: 20%;
   }
-  */
 
   body { 
     margin: 0; 
@@ -105,3 +100,30 @@
     font-size: 5em;
     color:red;
   }
+
+
+  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #000;
+}
+.smaller-text {
+  font-size:1em;
+}
