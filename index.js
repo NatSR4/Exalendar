@@ -51,6 +51,11 @@ app.get("/signup", (req,res) => {
   res.sendFile(views + 'signup.html');
 });
 
+// TEST GET REQUEST to return true
+app.get("/professortest", (req,res) => {
+  res.send( { isprofessor: true });
+});
+
 app.post("/signup", (req,res) => {
   if (req.body.password !== req.body.password2){
     res.return(500);
@@ -77,6 +82,7 @@ app.post("/login", (req, res) => {
 app.get("*", (req,res) => {
   res.sendFile(views + '404.html');
 });
+
 
 app.listen(port, () => {
   console.log(`Listening to requests on http://localhost:${port}`);
