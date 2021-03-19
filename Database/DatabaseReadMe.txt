@@ -7,7 +7,7 @@ https://sequelize.org/master/
 https://github.com/sequelize/sequelize-auto/blob/master/README.md
 
 A diagram of the database relationships is available here:
-https://dbdiagram.io/d/5fb1fa953a78976d7b7c0442
+https://dbdiagram.io/d/605406d0ecb54e10c33c2d9a
 
 Originally the database was held on a rasberrypi running a MySQL server. This
 probably won't exist in the future so you'll have to find a new way to host it.
