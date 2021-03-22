@@ -1,0 +1,52 @@
+
+body { 
+    margin: 0; 
+    padding: 0;
+    background-color: #333 
+  }
+
+.header {
+    height: 50px;
+    width: 100%;
+    z-index: -1;
+    float: center;
+    background-color: #ff3224;
+    font-family: Dancing Script;
+    font-weight: bold;
+    font-size: 180%;
+    color:white;
+    text-align:center;
+    display:block;
+    /*align-content: center;*/
+    text-align-last: center; 
+}
+
+
+/* Header extra css - delete if necessary after page and db are linked fully
+If we put more stuff to the header kind of like a navbar 
+this stuff would be used, its ready for that case */
+ul {
+  list-style-type: none;
+  margin: 0%;
+  padding: 0%;
+  overflow: hidden;
+  
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #db1204;
+}
+
+/*end Header extra css*/
