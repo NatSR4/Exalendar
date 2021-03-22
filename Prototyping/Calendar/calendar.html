@@ -12,7 +12,7 @@
    <link rel = "stylesheet" href="calendarStyle.css"/>
    <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
 </head>
-<body class = "bodCal" onload="generateProfessorView()">
+<body onload="generateProfessorView()">
     <div class = "container">
         <div class = "calendar">
             <div class = "month">
@@ -27,7 +27,6 @@
                     <!--We need a NEXT arrow to select the next month-->
                 </div>
             </div>
-
             <div class = "weekdays"> <!--These are the days of the week that appear at the top of the calendar, corresponding with 7 columns-->
                 <div>Sun</div>
                 <div>Mon</div>
@@ -42,8 +41,13 @@
                 <!--The days will go in here, the javaScript file calulates how many days are needed to fill the calendar-->
             </div>
         </div>
+        <div class="tabs">
+            <button title="Monthly View" onclick="changeMonth()">M</button>
+            <button title="Weekly View" onclick = "changeWeek()">W</button>
+            <button title="Daily View" style="padding-left: calc((5vw / 2) - 0.7vw);" onclick = "changeDay()">D</button>
+        </div>
     </div>
-    <script src = "calendar.js"></script>
+    <script src="calendar.js"></script>
     <script src="professor.js"></script>
 </body>
 </html>
