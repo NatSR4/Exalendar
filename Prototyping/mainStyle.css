@@ -33,7 +33,7 @@ body {
 }
 
 #modal {
-    display: none;
+    display: block;
     position: fixed;
     z-index: 2;
     left: 0;
@@ -76,6 +76,28 @@ body {
 
 #sidebar ul {
     margin: 4px 0 7px 0;
+}
+
+#addevent-btn {
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    background-color: white;
+    border: solid black 2px;
+    font-weight: 500;
+    transition-duration: 0.4s;
+}
+
+#addevent-btn:hover {
+    border: solid red 2px;
+    color: red;
+}
+
+#addevent-menu {
+    
 }
 
 .calendar {
@@ -149,19 +171,9 @@ body {
     top: 1rem;
 }
 
-#main {
-  transition: margin-left .5s; /* If you want a transition effect */
-  padding: 20px;
-}
-
 #containCalendar {
   transition: margin-left .5s; /* If you want a transition effect */
 }
-
-
-
-
-
 
 :root {
     --sidebar: rgb(199, 33, 33);
