@@ -1,3 +1,6 @@
+// not the same as the ones in the professorpages folder 
+// - comment for anyone who panicked w/o reading anything 
+
 function generateProfessorView(){
 	//adjusts the view of calandar.html to what the professor should see
 	
