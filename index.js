@@ -57,20 +57,20 @@ app.get("/professortest", (req,res) => {
 });
 
 app.post("/signup", (req,res) => {
-    console.log(req.body);
   db_tool.users.create_user(
 		req.body.firstname,
 		req.body.lastname,
 		req.body.inputEmail,
 		req.body.password
 	);
-  res.redirect("/");
+  // res.redirect("/");
+  res.send({ signup: true });
 });
 
 app.post("/login", (req, res) => {
   db_tool.users.verify_user(req.body.inputEmail, req.body.password)
     .then((result) => {
-      res.redirect("/");
+      res.send({ verified: result });
     })
     .catch((err) => {
       console.log(err);

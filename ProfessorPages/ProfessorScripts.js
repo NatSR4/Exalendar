@@ -32,3 +32,39 @@ async function signupTest() {
     }).then(response => response.json());
     console.log(data);
 }
+
+
+// TEST function for logging in using the credentials above
+async function loginTest() {
+    let loginCredentials = {
+        inputEmail: "exalendar@rpi.edu",
+        password: "exalendar123"
+    };
+
+    let data = await fetch('http://localhost:8000/login', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(loginCredentials)
+    }).then(response => response.json());
+    console.log(data);
+}
+
+// TODO: For invalid credentials, need to handle the username not in table case
+// TEST function for logging in using invalid credentials
+async function loginFailTest() {
+    let loginCredentials = {
+        inputEmail: "exalendar@rpi.edu",
+        password: "dummy123"
+    };
+
+    let data = await fetch('http://localhost:8000/login', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(loginCredentials)
+    }).then(response => response.json());
+    console.log(data);
+}
