@@ -57,9 +57,7 @@ app.get("/professortest", (req,res) => {
 });
 
 app.post("/signup", (req,res) => {
-  if (req.body.password !== req.body.password2){
-    res.return(500);
-  }
+    console.log(req.body);
   db_tool.users.create_user(
 		req.body.firstname,
 		req.body.lastname,
@@ -70,7 +68,7 @@ app.post("/signup", (req,res) => {
 });
 
 app.post("/login", (req, res) => {
-  db_tool.verify_user(req.body.inputEmail, req.body.password)
+  db_tool.users.verify_user(req.body.inputEmail, req.body.password)
     .then((result) => {
       res.redirect("/");
     })
