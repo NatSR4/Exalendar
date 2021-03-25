@@ -11,6 +11,9 @@ https://dbdiagram.io/d/605406d0ecb54e10c33c2d9a
 
 Originally the database was held on a rasberrypi running a MySQL server. This
 probably won't exist in the future so you'll have to find a new way to host it.
+UPDATE: The database is currently hosted on freedb.tech with plans to move it to
+an AWS machine as a permanent place
+
 
 Once you find a way to host the datbase you can export the MySQL statements from
 the diagram above. After executing those you will need to create credentials for 
