@@ -2,6 +2,7 @@ const initModels = require('./models/init-models.js');
 const user_tools = require('./user_tools.js');
 const class_tools = require('./class_tools.js');
 const setting_tools = require('./setting_tools.js');
+const event_tools = require('./event_tools.js');
 
 class Database_Tools {
 /* This class holds instances for each of the tools classes. This is so their
@@ -22,6 +23,7 @@ class Database_Tools {
     this.users = new user_tools(sequelize);
     this.classes = new class_tools(sequelize);
     this.settings = new setting_tools(sequelize);
+    this.events = new event_tools(sequelize);
   }
 }
 module.exports = Database_Tools;

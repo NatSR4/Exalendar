@@ -77,6 +77,17 @@ app.post("/login", (req, res) => {
     });
 });
 
+app.post("/get_events", (req, res) => {
+  console.log(db_tools.users);
+  db_tool.events.get_events(req.body.userid)
+    .then((result) => {
+      res.send(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
 app.get("*", (req,res) => {
   res.sendFile(views + '404.html');
 });
