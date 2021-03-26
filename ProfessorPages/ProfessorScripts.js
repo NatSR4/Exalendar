@@ -68,3 +68,18 @@ async function loginFailTest() {
     }).then(response => response.json());
     console.log(data);
 }
+
+// TEST function for getting events from the table
+async function getEventsTest() {
+    let userid = {
+        userid: "1"
+    };
+    let data = await fetch('http://localhost:8000/get_events', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userid)
+    }).then(response => response.json());
+    console.log(data);    
+}
