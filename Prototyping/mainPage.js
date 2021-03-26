@@ -14,15 +14,11 @@ function openNav() {
 	let bar = document.getElementById("sidebar");
 	let button = document.getElementById("buttonBar");
 	bar.style.width = "calc(100vw / 6)";
-	// bar.style.left = "0";
-	//document.getElementById("main").style.marginLeft = "250px";
-	//document.getElementById("containCalendar").style.marginLeft="250px";
 	button.style.backgroundColor = "var(--sidebar)";
 	button.style.color = "white";
 	button.style.left = "calc(100vw / 6)";
 	button.style.border = "outset white";
 	button.style.borderWidth = "0px 1.5px 1.5px 0px";
-	document.getElementById("main").style.marginLeft = "calc(100vw / 6)";
 	let modal = document.getElementById("modal");
 	modal.style.display = "block";
 	window.onclick = function(event) {
@@ -62,4 +58,30 @@ function loadMain() {
 		exalendarMenu.innerHTML += `<li><img src="50x50.png"
 			class="menuIcon">&nbsp;&nbsp;<a href="Professor/professor.html">Professor</a></li>`;
 	}
+}
+
+// function modalOn() {
+// 	document.getElementById("modal").style.display = "block";
+// }
+
+// function modalOff() {
+// 	document.getElementById("modal").style.display = null;
+// }
+
+function openAddEvent() {
+	let modal = document.getElementById("modal");
+	modal.style.display = "block";
+	modal.style.zIndex = 
+	document.getElementById("addevent-menu").style.display = "block";
+	window.onclick = function(event) {
+		if (event.target == modal) {
+			modal.style.display = "none";
+			closeAddEvent();
+		}
+	}
+}
+
+function closeAddEvent() {
+	document.getElementById("modal").style.display = null;
+	document.getElementById("addevent-menu").style.display = null;
 }
