@@ -15,8 +15,8 @@ class Event_Tools {
         event_id: eventid,
         event_type: eventtype,
         event_title: eventtitle,
-        event_description: event_description,
-        eventdate: eventdate
+        event_description: eventdescription,
+        event_date: eventdate
       });
       return true;
     }

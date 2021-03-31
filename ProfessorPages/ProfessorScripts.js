@@ -83,3 +83,23 @@ async function getEventsTest() {
     }).then(response => response.json());
     console.log(data);    
 }
+
+// TEST function for adding event to table
+async function addEventTest() {
+    let request = {
+        classid: 1,
+        eventid: 1,
+        eventtype: "homework",
+        eventtitle: "Homework 1",
+        eventdescription: "Make a Hello World program",
+        eventdate: '2021-03-31 19:30:00'
+    };
+    let data = await fetch('http://localhost:8000/add_event', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(request)
+    }).then(response => response.json());
+    console.log(data);
+}

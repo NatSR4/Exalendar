@@ -68,6 +68,7 @@ app.post("/signup", (req,res) => {
 });
 
 app.post("/login", (req, res) => {
+    console.log(req.body);
   db_tool.users.verify_user(req.body.inputEmail, req.body.password)
     .then((result) => {
       res.send({ verified: result });
@@ -78,7 +79,6 @@ app.post("/login", (req, res) => {
 });
 
 app.post("/get_events", (req, res) => {
-  console.log(db_tools.users);
   db_tool.events.get_events(req.body.userid)
     .then((result) => {
       res.send(result);
@@ -86,6 +86,17 @@ app.post("/get_events", (req, res) => {
     .catch((err) => {
       console.log(err);
     });
+});
+
+app.post("/add_event", (req, res) => {
+  db_tool.events.add_event(
+      req.body.classid,
+      req.body.eventid,
+      req.body.eventtype,
+      req.body.eventtitle,
+      req.body.eventdescription,
+      req.body.eventdate
+  );
 });
 
 app.get("*", (req,res) => {
