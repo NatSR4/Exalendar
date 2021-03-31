@@ -28,10 +28,17 @@ Make sure these files are included in the gitignore (they should already be ther
 If you did all of this correctly you should be able to use functions from the tools
 classes now.
 
-Your job at this point is to expand the databse tools as well as revising the 
+Your job at this point is to expand the database tools as well as revising the 
 diagram and models to the projects needs. 
 
 Should you change the diagram and need to re import the sequelize models, usue the
 library sequelize-auto. It allows you to generate models based upon your databases
 structure. So just change the diagram, alter the database (wipe it if you have to),
 delete the models folder, and then use sequelize auto to generate new models.
+
+In order to run sequelize-auto, install it and grab the variables defined by the
+database hosting service. This is dependent on whatever is being used to host the
+database. However, in order for sequelize to work the variables needed must be
+defined in .env, so you can use those to run the following command:
+sequelize-auto -h [host] -d [database name] -u [username] -x [password] --dialect mysql -o Database/models/
+Refer to the sequelize-auto readme for more information.
