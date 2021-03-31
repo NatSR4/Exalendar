@@ -85,6 +85,7 @@ async function getEventsTest() {
 }
 
 // TEST function for adding event to table
+// Due to foreign key, requires that a class with id 1 has been created.
 async function addEventTest() {
     let request = {
         classid: 1,
