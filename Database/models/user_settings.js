@@ -1,8 +1,6 @@
-/* jshint indent: 2 */
-
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  usr_settings = sequelize.define('user_settings', {
+  return sequelize.define('user_settings', {
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
@@ -44,6 +42,4 @@ module.exports = function(sequelize, DataTypes) {
       },
     ]
   });
-  usr_settings.removeAttribute('id');
-  return usr_settings;
 };

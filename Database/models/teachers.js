@@ -1,17 +1,17 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('user_classes', {
+  return sequelize.define('teachers', {
     user_id: {
       type: DataTypes.INTEGER,
-      allowNull: true,
+      allowNull: false,
       references: {
-        model: 'users',
+        model: 'user_classes',
         key: 'user_id'
       }
     },
     class_id: {
       type: DataTypes.INTEGER,
-      allowNull: true,
+      allowNull: false,
       references: {
         model: 'classes',
         key: 'class_id'
@@ -19,7 +19,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     sequelize,
-    tableName: 'user_classes',
+    tableName: 'teachers',
     timestamps: false,
     indexes: [
       {
