@@ -25,13 +25,12 @@ class Event_Tools {
     }
   }
 
-  /* TODO: make the documentation better here 
-  returns a list of jsons containing the events of all the classes that userid has */
+  /* Returns a list of jsons containing the events of all the classes that userid has. Sorted by date ascending */
   async get_events(userid) {
     try {
       var events = await this.sequelize.query(
         `SELECT * FROM user_classes uc, events e
-        WHERE uc.user_id = ? and uc.class_id = e.class_id`,
+        WHERE uc.user_id = ? and uc.class_id = e.class_id ORDER BY e.event_date asc`,
         {
           replacements: [userid],
           type: QueryTypes.SELECT
