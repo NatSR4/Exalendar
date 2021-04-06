@@ -1,39 +1,36 @@
-const Koa = require('koa')
 const Router = require('koa-router')
-const Logger = require('koa-logger')
-const Static = require('koa-static')
-const Helmet = require('koa-helmet')
-const Session = require('koa-session')
-const Body = require('koa-body')
-const Respond = require('koa-respond')
-const Send = require('koa-send')
-const Compress = require('koa-compress')
-
-const moment = require('moment')
-const passport = require('koa-passport')
-
-const app = new Koa()
-
-/* Server side routing (mainly used for API) */
 const router = new Router()
 
-/* Body Parser Setup */
-app.use(Body({ multipart: true }))
+const Ctrl = require('./auth.controller')
+const passport = require('koa-passport')
+const cas = require('./cas')
+const logger = require('.logger')
 
-/* Adds useful ctx functions for API responses */
-app.use(Respond())
+// ------- CAS -------
+router.get(
+  '/login',
+  function (ctx, next) {
+    return passport.authenticate('cas', function (err, user, info, status) {
+      if (err) {
+        return ctx.redirect('/?waitlisted=1')
+      }
+      ctx.login(user, function (loginErr) {
+        if (!ctx.state.user.setup.profile) {
+          return ctx.redirect('/account')
+        }
+        ctx.redirect('/')
+      })
+    })(ctx, next)
+  }
+)
 
-/* Use compression for API responses to decrease size */
-app.use(Compress())
+router.get('/logout', function (ctx) {
+  if (ctx.isAuthenticated()) {
+    logger.info(`Logging out ${ctx.state.user.identifier}`)
+    // return cas.logout(ctx, ctx.res)
+    ctx.logout()
+  }
+  ctx.redirect('https://cas-auth.rpi.edu/cas/logout?service=' + process.env.BASE_URL)
+})
 
-app.keys = [process.env.SESSION_KEY]
-
-/* Setup session */
-const CONFIG = {
-  key: 'koa:sess',
-  maxAge: 86400000,
-  // secure: true,
-  renew: true
-}
-app.use(Session(CONFIG, app))
-
+module.exports = router.routes()
