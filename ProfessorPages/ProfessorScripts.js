@@ -105,6 +105,24 @@ async function addEventTest() {
     console.log(data);
 }
 
+// TEST function for updating events in the table
+async function updateEventTest() {
+    let request = {
+        eventid: 1,
+        eventtype: "homework",
+        eventtitle: "Homework 1",
+        eventdescription: "Make a Goodbye World program",
+        eventdate: '2021-03-31 19:30:00'
+    };
+    let data = await fetch('http://localhost:8000/update_event', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(request)
+    }).then(response => response.json());
+    console.log(data);
+}
 
 
 //Sidebar functions:

@@ -99,6 +99,16 @@ app.post("/add_event", (req, res) => {
   );
 });
 
+app.post("/update_event", (req, res) => {
+  db_tool.events.update_event(
+      req.body.eventid,
+      req.body.eventtype,
+      req.body.eventtitle,
+      req.body.eventdescription,
+      req.body.eventdate
+  );
+});
+
 app.get("*", (req,res) => {
   res.sendFile(views + '404.html');
 });
