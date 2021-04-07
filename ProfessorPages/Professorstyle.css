@@ -10,7 +10,7 @@ body {
     width: 100%;
     z-index: -1;
     float: center;
-    background-color: #ff3224;
+    background-color: rgb(199, 33, 33);
     font-family: Dancing Script;
     font-weight: bold;
     font-size: 180%;
@@ -50,3 +50,66 @@ li a:hover {
 }
 
 /*end Header extra css*/
+
+
+/*SIDEBAR*/
+
+#buttonBar{
+    width: 2.5vw;
+    height: 2.5vw;
+    position: fixed;
+    top: 19px;
+    left: 1vw;
+    background-color: rgb(0, 0, 0);
+  border color: 2px solid white;
+    border: 0;
+    color: white;
+  transition-duration: 0.4s;
+    font-size: 1.1vw;
+}
+
+#buttonBar:hover {
+  background-color: rgb(0,0,0);
+  color: white;
+}
+
+
+#sidebar{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    width: 0;
+    height: 100%;
+    background-color: var(--sidebar);
+    overflow-x: hidden;
+    transition: 0.4s;
+}
+
+#sidebar h2{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.menuIcon{
+    height: 1rem;
+    width: 1rem;
+}
+
+#sidebar li {
+    margin: 0 0 1px 1.5vw;
+    list-style: none;
+}
+
+#sidebar ul {
+    margin: 4px 0 7px 0;
+}
+
+/*End sidebar things*/
+
+:root {
+    --sidebar: rgb(199, 33, 33);
+}
+

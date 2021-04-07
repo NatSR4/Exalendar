@@ -8,8 +8,8 @@
 </head>
 
 <body>
-    <!-- Extra work to make it look like the text is FULLY centered, there's probably a better way sorry-->
-    <div style=" background-color: #ff3224;color:  #ff3224;">  space </div>
+    <!-- Extra work to make it look like the text is FULLY centered, there's probably a better way sorry, SR:its clever though lol, funny work around-->
+    <div style=" background-color: rgb(199, 33, 33);color:  rgb(199, 33, 33);">  space </div>
     <div class="header">
 
       <!--  <li><a class="active" href="#home">Home</a></li>
@@ -18,28 +18,33 @@
         <li><a href="#about">About</a></li>-->
        Exalendar!
     </div>
-    <button class="openbtn" onclick="openNav()" type="button" id="sideButton">Menu</button>
-    <!--SIDEBAR-->
-    <div class="sidebar" id="sidebarMenu">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <h2 class>Exalendar</h2>
-        <ul class>
-            <li>Dashboard</li>
-            <li><a href="../Prototyping/main.html">Calendar</a></li>
-            <li>Other Page</li>
-        </ul>
-        <h2 class>Other Menu</h2>
-        <ul class>
-            <li><a href="../Prototyping/Options/options.html">Preferences</a></li>
-            <li>Logout</li>
-        </ul>
-    </div>
+
+    <!--SIDEBAR (this contains the menus on the left)-->
+        <!--At the moment only the calendar moves, notes do not. The header with monthly/weekly etc. does not move yet-->
+        <div id="sidebar">
+            <button id="buttonBar" onclick="opencloseNav()">☰</button><!--Generic menu button with 3-bars you know how it be-->
+            <h2 style="margin-top:40px;">Exalendar Menu</h2>
+            <ul id="exalendarMenu"> <!--The 50x50.png does not actually exist here, fill with actual image file name/path-->
+                <!-- The alignment of all these are wrong for now, fix after images and hyperlinks are put-->
+                <li><img src="50x50.png" class="menuIcon">&nbsp;&nbsp;Dashboard</li>
+                <li><img src="50x50.png" class="menuIcon">&nbsp;&nbsp;<a href="../Prototyping/main.html">Calendar</a></li>
+                <li><img src="50x50.png" class="menuIcon">&nbsp;&nbsp;Other Page</li>
+                <!--feel free to add to the list and fill with relevant links and icons to other pages-->
+            </ul>
+            <h2>Other Menu</h2>
+            <ul>
+                <li><img src="settings-icon.png" class="menuIcon">&nbsp;&nbsp;<a href="../Prototyping/Options/options.html">Preferences</a></li>
+                <li><img src="signout.png" class="menuIcon">&nbsp;&nbsp;Logout</li>
+                <!--feel free to add to the list and fill with relevant links and icons to other pages-->
+            </ul>
+        </div>
+
     <!--MAIN BODY STUFF-->
     
 
     <div class="main-content"></div>
 
-    <div class="option-buffer">This Column left intentionally blank</div>
+   
 
     <div class="option-do"> Add or Remove Events
     </div>
