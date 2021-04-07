@@ -8,7 +8,6 @@ async function verificationTest() {
     console.log(data);
 }
 
-
 // TEST function that adds a user to the database
 // with the credentials:
 // firstname:  Ex
@@ -32,7 +31,6 @@ async function signupTest() {
     }).then(response => response.json());
     console.log(data);
 }
-
 
 // TEST function for logging in using the credentials above
 async function loginTest() {
@@ -106,6 +104,7 @@ async function addEventTest() {
 }
 
 // TEST function for updating events in the table
+// All details provided
 async function updateEventTest() {
     let request = {
         eventid: 1,
@@ -124,3 +123,61 @@ async function updateEventTest() {
     console.log(data);
 }
 
+// TEST functions for updating only a subset of the attributes
+// using null arguments
+async function updateTypeTest() {
+    let request = {
+        eventid: 1,
+        eventtype: "exam",
+    };
+    let data = await fetch('http://localhost:8000/update_event', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(request)
+    }).then(response => response.json());
+    console.log(data);
+}
+async function updateTitleTest() {
+    let request = {
+        eventid: 1,
+        eventtitle: "Homework 3",
+    };
+    let data = await fetch('http://localhost:8000/update_event', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(request)
+    }).then(response => response.json());
+    console.log(data);
+}
+async function updateDescriptionTest() {
+    let request = {
+        eventid: 1,
+        eventdescription: "Make a Hello Planet program",
+    };
+    let data = await fetch('http://localhost:8000/update_event', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(request)
+    }).then(response => response.json());
+    console.log(data);
+}
+async function updateDateTest() {
+    let request = {
+        eventid: 1,
+        eventdate: '2021-04-07 19:30:00'
+    };
+    let data = await fetch('http://localhost:8000/update_event', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(request)
+    }).then(response => response.json());
+    console.log(data);
+}
