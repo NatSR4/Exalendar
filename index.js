@@ -109,6 +109,12 @@ app.post("/update_event", (req, res) => {
   );
 });
 
+app.post("/delete_event", (req, res) => {
+  db_tool.events.delete_event(
+      req.body.eventid
+  );
+});
+
 app.get("*", (req,res) => {
   res.sendFile(views + '404.html');
 });

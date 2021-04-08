@@ -33,6 +33,7 @@ class Event_Tools {
       await this.sequelize.models.events.findAll({ where: {event_id: eventid} })
           .then((events) => {
         // Update the first event (there should only be one with event_id)
+        // TODO: Need to make sure that event exists
         let event_ = events[0];
         let new_type = eventtype ? eventtype : event_.event_type;
         let new_title = eventtitle ? eventtitle : event_.event_title;
@@ -46,6 +47,17 @@ class Event_Tools {
         })
       });
       return true;
+    }
+    catch(error) {
+        throw error;
+    }
+  }
+
+  /* Updates the event with the specified event_id */
+  /* If any of the parameters are null, do not change them */
+  async delete_event(eventid) {
+    try {
+        await this.sequelize.models.events.destroy({ where: {event_id: eventid} });
     }
     catch(error) {
         throw error;

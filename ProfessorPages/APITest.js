@@ -181,3 +181,18 @@ async function updateDateTest() {
     }).then(response => response.json());
     console.log(data);
 }
+
+// TEST function for deleting an event from the table
+async function deleteEventTest() {
+    let request = {
+        eventid: 1
+    }
+    let data = await fetch('http://localhost:8000/delete_event', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(request)
+    }).then(response => response.json());
+    console.log(data);
+}
