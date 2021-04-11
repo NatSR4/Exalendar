@@ -1,0 +1,14 @@
+.logStyle-Button{
+    width: 17vw;
+    height: 5vw;
+    align-self: center;
+    border-color: maroon;
+    color: lightcyan;
+
+}
+.buttonText{
+    font-family: Georgia, 'Times New Roman', Times, serif; /*Yeah ik, I just put a placeholder font here for now*/
+    color: black;
+    font-weight: bold;
+}
+/*Just keeping this seperated from the rest of the login css cause I don't want to break anything*/
