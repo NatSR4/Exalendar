@@ -1,3 +1,7 @@
+-- This .sql was generated using dbdiagram.io. The diagram can be found in the readme / the wiki.
+-- When running this file, the tables for Exalendar will BE DROPPED and then created.
+-- Do NOT run this if you are not sure what you are doing.
+
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `user_id` int PRIMARY KEY AUTO_INCREMENT,
