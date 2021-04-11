@@ -40,5 +40,8 @@ In order to run sequelize-auto, install it and grab the variables defined by the
 database hosting service. This is dependent on whatever is being used to host the
 database. However, in order for sequelize to work the variables needed must be
 defined in .env, so you can use those to run the following command:
+For Linux:
 sequelize-auto -h [host] -d [database name] -u [username] -x [password] --dialect mysql -o Database/models/
+For Windows:
+npx sequelize-auto -h [host] -d [database name] -u [username] -x [password] --dialect mysql -o Database/models/
 Refer to the sequelize-auto readme for more information.
