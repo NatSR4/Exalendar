@@ -12,20 +12,21 @@
    <link rel = "stylesheet" href="calendarStyle.css"/>
    <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
 </head>
-<body class = "bodCal">
+<body>
     <div class = "container">
         <div class = "calendar">
             <div class = "month">
-                <!--We need a Previous arrow to select the previous month-->
-                <i class="arrow left"></i>
-                <div class = "date"><!--This is where the current SELECTED Month's name, and the CURRENT date are displayed on the TOP of the calendar-->
-                    <h2>October</h2> 
-                    <p>Fri October 18, 2020</p><!--Note these are placeholders, the JavaScript file overrides these with the real date-->
+                <div class="header">
+                    <!--We need a Previous arrow to select the previous month-->
+                    <i class="arrow left" onclick="loadPrev()"></i>
+                    <div class = "date"><!--This is where the current SELECTED Month's name, and the CURRENT date are displayed on the TOP of the calendar-->
+                        <h2>October</h2> 
+                        <p>Fri October 18, 2020</p><!--Note these are placeholders, the JavaScript file overrides these with the real date-->
+                    </div>
+                    <i class="arrow right" onclick="loadNext()"></i>
+                    <!--We need a NEXT arrow to select the next month-->
                 </div>
-                <i class="arrow right"></i>
-                <!--We need a NEXT arrow to select the next month-->
             </div>
-
             <div class = "weekdays"> <!--These are the days of the week that appear at the top of the calendar, corresponding with 7 columns-->
                 <div>Sun</div>
                 <div>Mon</div>
@@ -39,6 +40,11 @@
             <div class = "days">
                 <!--The days will go in here, the javaScript file calulates how many days are needed to fill the calendar-->
             </div>
+        </div>
+        <div class="tabs">
+            <button title="Monthly View">M</button>
+            <button title="Weekly View">W</button>
+            <button title="Daily View" style="padding-left: calc((5vw / 2) - 0.7vw);">D</button>
         </div>
     </div>
     <script src = "calendar.js"></script>
