@@ -42,12 +42,20 @@
     <!--MAIN BODY STUFF-->
     
 
-    <div class="main-content"></div>
-
+    <div class="main-content">
+        <div class="option-do"> Add or Remove Events
+            <form id="event-form">
+                Event ID (Temporary) <input type="text" id="eventid"><br>
+                Event Name <input type="text" id="eventname"><br>
+                Event Type <input type="text" id="eventtype"><br>
+                Event Description <input type="text" id="eventdesc"><br>
+                Event Date <input type="datetime-local" id="eventdate"><br>
+            </form>
+            <button type="button" onclick="addEvent()">Add Event</button>
+        </div>
+    </div>
    
 
-    <div class="option-do"> Add or Remove Events
-    </div>
 
     <script src="./ProfessorScripts.js"></script>
     <script src="./APITest.js"></script>
