@@ -14,6 +14,7 @@ var lastWeekDay; //gets the last day of the week
 var monthBool = true; //tells the program that the calendar is in month mode
 var weekBool = false; //tells the program that the calendar is in week mode
 var dayBool = false; //tells the program that the calendar is in day mode
+var darkmodeBool = false; //tells the program if it is on darkmode or lightmode
 
 ////The months of the year
 const months = [
@@ -102,6 +103,7 @@ function loadPrev() {
     loadCalendarDay();
   }
 }
+
 //Function to load calendar
 function loadCalendarMonth() {
 	lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
@@ -170,7 +172,7 @@ function loadCalendarMonth() {
 		for (let i = 0; i < dayboxes.length; ++i) {
 			dayboxes[i].style.height = null;
 		}
-	}
+  }
 }
 
 //Function to load Calendar Week
@@ -188,7 +190,6 @@ function loadCalendarWeek() {
   //looping through dates
   let i = firstWeekDay.getDate();
   while (i != lastWeekDay.getDate()) {
-    console.log(i);
     //for active
     if (i == currentDate.getDate() && 
     (firstWeekDay.getMonth() == currentDate.getMonth() || lastWeekDay.getMonth() == currentDate.getMonth()) &&
@@ -220,8 +221,6 @@ function loadCalendarWeek() {
     // normal cases
     else {
       i++;
-      if (i === 33)
-        break;
     }
   }
 
@@ -256,4 +255,19 @@ function loadCalendarDay() {
   let dayboxes = document.getElementsByClassName('daybox');
   dayboxes[0].style.height = "calc(100vh - 120px)";
   dayboxes[0].style.width = "100%";
+}
+
+function toggleDarkmode() {
+  // adding the darkmode classes
+  if (!darkmodeBool) {
+    document.querySelector(".calendar").classList.toggle("darkmode");
+    document.querySelector(".weekdays").classList.toggle("darkmode");
+    document.querySelector(".days").classList.toggle("darkmode");
+    darkmodeBool = true;
+  } else {
+    document.querySelector(".calendar").classList.toggle("darkmode");
+    document.querySelector(".weekdays").classList.toggle("darkmode");
+    document.querySelector(".days").classList.toggle("darkmode");
+    darkmodeBool = false;
+  }
 }
