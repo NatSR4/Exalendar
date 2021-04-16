@@ -42,9 +42,10 @@
             </div>
         </div>
         <div class="tabs">
-            <button title="Monthly View">M</button>
-            <button title="Weekly View">W</button>
-            <button title="Daily View" style="padding-left: calc((5vw / 2) - 0.7vw);">D</button>
+            <button title="Monthly View" onclick="changeMonth()">M</button>
+            <button title="Weekly View" onclick = "changeWeek()">W</button>
+            <button title="Daily View" style="padding-left: calc((5vw / 2) - 0.7vw);" onclick = "changeDay()">D</button>
+            <button title="DarkMode" onclick="toggleDarkmode()"><img src="darkmodemoon.png" width=15vw height="15vw" style="float: center"></button>
         </div>
     </div>
     <script src = "calendar.js"></script>

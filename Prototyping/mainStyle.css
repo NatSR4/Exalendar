@@ -2,7 +2,7 @@
 /* check out https://fonts.google.com/specimen/Roboto? for info on the different weights available */
 
 body {
-    background-color: #2b2b2b;
+    background-color: rgba(0,0,0,0.9);
     font-size: 11.5pt;
 }
 
@@ -19,7 +19,7 @@ body {
     position: fixed;
     top: 15px;
     left: 1vw;
-    background-color: white;
+    background-color: rgb(199, 40, 40);
 	border: 2px solid white;
     border: 0;
     color: black;
@@ -157,6 +157,11 @@ body {
 #containCalendar {
   transition: margin-left .5s; /* If you want a transition effect */
 }
+
+
+
+
+
 
 :root {
     --sidebar: rgb(199, 33, 33);
