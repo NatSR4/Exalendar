@@ -33,6 +33,11 @@ async function addEvent() {
     console.log(data);
 }
 
+/* Get events with the given class id and render them as text */
+async function getEvents() {
+    
+}
+
 //Sidebar functions:
 
 /* Set the width of the sidebar to 250px and the left margin of the page

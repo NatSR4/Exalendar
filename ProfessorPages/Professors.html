@@ -44,7 +44,7 @@
 
     <div class="main-content">
         <div class="option-do"> Add or Remove Events
-            <form id="event-form">
+            <form id="add-event-form">
                 Event ID (Temporary) <input type="text" id="eventid"><br>
                 Event Title <input type="text" id="eventtitle"><br>
                 Event Type <input type="text" id="eventtype"><br>
@@ -52,6 +52,10 @@
                 Event Date <input type="datetime-local" id="eventdate"><br>
             </form>
             <button type="button" onclick="addEvent()">Add Event</button>
+            <form id="get-event-form">
+                Class ID (Temporary) <input type="text" id="classid"><br>
+            </form>
+            <button type="button" onclick="getEvents()">Get Events</button>
         </div>
     </div>
    
