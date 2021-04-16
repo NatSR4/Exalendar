@@ -3,16 +3,16 @@
 
 <!DOCTYPE html>
 <html lang = "en">
-
 	<head>
 		<meta charset = "">
 		<meta name = "viewport"
 		content = "width =device-width,
 		initial-scale = 1.0">
-		<title>Exalendar</title>
+		<title>Calendar | Exalendar</title>
 
-		<link rel = "stylesheet" href="mainStyle.css"/>
-		<link rel = "stylesheet" href="footer.css"/>
+		<link rel = "stylesheet" href="css/main.css"/>
+		<link rel = "stylesheet" href="css/footer.css"/>
+		<link rel = "stylesheet" href="css/sidebar.css"/>
 		<!-- <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet"> -->
 	</head>
 	<body onload="loadMain()"><!---------------------------------------------------MAIN CONTENTS BEGIN-------------------------------------------------------------------------------->
@@ -23,25 +23,27 @@
 			<button id="buttonBar" onclick="opencloseNav()">☰</button><!--Generic menu button with 3-bars you know how it be-->
 			<h2 style="margin-top:20px;">Exalendar Menu</h2>
 			<ul id="exalendarMenu"> <!--The 50x50.png does not actually exist here, fill with actual image file name/path-->
-				<li><img src="50x50.png" class="menuIcon">&nbsp;&nbsp;Dashboard</li>
-				<li><img src="50x50.png" class="menuIcon">&nbsp;&nbsp;Calendar</li>
-				<li><img src="50x50.png" class="menuIcon">&nbsp;&nbsp;Other Page</li>
+				<li><img src="media/50x50.png" class="menuIcon">&nbsp;&nbsp;Dashboard</li>
+				<li><img src="media/50x50.png" class="menuIcon">&nbsp;&nbsp;Calendar</li>
+				<li><img src="media/50x50.png" class="menuIcon">&nbsp;&nbsp;Other Page</li>
 				<!--feel free to add to the list and fill with relevant links and icons to other pages-->
 			</ul>
 			<h2>Other Menu</h2>
 			<ul>
-				<li><img src="settings-icon.png" class="menuIcon">&nbsp;&nbsp;Preferences</li>
-				<li><img src="signout.png" class="menuIcon">&nbsp;&nbsp;Logout</li>
+				<li><img src="media/settings-icon.png" class="menuIcon">&nbsp;&nbsp;Preferences</li>
+				<li><img src="media/signout.png" class="menuIcon">&nbsp;&nbsp;Logout</li>
 				<!--feel free to add to the list and fill with relevant links and icons to other pages-->
 			</ul>
 		</div>
+		<script src="js/sidebar.js"></script>
 		<!--SIDEBAR END-->
 		<!--CALENDAR IS CORRECT, THE DAYS AND WEEK WORK CORRECTLY, THERE IS AN ISSUE WITH THE DIMENSIONS THAT MAKE IT LOOK LIKE IT ISNT. DO NOT CHANGE THE JS IT WORKS PERFECTLY-->
-		<iframe class="calendar" src="Calendar/calendar.html"></iframe>
+		<iframe class="calendar" src="calendar.html"></iframe>
+		<!-- TODO fix issues with sidebar z index over add event and modal effect -->
 		<div id="addevent-menu">
 			<button onclick="closeAddEvent()">X</button>
 			<h3>Add Event</h3>
-			<form>
+			<form id="addevent-form">
 				<label for="eclass">Class:</label>
 				<select name="eclass">
 					<option disabled selected>Choose class</option>
@@ -64,6 +66,7 @@
 				<label>Details:</label><br/>
 				<textarea></textarea>
 			</form>
+			<!-- <button onclick="document.getElementById('addevent-form').submit()">Submit</button> -->
 			<button onclick="closeAddEvent()">Submit</button>
 		</div>
 		<div class="noteContain"><!--Notes and Events are on the right of this div-->
@@ -94,7 +97,7 @@
 			</div>
 		</div>
 		<!---------------------------------------------------MAIN CONTENTS END---------------------------------------------------------------------------------->
-		<script src = "mainPage.js"></script>
+		<script src="js/mainPage.js"></script>
 		</body>
 		<footer class="footer">
 			<nav class="menu">
@@ -103,7 +106,7 @@
 					<li><a href="https://github.com/NatSR4/Exalendar/wiki/What-is-Exalendar%3F" target="_blank">About</a></li> <!--The 'About' page, probably just a page with the general mission of Exalendar, maybe a table of contents for those who wish to be on it and their comments if any,
 						something to make the site feel like there's been love and effort put into it. HG: Just gonna link it to the wiki for now, someone link it to the actual about page if/when we have one. -->
 					<li><a href= "https://rcos.io/" target= "_blank">RCOS</a></li> <!--If the RCOS page changes, make sure to update this-->
-					<li><a href= "https://github.com/NatSR4/Exalendar" target = "_blank" id="gitcat" title="GitHub" aria-label="GitHub"><img src="gitcat.svg"/></a></li> <!--Obligitory github link :) -->
+					<li><a href= "https://github.com/NatSR4/Exalendar" target = "_blank" id="gitcat" title="GitHub" aria-label="GitHub"><img src="media/gitcat.svg"/></a></li> <!--Obligitory github link :) -->
 				</ul>
 				<span>&copy; 2021 | Exalendar</span>
 			</nav>

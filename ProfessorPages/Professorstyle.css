@@ -1,115 +1,121 @@
+@import "../Prototyping/css/standard.css";
+@import "../Prototyping/css/sidebar.css";
+@import "../Prototyping/css/footer.css";
 
-body { 
-    margin: 0; 
-    padding: 0;
-    background-color: #333 
-  }
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #333
+}
 
 .header {
-    height: 50px;
-    width: 100%;
-    z-index: -1;
-    float: center;
-    background-color: rgb(199, 33, 33);
-    font-family: Dancing Script;
-    font-weight: bold;
-    font-size: 180%;
-    color:white;
-    text-align:center;
-    display:block;
-    /*align-content: center;*/
-    text-align-last: center; 
+	height: 50px;
+	width: 100%;
+	z-index: -1;
+	float: center;
+	background-color: rgb(199, 33, 33);
+	font-family: Dancing Script;
+	font-weight: bold;
+	font-size: 180%;
+	color:white;
+	text-align:center;
+	display:block;
+	/*align-content: center;*/
+	text-align-last: center;
 }
 
 
 /* Header extra css - delete if necessary after page and db are linked fully
-If we put more stuff to the header kind of like a navbar 
+If we put more stuff to the header kind of like a navbar
 this stuff would be used, its ready for that case */
-ul {
-  list-style-type: none;
-  margin: 0%;
-  padding: 0%;
-  overflow: hidden;
-  
+/* commented out for footer functionality, add ids/classes if used instead of
+   applying to all elements */
+/* ul {
+	list-style-type: none;
+	margin: 0%;
+	padding: 0%;
+	overflow: hidden;
 }
 
 li {
-  float: left;
+	float: left;
 }
 
 li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
 }
 
 li a:hover {
-  background-color: #db1204;
-}
+	background-color: #db1204;
+} */
 
 /*end Header extra css*/
 
-
-/*SIDEBAR*/
-
-#buttonBar{
-    width: 2.5vw;
-    height: 2.5vw;
-    position: fixed;
-    top: 19px;
-    left: 1vw;
-    background-color: rgb(0, 0, 0);
-  border color: 2px solid white;
-    border: 0;
-    color: white;
-  transition-duration: 0.4s;
-    font-size: 1.1vw;
+div.class {
+	display: inline-block;
+	border-radius: 5px;
+	background-color: white;
+	height: 180px;
+	width: 280px;
+	margin: 10px 0 0 10px;
+	cursor: pointer;
+	padding: 10px;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
-#buttonBar:hover {
-  background-color: rgb(0,0,0);
-  color: white;
+.class:hover {
+	background-color: #c7c7c7;
 }
 
-
-#sidebar{
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 2;
-    width: 0;
-    height: 100%;
-    background-color: var(--sidebar);
-    overflow-x: hidden;
-    transition: 0.4s;
+#classes-ctn {
+	margin-bottom: 35px;
 }
 
-#sidebar h2{
-    text-align: center;
-    color: white;
-    font-size: 20px;
-    font-weight: 100;
+.class h2, .class h3, .class h4, .class h5, .class h6, .class p {
+	margin: 0;
 }
 
-.menuIcon{
-    height: 1rem;
-    width: 1rem;
+.course-id {
+	display: inline;
+	font-size: 1.5rem;
+	padding: 0;
 }
 
-#sidebar li {
-    margin: 0 0 1px 1.5vw;
-    list-style: none;
+.section-num {
+	float: right;
+	font-size: 1rem;
+	padding-top: 0.5rem;
 }
 
-#sidebar ul {
-    margin: 4px 0 7px 0;
+.class h3 {
+	font-weight: 600;
 }
 
-/*End sidebar things*/
-
-:root {
-    --sidebar: rgb(199, 33, 33);
+.class h4 {
+	font-size: 0.9rem;
+	font-weight: 400;
 }
 
+.class h4 b {
+	font-weight: 500;
+}
+
+.fullview {
+	height: 380px;
+	width: 380px;
+	position: fixed;
+	top: calc(50% - 190px);
+	left: calc(50% - 190px);
+	background-color: white;
+	z-index: 5;
+	padding: 10px;
+	border-radius: 10px;
+	display: none;
+}

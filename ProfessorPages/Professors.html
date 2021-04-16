@@ -1,56 +1,86 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<title>Dashboard | Exalendar</title>
+		<link href="Professorstyle.css" rel="stylesheet">
+	</head>
+	<body>
+		<div id="modal"></div>
+		<!--SIDEBAR (this contains the menus on the left)-->
+		<div id="sidebar">
+			<button id="buttonBar" onclick="opencloseNav()">☰</button><!--Generic menu button with 3-bars you know how it be-->
+			<h2 style="margin-top:20px;">Exalendar Menu</h2>
+			<ul id="exalendarMenu"> <!--The 50x50.png does not actually exist here, fill with actual image file name/path-->
+				<li><img src="../Prototyping/media/50x50.png" class="menuIcon">&nbsp;&nbsp;Dashboard</li>
+				<li><img src="../Prototyping/media/50x50.png" class="menuIcon">&nbsp;&nbsp;Calendar</li>
+				<li><img src="../Prototyping/media/50x50.png" class="menuIcon">&nbsp;&nbsp;Other Page</li>
+				<!--feel free to add to the list and fill with relevant links and icons to other pages-->
+			</ul>
+			<h2>Other Menu</h2>
+			<ul>
+				<li><img src="../Prototyping/media/settings-icon.png" class="menuIcon">&nbsp;&nbsp;Preferences</li>
+				<li><img src="../Prototyping/media/signout.png" class="menuIcon">&nbsp;&nbsp;Logout</li>
+				<!--feel free to add to the list and fill with relevant links and icons to other pages-->
+			</ul>
+		</div>
+		<script src="../Prototyping/js/sidebar.js"></script>
+		<!--SIDEBAR END-->
+		<!-- Extra work to make it look like the text is FULLY centered, there's probably a better way sorry, SR:its clever though lol, funny work around-->
+		<div style=" background-color: rgb(199, 33, 33);color:  rgb(199, 33, 33);">  space </div>
+		<div class="header">
+		<!--  <li><a class="active" href="#home">Home</a></li>
+			<li><a href="#news">News</a></li>
+			<li><a href="#contact">Contact</a></li>
+			<li><a href="#about">About</a></li>-->
+		Exalendar!
+		</div>
+		<!--MAIN BODY STUFF-->
+		<div id="classes-ctn"> <!-- this is the div the js will populate with class divs -->
+			<div class="class" onclick="window.location.reload()">
+				<h2 class="course-id">CLAS-XXXX</h2>
+				<h2 class="section-num">X SECTIONS</h2> <!-- we need to implement sections in classes -->
+				<hr/>
+				<h3>Class Name (like the actual title)</h3>
+				<h4><b>Editor:</b> rcs_id of person(s) that edit this calendar</h4>
+				<h4><b>Description:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4> <!-- TODO: figure out how to get it to cut off and put ellipsis on multiline element if the description runs over -->
+			</div>
+			<div class="class" onclick="window.location.reload()">
+				<h2 class="course-id">BIOL-1010</h2>
+				<h2 class="section-num">9 SECTIONS</h2> <!-- we need to implement sections in classes -->
+				<hr/>
+				<h3>Introduction to Biology</h3>
+				<h4><b>Editor:</b> ramans</h4>
+				<h4><b>Description:</b> I'm using this as an example.</h4> <!-- TODO: figure out how to get it to cut off and put ellipsis on multiline element if the description runs over -->
+			</div>
+		</div>
 
-<head>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-    <link href="Professorstyle.css" rel="stylesheet">
-</head>
+		<div class="fullview">
+			<button onclick="">X</button>
+			<form class="fullview-form" action="/handle"> <!-- temp action -->
+				<h2>CLAS-XXXX</h2>
+				<label for="class_description">Description:</label>
+				<input type="text" name="class_description"><br/> <!-- auto set value to description -->
+				<h3>Section 1</h3>
+				<label for="editors">Editors:</label>
+				<input type="text" name="editors"/><br/>
+				<p>TODO: Make drop downs for each section (like how you see everything sectioned off <a href="https://science.rpi.edu/computer-science/programs/undergrad/bs-computerscience" target="_blank">here</a>) and allow to choose editors for each section.</p>
+			</form>
+			<button onclick="">Submit</button>
+		</div>
 
-<body>
-    <!-- Extra work to make it look like the text is FULLY centered, there's probably a better way sorry, SR:its clever though lol, funny work around-->
-    <div style=" background-color: rgb(199, 33, 33);color:  rgb(199, 33, 33);">  space </div>
-    <div class="header">
-
-      <!--  <li><a class="active" href="#home">Home</a></li>
-        <li><a href="#news">News</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#about">About</a></li>-->
-       Exalendar!
-    </div>
-
-    <!--SIDEBAR (this contains the menus on the left)-->
-        <!--At the moment only the calendar moves, notes do not. The header with monthly/weekly etc. does not move yet-->
-        <div id="sidebar">
-            <button id="buttonBar" onclick="opencloseNav()">☰</button><!--Generic menu button with 3-bars you know how it be-->
-            <h2 style="margin-top:40px;">Exalendar Menu</h2>
-            <ul id="exalendarMenu"> <!--The 50x50.png does not actually exist here, fill with actual image file name/path-->
-                <!-- The alignment of all these are wrong for now, fix after images and hyperlinks are put-->
-                <li><img src="50x50.png" class="menuIcon">&nbsp;&nbsp;Dashboard</li>
-                <li><img src="50x50.png" class="menuIcon">&nbsp;&nbsp;<a href="../Prototyping/main.html">Calendar</a></li>
-                <li><img src="50x50.png" class="menuIcon">&nbsp;&nbsp;Other Page</li>
-                <!--feel free to add to the list and fill with relevant links and icons to other pages-->
-            </ul>
-            <h2>Other Menu</h2>
-            <ul>
-                <li><img src="settings-icon.png" class="menuIcon">&nbsp;&nbsp;<a href="../Prototyping/Options/options.html">Preferences</a></li>
-                <li><img src="signout.png" class="menuIcon">&nbsp;&nbsp;Logout</li>
-                <!--feel free to add to the list and fill with relevant links and icons to other pages-->
-            </ul>
-        </div>
-
-    <!--MAIN BODY STUFF-->
-    
-
-    <div class="main-content"></div>
-
-   
-
-    <div class="option-do"> Add or Remove Events
-    </div>
-
-    <script src="./ProfessorScripts.js"></script>
-    <script src="./APITest.js"></script>
-</body>
-
+		<script src="./ProfessorScripts.js"></script>
+		<script src="./APITest.js"></script>
+	</body>
+	<footer class="footer">
+		<nav class="menu">
+			<ul>
+				<li><a>Home</a></li> <!--The home page, should be linked once finished-->
+				<li><a href="https://github.com/NatSR4/Exalendar/wiki/What-is-Exalendar%3F" target="_blank">About</a></li> <!--The 'About' page, probably just a page with the general mission of Exalendar, maybe a table of contents for those who wish to be on it and their comments if any,
+					something to make the site feel like there's been love and effort put into it. HG: Just gonna link it to the wiki for now, someone link it to the actual about page if/when we have one. -->
+				<li><a href= "https://rcos.io/" target= "_blank">RCOS</a></li> <!--If the RCOS page changes, make sure to update this-->
+				<li><a href= "https://github.com/NatSR4/Exalendar" target = "_blank" id="gitcat" title="GitHub" aria-label="GitHub"><img src="../Prototyping/media/gitcat.svg"/></a></li> <!--Obligitory github link :) -->
+			</ul>
+			<span>&copy; 2021 | Exalendar</span>
+		</nav>
+	</footer>
 </html>

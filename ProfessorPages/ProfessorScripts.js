@@ -1,40 +1,23 @@
-//Sidebar functions:
+let container = document.getElementById('classes-ctn');
 
-/* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
-function openNav() {
-    let bar = document.getElementById("sidebar");
-    let button = document.getElementById("buttonBar");
-    bar.style.width = "calc(100vw / 6)";
-    button.style.backgroundColor = "var(--sidebar)";
-    button.style.color = "white";
-    button.style.left = "calc(100vw / 6)";
-    button.style.border = "outset white";
-    button.style.borderWidth = "0px 1.5px 1.5px 0px";
-    let modal = document.getElementById("modal");
-    modal.style.display = "block";
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-            closeNav();
-        }
-    }
+/**
+ * Quick function to add class to page
+ * @param {string} course_id 
+ * @param {number} section_num 
+ * @param {string} class_name 
+ * @param {string} editors 
+ * @param {string} description 
+ */
+function addClass(course_id, section_num, class_name, editors, description) {
+	container.innerHTML += `
+		<div class="class" onclick="window.location.reload()">
+			<h2 class="course-id">` + course_id + `</h2>
+			<h2 class="section-num">` + section_num + ` SECTIONS</h2>
+			<hr/>
+			<h3>` + class_name + `</h3>
+			<h4><b>Editor:</b> ` + editors + `</h4>
+			<h4><b>Description:</b> ` + description + `</h4>
+		</div>`;
 }
 
-/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
-function closeNav() {
-    let bar = document.getElementById("sidebar");
-    bar.style.width = null;
-    // bar.style.left = null;
-    // document.getElementById("main").style.marginLeft = "0";
-    // document.getElementById("containCalendar").style.marginLeft="0";
-    let button = document.getElementById("buttonBar");
-    button.style.backgroundColor = null;
-    button.style.color = null;
-    button.style.left = null;
-    button.style.border = null;
-    document.getElementById("modal").style.display = null;
-}
-function opencloseNav() {
-    if (document.getElementById("buttonBar").style.color == "white") closeNav();
-    else openNav();
-}
+document.getElementById('modal').style.zIndex = 3;
