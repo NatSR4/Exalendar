@@ -13,6 +13,24 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+/* EVENT INPUT FORM CSS STARTS*/
+h3 {
+    text-align: center;
+    color: white;
+}
+
+#content-box {
+
+    background-color: rgb(240,240,240);
+    height: 35vh;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    font-weight: bolder;
+    line-height: 1.6;
+
+}
+
 #addevent-btn {
     border-radius: 50%;
     height: 20px;
@@ -33,12 +51,12 @@ body {
 
 #addevent-menu {
     display: none;
-    background-color: white;
+    background-color: rgb(225, 40, 40);
     position: fixed;
-    height: 40vh;
-    width: 40vw;
+    height: 50vh;
+    width: 80vw;
     z-index: 2;
-    left: 30vw;
+    left: 10vw;
     top: 30vh;
     border-radius: 10px;
     padding: 10px;
@@ -48,6 +66,8 @@ body {
     border-radius: 3px;
     border: solid 0.65px;
 }
+
+/* EVENT INPUT FORM ENDS STARTS*/
 
 .calendar {
     border: none;

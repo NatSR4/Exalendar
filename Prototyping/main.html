@@ -37,12 +37,13 @@
 		</div>
 		<script src="js/sidebar.js"></script>
 		<!--SIDEBAR END-->
-		<!--CALENDAR IS CORRECT, THE DAYS AND WEEK WORK CORRECTLY, THERE IS AN ISSUE WITH THE DIMENSIONS THAT MAKE IT LOOK LIKE IT ISNT. DO NOT CHANGE THE JS IT WORKS PERFECTLY-->
+		<!--CALENDAR IS CORRECT, THE DAYS AND WEEK WORK CORRECTLY. DO NOT CHANGE THE JS IT WORKS PERFECTLY-->
 		<iframe class="calendar" src="calendar.html"></iframe>
 		<!-- TODO fix issues with sidebar z index over add event and modal effect -->
 		<div id="addevent-menu">
 			<button onclick="closeAddEvent()">X</button>
 			<h3>Add Event</h3>
+			<div id="content-box">
 			<form id="addevent-form">
 				<label for="eclass">Class:</label>
 				<select name="eclass">
@@ -68,6 +69,7 @@
 			</form>
 			<!-- <button onclick="document.getElementById('addevent-form').submit()">Submit</button> -->
 			<button onclick="closeAddEvent()">Submit</button>
+			</div>
 		</div>
 		<div class="noteContain"><!--Notes and Events are on the right of this div-->
 			<h2 class="center-header"><button id="addevent-btn" onclick="openAddEvent()">+</button><span id = "noteDate">a</span></h2> <!--javaScript changes displayed date MM/DD/YYYY to current (by default) OR selected day-->
