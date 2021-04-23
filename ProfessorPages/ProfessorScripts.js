@@ -24,10 +24,10 @@ function addClass(course_id, section_num, class_name, editors, description) {
 /* Get the related form values in Professors.html and add
  * the event */
 // TODO: Somehow generate event ids instead of asking for input
-// TODO: Instead of using classid: 1, get class from page
+// TODO: Instead of using classid from form, get from page based on current class
 async function addEvent() {
     let request = {
-        classid: 1,
+        classid: parseInt(document.getElementById("classid").value),
         eventid: parseInt(document.getElementById("eventid").value),
         eventtype: document.getElementById("eventtype").value,
         eventtitle: document.getElementById("eventtitle").value,
