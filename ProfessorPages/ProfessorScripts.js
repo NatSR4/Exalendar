@@ -18,6 +18,7 @@ function addClass(course_id, section_num, class_name, editors, description) {
 			<h4><b>Editor:</b> ` + editors + `</h4>
 			<h4><b>Description:</b> ` + description + `</h4>
 		</div>`;
+}
 // Event functions:
 
 /* Get the related form values in Professors.html and add
@@ -33,7 +34,6 @@ async function addEvent() {
         eventdescription: document.getElementById("eventdesc").value,
         eventdate: document.getElementById("eventdate").value
     };
-    console.log(request);
 
     // Check if request is valid
     for (const property in request) {
@@ -50,12 +50,28 @@ async function addEvent() {
         },
         body: JSON.stringify(request)
     }).then(response => response.json());
-    console.log(data);
 }
 
-/* Get events with the given class id and render them as text */
+/* Get events for the given user id and render them as text */
 async function getEvents() {
+    let request = {
+        userid: parseInt(document.getElementById("userid").value)
+    };
     
+    // Check if request is valid
+    if (request["userid"] == null) {
+        console.log("Invalid form");
+        return;
+    }
+
+    let data = await fetch('http://localhost:8000/get_events', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(request)
+    }).then(response => response.json())
+    .then(data => console.log(data));
 }
 
 document.getElementById('modal').style.zIndex = 3;
