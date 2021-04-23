@@ -64,6 +64,8 @@ async function getEvents() {
         return;
     }
 
+    document.getElementById("list-events").innerHTML = "";
+
     let data = await fetch('http://localhost:8000/get_events', {
         method: "POST",
         headers: {
@@ -71,7 +73,20 @@ async function getEvents() {
         },
         body: JSON.stringify(request)
     }).then(response => response.json())
-    .then(data => console.log(data));
+    .then(data => {
+        // data is an array of events
+        // Render it as boxes for now
+        for (i = 0; i < data.length; i++) {
+            let currentEvent = document.createElement("div");
+            currentEvent.className = "class";
+            currentEvent.innerHTML = `<h2>${data[i]["event_title"]}</h2>`
+            currentEvent.innerHTML += `<hr />`
+            currentEvent.innerHTML += `<h4>${data[i]["event_description"]}</h4>`
+            currentEvent.innerHTML += `<h4>${data[i]["event_type"]}</h4>`
+            currentEvent.innerHTML += `<h4>${data[i]["event_date"]}</h4>`
+            document.getElementById("list-events").appendChild(currentEvent);
+        }
+    });
 }
 
 document.getElementById('modal').style.zIndex = 3;
