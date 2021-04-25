@@ -25,6 +25,7 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm ci
+    # Install necessary packages, including bcrypt which needs to be explicitly declared
+    - run: node install bcrypt
     # Make sure that we are able to run index.js so that sequelize can work
     - run: node index.js
