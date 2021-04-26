@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "node index.js",
-    "test": "node ProfessorPages/APITest.js"
+    "start-server": "node index.js",
+    "test": "node ProfessorPages/APITest.js",
+    "ci": "start-server-and-test start-server http://localhost:8000 test"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
     "mysql2": "^2.2.5",
     "node-fetch": "^2.6.1",
     "sequelize": "^6.6.2",
-    "sequelize-auto": "^0.7.11"
+    "sequelize-auto": "^0.7.11",
+    "start-server-and-test": "^1.12.1"
   }
 }

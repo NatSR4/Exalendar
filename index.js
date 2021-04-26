@@ -32,7 +32,7 @@ app.use(session({
 }));
 
 app.get("/", (req,res)=>{
-  res.sendFile(views + 'index.html');
+  res.sendFile(views + 'login.html');
 });
 
 app.get("/about",(req,res) => {
