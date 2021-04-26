@@ -23,6 +23,7 @@ jobs:
     - uses: actions/checkout@v2
     
     # Need to make the .env file for Sequelize to work
+    # This needs to be changed whenever a new host is made for the database
     - name: Make envfile for Sequelize
       uses: SpicyPizza/create-envfile@v1
       with:
@@ -38,5 +39,4 @@ jobs:
     # Install necessary packages, including bcrypt which needs to be explicitly declared
     - run: npm install bcrypt
     # Run Sequelize and some tests
-    - run: npm run build
-    - run: npm test
+    - run: npm run ci
