@@ -21,6 +21,16 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    
+    # Need to make the .env file for Sequelize to work
+    - name: Make envfile for Sequelize
+      uses: SpicyPizza/create-envfile@v1
+      with:
+        envkey_DB_NAME: freedbtech_exalendar
+        envkey_DB_HOST: freedb.tech
+        envkey_DB_USER: freedbtech_exalendar
+        envkey_DB_PSWD: shirleyannjackson
+        
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
