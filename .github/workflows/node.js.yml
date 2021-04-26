@@ -37,5 +37,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
     # Install necessary packages, including bcrypt which needs to be explicitly declared
     - run: npm install bcrypt
-    # Make sure that we are able to run index.js so that sequelize can work
-    - run: node index.js
+    # Run Sequelize and some tests
+    - run: npm run build
+    - run: npm test
