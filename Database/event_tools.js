@@ -7,12 +7,11 @@ class Event_Tools {
   }
 
   /* Adds an event to a given class */
-  async add_event(classid, eventid, eventtype, eventtitle, eventdescription,
+  async add_event(classid, eventtype, eventtitle, eventdescription,
       eventdate) {
     try {
       await this.sequelize.models.events.create({
         class_id: classid,
-        event_id: eventid,
         event_type: eventtype,
         event_title: eventtitle,
         event_description: eventdescription,

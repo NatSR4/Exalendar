@@ -28,7 +28,6 @@ function addClass(course_id, section_num, class_name, editors, description) {
 async function addEvent() {
     let request = {
         classid: parseInt(document.getElementById("classid").value),
-        eventid: parseInt(document.getElementById("eventid").value),
         eventtype: document.getElementById("eventtype").value,
         eventtitle: document.getElementById("eventtitle").value,
         eventdescription: document.getElementById("eventdesc").value,

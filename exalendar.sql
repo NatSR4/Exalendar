@@ -40,7 +40,7 @@ CREATE TABLE `classes` (
 DROP TABLE IF EXISTS `events`;
 CREATE TABLE `events` (
   `class_id` int,
-  `event_id` int PRIMARY KEY NOT NULL,
+  `event_id` int PRIMARY KEY AUTO_INCREMENT,
   `event_type` varchar(255) NOT NULL,
   `event_title` varchar(255) NOT NULL,
   `event_description` varchar(255),

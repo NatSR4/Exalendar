@@ -91,7 +91,6 @@ app.post("/get_events", (req, res) => {
 app.post("/add_event", (req, res) => {
   db_tool.events.add_event(
       req.body.classid,
-      req.body.eventid,
       req.body.eventtype,
       req.body.eventtitle,
       req.body.eventdescription,
