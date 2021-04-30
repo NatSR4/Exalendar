@@ -72,14 +72,16 @@
 			</div>
 		</div>
 		<div class="noteContain"><!--Notes and Events are on the right of this div-->
+			<h1 class="noteHeader">Exalendar </h1>
 			<h2 class="center-header"><button id="addevent-btn" onclick="openAddEvent()">+</button><span id = "noteDate">a</span></h2> <!--javaScript changes displayed date MM/DD/YYYY to current (by default) OR selected day-->
 			<!--Please Note that this sidebar intends to display events happening on the current/selected day, so remember to add functionality to that and connect it to some database for the user's events-->
 			<hr>
 			<div class="noteLeft" style = "float: left;">
+
 				<!--Basically it should Contain the Event's Name, the Timespan of the Event & the Event Tier, these lists might be gotten rid for better visual/functioning replacements but the function of the
 				side Event and Notes bar should remain the same-->
 				<ul>
-					<label class="noteList"><h3>Events</h3></label>
+					<label class="noteList"><h3 style="color: black;">Events</h3></label>
 					<li class="noteList">Event 1 - all day</li>
 					<li class="noteList">Event 2 - 12PM - 3PM</li>
 					<li class="noteList"> </li>
@@ -89,7 +91,7 @@
 			</div>
 			<div class="noteRight" style = "float: right;">
 				<ul>
-					<label class="noteList"><h3>Tier</h3></label>
+					<label class="noteList"><h3 style="color: black">Tier</h3></label>
 					<li class="noteList">Low</li>
 					<li class="noteList">High</li>
 					<li class="noteList"> </li>

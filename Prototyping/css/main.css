@@ -2,6 +2,8 @@
 @import "sidebar.css";
 @import "footer.css";
 
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
 body {
     background-color: #FFF7F5;
     /*rgba(255,255,255,.5);*/
@@ -80,6 +82,13 @@ h3 {
     box-shadow: 5px 5px 5px #E2E1E0;
 }
 
+.noteHeader {
+    background-color: rgb(225, 40, 40);
+    color: white;
+    text-align:center;
+    font-family: Dancing Script;
+
+}
 .noteContain{
     background-color: white;
     position: fixed;
@@ -93,6 +102,7 @@ h3 {
 .noteList{
     padding-top: .5rem;
     padding-bottom: .5rem;
+   
 }
 
 .noteContain label{   
@@ -117,6 +127,8 @@ h3 {
 
 .center-header{
     text-align: center;
+    background-color: rgb(225, 40, 40);
+    color: white;
 }
 
 .menuTop{
