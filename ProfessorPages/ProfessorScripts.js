@@ -88,4 +88,4 @@ async function getEvents() {
     });
 }
 
-document.getElementById('modal').style.zIndex = 3;
+//document.getElementById('modal').style.zIndex = 3;

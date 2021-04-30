@@ -263,11 +263,14 @@ function toggleDarkmode() {
     document.querySelector(".calendar").classList.toggle("darkmode");
     document.querySelector(".weekdays").classList.toggle("darkmode");
     document.querySelector(".days").classList.toggle("darkmode");
+   // parent.document.body.classList.toggle("darkmode");
+    parent.document.body.style.backgroundColor = "red";
     darkmodeBool = true;
   } else {
     document.querySelector(".calendar").classList.toggle("darkmode");
     document.querySelector(".weekdays").classList.toggle("darkmode");
     document.querySelector(".days").classList.toggle("darkmode");
+    parent.document.body.classList.toggle("darkmode");
     darkmodeBool = false;
   }
 }
