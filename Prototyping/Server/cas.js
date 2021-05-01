@@ -3,8 +3,9 @@ const logger = require('./logger')
 const passport = require('koa-passport')
 const CasStrategy = require('passport-cas2').Strategy
 
-const { getNameAndMajor } = require('../modules/directory')
+const { getNameAndMajor } = require('./directory')
 
+//dont have this implemented yet
 const Student = require('../api/students/students.model')
 
 passport.serializeUser((user, done) => {

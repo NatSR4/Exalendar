@@ -1,10 +1,9 @@
 const Router = require('koa-router')
 const router = new Router()
 
-const Ctrl = require('./auth.controller')
 const passport = require('koa-passport')
 const cas = require('./cas')
-const logger = require('.logger')
+const logger = require('./logger')
 
 // ------- CAS -------
 router.get(
