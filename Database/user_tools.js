@@ -1,4 +1,5 @@
 let bcrypt = require("bcrypt");
+const { v4: uuidv4 } = require('uuid');
 
 class User_Tools {
   constructor(sequelize) {
@@ -12,6 +13,7 @@ class User_Tools {
       const rounds = 10;
       bcrypt.hash(password, rounds,async (err,hash) => {
       await this.sequelize.models.users.create({
+        user_id: uuidv4(),
         first_name: first,
         last_name: last,
         user_name: username,
@@ -30,10 +32,13 @@ class User_Tools {
   async verify_user(username, password_attempt) {
     try {
       var hash = await this.sequelize.models.users.findOne({
-        attributes: ['pwd_hash'],
+        attributes: ['user_id', 'pwd_hash'],
         where: { user_name: username }
       });
-      return await bcrypt.compare(password_attempt, hash.pwd_hash);
+      return {
+        verified: await bcrypt.compare(password_attempt, hash.pwd_hash),
+        uuid: hash.user_id 
+      };
     }
     catch (error) {
       throw error;

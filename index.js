@@ -68,10 +68,9 @@ app.post("/signup", (req,res) => {
 });
 
 app.post("/login", (req, res) => {
-    console.log(req.body);
   db_tool.users.verify_user(req.body.inputEmail, req.body.password)
     .then((result) => {
-      res.send({ verified: result });
+      res.send(result);
     })
     .catch((err) => {
       console.log(err);
