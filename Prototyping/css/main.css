@@ -2,8 +2,11 @@
 @import "sidebar.css";
 @import "footer.css";
 
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
 body {
-    background-color: rgba(0,0,0,0.9);
+    background-color: #FFF7F5;
+    /*rgba(255,255,255,.5);*/
 }
 
 * {
@@ -11,6 +14,24 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+}
+
+/* EVENT INPUT FORM CSS STARTS*/
+h3 {
+    text-align: center;
+    color: white;
+}
+
+#content-box {
+
+    background-color: rgb(240,240,240);
+    height: 35vh;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    font-weight: bolder;
+    line-height: 1.6;
+
 }
 
 #addevent-btn {
@@ -33,12 +54,12 @@ body {
 
 #addevent-menu {
     display: none;
-    background-color: white;
+    background-color: rgb(225, 40, 40);
     position: fixed;
-    height: 40vh;
-    width: 40vw;
+    height: 50vh;
+    width: 80vw;
     z-index: 2;
-    left: 30vw;
+    left: 10vw;
     top: 30vh;
     border-radius: 10px;
     padding: 10px;
@@ -49,6 +70,8 @@ body {
     border: solid 0.65px;
 }
 
+/* EVENT INPUT FORM ENDS STARTS*/
+
 .calendar {
     border: none;
     position: fixed;
@@ -56,8 +79,16 @@ body {
     top: 15px;
     height: calc(100vh - 55px);
     width: 70.9vw;
+    box-shadow: 5px 5px 5px #E2E1E0;
 }
 
+.noteHeader {
+    background-color: rgb(225, 40, 40);
+    color: white;
+    text-align:center;
+    font-family: Dancing Script;
+
+}
 .noteContain{
     background-color: white;
     position: fixed;
@@ -65,11 +96,13 @@ body {
     left: 73vw;
     top: 15px;
     height: calc(100vh - 55px);
+    box-shadow: 5px 5px 5px #E2E1E0;
 }
 
 .noteList{
     padding-top: .5rem;
     padding-bottom: .5rem;
+   
 }
 
 .noteContain label{   
@@ -94,6 +127,8 @@ body {
 
 .center-header{
     text-align: center;
+    background-color: rgb(225, 40, 40);
+    color: white;
 }
 
 .menuTop{
@@ -122,4 +157,9 @@ body {
 
 #containCalendar {
   transition: margin-left .5s; /* If you want a transition effect */
+}
+
+body .darkmode
+{
+    background-color: rgba(0,0,0,0.9);
 }

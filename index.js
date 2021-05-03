@@ -32,7 +32,7 @@ app.use(session({
 }));
 
 app.get("/", (req,res)=>{
-  res.sendFile(views + 'index.html');
+  res.sendFile(views + 'login.html');
 });
 
 app.get("/about",(req,res) => {
@@ -91,7 +91,6 @@ app.post("/get_events", (req, res) => {
 app.post("/add_event", (req, res) => {
   db_tool.events.add_event(
       req.body.classid,
-      req.body.eventid,
       req.body.eventtype,
       req.body.eventtitle,
       req.body.eventdescription,

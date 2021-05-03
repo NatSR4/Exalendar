@@ -7,12 +7,14 @@ https://sequelize.org/master/
 https://github.com/sequelize/sequelize-auto/blob/master/README.md
 
 A diagram of the database relationships is available here:
-https://dbdiagram.io/d/6064e5d5ecb54e10c33e33ca
+https://dbdiagram.io/d/608317c5b29a09603d11e433
 
 Originally the database was held on a rasberrypi running a MySQL server. This
 probably won't exist in the future so you'll have to find a new way to host it.
-UPDATE: The database is currently hosted on freedb.tech with plans to move it to
-an AWS machine as a permanent place
+UPDATE: The database is currently hosted on freedb.tech. Login details are posted
+on the discord server. Once logged into freedb.tech click on "Visit PhpMyAdmin".
+The Username and password are detailed in the .env file provided in the discord.
+If possible find a more permanent place to host it the databse such as AWS.
 
 
 Once you find a way to host the datbase you can export the MySQL statements from

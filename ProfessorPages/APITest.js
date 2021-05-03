@@ -1,3 +1,5 @@
+const fetch = require("node-fetch");
+
 // TEST function that fetches from the api
 // get request is defined in Exalendar/index.js
 // currently, just prints whatever is defined in index.js
@@ -196,3 +198,10 @@ async function deleteEventTest() {
     }).then(response => response.json());
     console.log(data);
 }
+
+(async() => {
+await verificationTest();
+await loginTest();
+await loginFailTest();
+await getEventsTest();
+})();

@@ -10,6 +10,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     event_id: {
+      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true

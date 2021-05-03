@@ -68,9 +68,11 @@
 			<button onclick="">Submit</button>
 		</div>
 
-        <div class="option-do"> Add or Remove Events
+        <div class="option-do"> <h3 style="color: rgb(199, 33, 33); font-weight: bold;    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;"> Add or Remove Events </h3>
             <form id="add-event-form">
-                Event ID (Temporary) <input type="text" id="eventid"><br>
+                Class ID (Temporary) <input type="text" id="classid"><br>
                 Event Title <input type="text" id="eventtitle"><br>
                 Event Type <input type="text" id="eventtype"><br>
                 Event Description <input type="text" id="eventdesc"><br>
@@ -78,13 +80,13 @@
             </form>
             <button type="button" onclick="addEvent()">Add Event</button>
             <form id="get-event-form">
-                Class ID (Temporary) <input type="text" id="classid"><br>
+                User ID (Temporary) <input type="text" id="userid"><br>
             </form>
             <button type="button" onclick="getEvents()">Get Events</button>
         </div>
+            <div id="list-events"></div>
 
 		<script src="./ProfessorScripts.js"></script>
-		<script src="./APITest.js"></script>
 	</body>
 	<footer class="footer">
 		<nav class="menu">

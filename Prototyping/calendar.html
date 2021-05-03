@@ -11,6 +11,8 @@
    <title>Exalendar</title>
    <link rel = "stylesheet" href="css/calendar.css"/>
    <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 </head>
 <body onload="generateProfessorView()">
     <div class = "container">
@@ -45,7 +47,9 @@
             <button title="Monthly View" onclick="changeMonth()">M</button>
             <button title="Weekly View" onclick = "changeWeek()">W</button>
             <button title="Daily View" style="padding-left: calc((5vw / 2) - 0.7vw);" onclick = "changeDay()">D</button>
-            <button title="DarkMode" onclick="toggleDarkmode()"><img src="darkmodemoon.png" width=15vw height="15vw" style="float: center"></button>
+            <button title="DarkMode" onclick="toggleDarkmode()" style="padding-left: calc((3vw / 2) - 0.7vw);padding-top: 5px;"> <!--unsure of padding-top on my(SR) screen, sizing is fine, unsure if thats true on others-->
+                <span class="material-icons" style="font-size: 1.5em">dark_mode</span>
+                <!--img src="media/darkmodemoon.png" width=20vw height="15vw" style="float: center; transform: rotate(-45deg);-webkit-transform: rotate(-45deg);"--></button>
         </div>
     </div>
     <script src="js/calendar_js/calendar.js"></script>

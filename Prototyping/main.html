@@ -20,7 +20,7 @@
 		<!--SIDEBAR (this contains the menus on the left)-->
 		<!--At the moment only the calendar moves, notes do not. The header with monthly/weekly etc. does not move yet-->
 		<div id="sidebar">
-			<button id="buttonBar" onclick="opencloseNav()">☰</button><!--Generic menu button with 3-bars you know how it be-->
+			<button id="buttonBar" style="border-color: rgb(199, 40, 40)" onclick="opencloseNav()">☰</button><!--Generic menu button with 3-bars you know how it be-->
 			<h2 style="margin-top:20px;">Exalendar Menu</h2>
 			<ul id="exalendarMenu"> <!--The 50x50.png does not actually exist here, fill with actual image file name/path-->
 				<li><img src="media/50x50.png" class="menuIcon">&nbsp;&nbsp;Dashboard</li>
@@ -37,12 +37,13 @@
 		</div>
 		<script src="js/sidebar.js"></script>
 		<!--SIDEBAR END-->
-		<!--CALENDAR IS CORRECT, THE DAYS AND WEEK WORK CORRECTLY, THERE IS AN ISSUE WITH THE DIMENSIONS THAT MAKE IT LOOK LIKE IT ISNT. DO NOT CHANGE THE JS IT WORKS PERFECTLY-->
+		<!--CALENDAR IS CORRECT, THE DAYS AND WEEK WORK CORRECTLY. DO NOT CHANGE THE JS IT WORKS PERFECTLY-->
 		<iframe class="calendar" src="calendar.html"></iframe>
 		<!-- TODO fix issues with sidebar z index over add event and modal effect -->
 		<div id="addevent-menu">
 			<button onclick="closeAddEvent()">X</button>
 			<h3>Add Event</h3>
+			<div id="content-box">
 			<form id="addevent-form">
 				<label for="eclass">Class:</label>
 				<select name="eclass">
@@ -68,16 +69,19 @@
 			</form>
 			<!-- <button onclick="document.getElementById('addevent-form').submit()">Submit</button> -->
 			<button onclick="closeAddEvent()">Submit</button>
+			</div>
 		</div>
 		<div class="noteContain"><!--Notes and Events are on the right of this div-->
+			<h1 class="noteHeader">Exalendar </h1>
 			<h2 class="center-header"><button id="addevent-btn" onclick="openAddEvent()">+</button><span id = "noteDate">a</span></h2> <!--javaScript changes displayed date MM/DD/YYYY to current (by default) OR selected day-->
 			<!--Please Note that this sidebar intends to display events happening on the current/selected day, so remember to add functionality to that and connect it to some database for the user's events-->
 			<hr>
 			<div class="noteLeft" style = "float: left;">
+
 				<!--Basically it should Contain the Event's Name, the Timespan of the Event & the Event Tier, these lists might be gotten rid for better visual/functioning replacements but the function of the
 				side Event and Notes bar should remain the same-->
 				<ul>
-					<label class="noteList"><h3>Events</h3></label>
+					<label class="noteList"><h3 style="color: black;">Events</h3></label>
 					<li class="noteList">Event 1 - all day</li>
 					<li class="noteList">Event 2 - 12PM - 3PM</li>
 					<li class="noteList"> </li>
@@ -87,7 +91,7 @@
 			</div>
 			<div class="noteRight" style = "float: right;">
 				<ul>
-					<label class="noteList"><h3>Tier</h3></label>
+					<label class="noteList"><h3 style="color: black">Tier</h3></label>
 					<li class="noteList">Low</li>
 					<li class="noteList">High</li>
 					<li class="noteList"> </li>

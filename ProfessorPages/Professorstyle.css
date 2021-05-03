@@ -7,7 +7,8 @@
 body {
 	margin: 0;
 	padding: 0;
-	background-color: #333
+	background-color: #FFF7F5;
+	color: black;
 }
 
 .header {
@@ -68,6 +69,7 @@ div.class {
 	padding: 10px;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	box-shadow: 5px 5px 5px #E2E1E0;
 }
 
 .class:hover {
@@ -107,6 +109,11 @@ div.class {
 	font-weight: 500;
 }
 
+.option-do {
+    color: black;
+    padding-left: 10px;
+}
+
 .fullview {
 	height: 380px;
 	width: 380px;
@@ -119,3 +126,13 @@ div.class {
 	border-radius: 10px;
 	display: none;
 }
+
+/*
+body .darkmode {
+	background-color: #333
+}
+
+.option-do .darkmode {
+    color: white;
+}
+*/
