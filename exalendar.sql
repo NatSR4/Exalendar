@@ -4,7 +4,7 @@
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
-  `user_id` int PRIMARY KEY AUTO_INCREMENT,
+  `user_id` varchar(255) PRIMARY KEY,
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
   `user_name` varchar(255) UNIQUE NOT NULL,
@@ -13,14 +13,14 @@ CREATE TABLE `users` (
 
 DROP TABLE IF EXISTS `user_settings`;
 CREATE TABLE `user_settings` (
-  `user_id` int,
+  `user_id` varchar(255),
   `setting_id` int,
   `value` varchar(255)
 );
 
 DROP TABLE IF EXISTS `user_classes`;
 CREATE TABLE `user_classes` (
-  `user_id` int,
+  `user_id` varchar(255),
   `class_id` int
 );
 
@@ -49,7 +49,7 @@ CREATE TABLE `events` (
 
 DROP TABLE IF EXISTS `teachers`;
 CREATE TABLE `teachers` (
-  `user_id` int NOT NULL,
+  `user_id` varchar(255) NOT NULL,
   `class_id` int NOT NULL
 );
 
