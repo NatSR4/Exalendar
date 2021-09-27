@@ -15,8 +15,7 @@
 </head>
 
 <body>
-
-
+  <div class="column">
   <form class="form-signin" method="POST">
     <div class="auth-form-header text-center">
         <h1>Exalendar</h1>
@@ -41,7 +40,35 @@
       <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
     </div>
     <br>
-    <p class="mt-5 mb-3 text-muted text-center">&copy; Spring 2020</p>
+    <p class="mt-5 mb-3 text-muted text-center">&copy; Fall 2021</p>
   </form>
+  
+  
+    <form class="form-signin" method="post">
+    <div class="auth-form-header text-center">
+      
+      <h1>Exalendar</h1>
+      <h4>Please sign in using your RPI email.</h4>
+    </div>
+    <div class="auth-form-body">
+      <label for="inputEmail">Email address</label>
+      <input type="email" name = "inputEmail" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+
+      <label for="inputPassword">Password</label>
+      <input type="password" name = "password" id="inputPassword" class="form-control" placeholder="Password" required>
+      <label for="ERROR"></label>
+      <div class="checkbox mb-2">
+        <label><input type="checkbox" class="form-check" value="remember-me"> Remember me</label>
+        <a class="label-link" href="#">Forgot password?</a>
+      </div>
+      
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
+    </div>
+    <hr>
+    <p class="mt-5 mb-3 text-center">Don't have an account? <a href="./signup.html">Create an account.</a></p>
+    <br>
+    <p class="mt-5 mb-3 text-muted text-center">&copy; Fall 2021</p>
+  </form>
+  </div>
 </body>
 </html>
