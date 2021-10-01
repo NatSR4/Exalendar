@@ -11,9 +11,6 @@ body {
   /*padding-top: 40px;
   padding-bottom: 40px;*/
   background-color: #f5f5f5;
-  column-rule-style: solid;
-  column-rule-color: rgb(255, 40, 40);
-  /*column-rule-width: 4px;*/
 }
 
 h1 {
@@ -29,27 +26,38 @@ h1 {
   font-weight: bold;
   font-size: 5em;
   color:red;
+  margin: auto;
+  text-align: center;
+  box-sizing: border-box;
 }
 
-div {
-  column-count: 2;
-  column-rule-style: solid;
-  column-rule-color: rgb(255, 40, 40);
-  column-rule-width: 4px;
-}
+
 .column {
    
-  column-rule-style: solid;
-  column-rule-color: rgb(255, 40, 40);
-  column-rule-width: 4px;
+  float: left;
+  width: 50%;
+  align-items: center;
   height: 100%;
 }
 
+.row {
+  margin-left: 7em;
+  margin-right: 0em;
+  display: flex;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  margin-left: 7em;
+  margin-right: 0em;
+  clear: both;
+
+}
+
 .form-signin {
-  width: 100%;
-  max-width: 400px;
-  padding: 15px;
-  margin: auto;
+  width: 55%;
+  margin-right: 7em;
   /*color: rgb(255, 99, 71);*/
 }
 
