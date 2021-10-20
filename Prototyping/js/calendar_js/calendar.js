@@ -72,7 +72,7 @@ function loadToday() {
   }
 }
 
-//Fucntion to get the next month or week and load the calendar
+//Function to get the next month or week and load the calendar
 function loadNext() {
   if (monthBool) {
     date.setMonth(date.getMonth()+1);
@@ -136,9 +136,9 @@ function loadCalendarMonth() {
 		if (i === currentDate.getDate() &&
       date.getMonth() === currentDate.getMonth() && date.getFullYear() === currentDate.getFullYear())
    {
-			days += `<div class="daybox active">${i}</div>`;
+			days += `<div class="daybox active" onclick=this.selectDate()>${i}</div>`;
 		} else {
-			days += `<div class="daybox">${i}</div>`;
+			days += `<div class="daybox" onclick=this.selectDate()>${i}</div>`;
 		}
 	}
 
@@ -149,9 +149,9 @@ function loadCalendarMonth() {
     ((date.getMonth() + 1 === currentDate.getMonth() && date.getFullYear() === currentDate.getFullYear()) || 
     (0 == currentDate.getMonth() && date.getFullYear() + 1 === currentDate.getFullYear())))
       {
-      days += `<div class="daybox active">${i}</div>`;
+      days += `<div class="daybox active" onclick=selectDate()>${i}</div>`;
     } else {
-      days += `<div class="daybox next-date">${i}</div>`;
+      days += `<div class="daybox next-date" onclick=selectDate()>${i}</div>`;
     }
 	}
 
@@ -274,3 +274,10 @@ function toggleDarkmode() {
     darkmodeBool = false;
   }
 }
+
+function selectDate() {
+
+  
+   this.css("backgroundColor","rgb(0,0,255)") = "blue";
+}
+
