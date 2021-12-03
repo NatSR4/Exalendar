@@ -264,7 +264,7 @@ function toggleDarkmode() {
     document.querySelector(".weekdays").classList.toggle("darkmode");
     document.querySelector(".days").classList.toggle("darkmode");
    // parent.document.body.classList.toggle("darkmode");
-    parent.document.body.style.backgroundColor = "red";
+    parent.document.body.style.backgroundColor = "rgba(0,0,0,0.8)";
     darkmodeBool = true;
   } else {
     document.querySelector(".calendar").classList.toggle("darkmode");

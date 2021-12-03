@@ -2,7 +2,9 @@
 <html>
 	<head>
 		<title>Dashboard | Exalendar</title>
-		<link href="Professorstyle.css" rel="stylesheet">
+		<link href="../css/Professorstyle.css" rel="stylesheet">
+		<link rel = "stylesheet" href="../css/footer.css"/>
+		<link rel = "stylesheet" href="../css/sidebar.css"/>
 	</head>
 	<body>
 		<div id="modal"></div>
@@ -11,19 +13,19 @@
 			<button id="buttonBar" onclick="opencloseNav()">☰</button><!--Generic menu button with 3-bars you know how it be-->
 			<h2 style="margin-top:20px;">Exalendar Menu</h2>
 			<ul id="exalendarMenu"> <!--The 50x50.png does not actually exist here, fill with actual image file name/path-->
-				<li><img src="../Prototyping/media/50x50.png" class="menuIcon">&nbsp;&nbsp;Dashboard</li>
-				<li><img src="../Prototyping/media/50x50.png" class="menuIcon">&nbsp;&nbsp;Calendar</li>
-				<li><img src="../Prototyping/media/50x50.png" class="menuIcon">&nbsp;&nbsp;Other Page</li>
+				<li><img src="../media/50x50.png" class="menuIcon">&nbsp;&nbsp;Dashboard</li>
+				<li><img src="../media/50x50.png" class="menuIcon">&nbsp;&nbsp;Calendar</li>
+				<li><img src="../media/50x50.png" class="menuIcon">&nbsp;&nbsp;Other Page</li>
 				<!--feel free to add to the list and fill with relevant links and icons to other pages-->
 			</ul>
 			<h2>Other Menu</h2>
 			<ul>
-				<li><img src="../Prototyping/media/settings-icon.png" class="menuIcon">&nbsp;&nbsp;Preferences</li>
-				<li><img src="../Prototyping/media/signout.png" class="menuIcon">&nbsp;&nbsp;Logout</li>
+				<li><img src="../media/settings-icon.png" class="menuIcon">&nbsp;&nbsp;Preferences</li>
+				<li><img src="../media/signout.png" class="menuIcon">&nbsp;&nbsp;Logout</li>
 				<!--feel free to add to the list and fill with relevant links and icons to other pages-->
 			</ul>
 		</div>
-		<script src="../Prototyping/js/sidebar.js"></script>
+		<script src="../js/sidebar.js"></script>
 		<!--SIDEBAR END-->
 		<!-- Extra work to make it look like the text is FULLY centered, there's probably a better way sorry, SR:its clever though lol, funny work around-->
 		<div style=" background-color: rgb(199, 33, 33);color:  rgb(199, 33, 33);">  space </div>
@@ -86,16 +88,16 @@
         </div>
             <div id="list-events"></div>
 
-		<script src="./ProfessorScripts.js"></script>
+		<script src="ProfessorScripts.js"></script>
 	</body>
 	<footer class="footer">
 		<nav class="menu">
 			<ul>
-				<li><a>Home</a></li> <!--The home page, should be linked once finished-->
+				<li><a href = "../profile.html">Home</a></li> <!--The home page, should be linked once finished-->
 				<li><a href="https://github.com/NatSR4/Exalendar/wiki/What-is-Exalendar%3F" target="_blank">About</a></li> <!--The 'About' page, probably just a page with the general mission of Exalendar, maybe a table of contents for those who wish to be on it and their comments if any,
 					something to make the site feel like there's been love and effort put into it. HG: Just gonna link it to the wiki for now, someone link it to the actual about page if/when we have one. -->
 				<li><a href= "https://rcos.io/" target= "_blank">RCOS</a></li> <!--If the RCOS page changes, make sure to update this-->
-				<li><a href= "https://github.com/NatSR4/Exalendar" target = "_blank" id="gitcat" title="GitHub" aria-label="GitHub"><img src="../Prototyping/media/gitcat.svg"/></a></li> <!--Obligitory github link :) -->
+				<li><a href= "https://github.com/NatSR4/Exalendar" target = "_blank" id="gitcat" title="GitHub" aria-label="GitHub"><img src="../media/gitcat.svg"/></a></li> <!--Obligitory github link :) -->
 			</ul>
 			<span>&copy; 2021 | Exalendar</span>
 		</nav>

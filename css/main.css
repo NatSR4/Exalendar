@@ -79,7 +79,7 @@ h3 {
     top: 15px;
     height: calc(100vh - 55px);
     width: 70.9vw;
-    box-shadow: 5px 5px 5px #E2E1E0;
+    /*box-shadow: 5px 5px 5px #E2E1E0;*/
 }
 
 .noteHeader {
@@ -96,7 +96,7 @@ h3 {
     left: 73vw;
     top: 15px;
     height: calc(100vh - 55px);
-    box-shadow: 5px 5px 5px #E2E1E0;
+    /*box-shadow: 5px 5px 5px #E2E1E0;*/
 }
 
 .noteList{

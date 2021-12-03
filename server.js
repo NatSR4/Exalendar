@@ -1,15 +1,21 @@
-const http = require('http');
 const express = require('express');
 const path = require('path');
+const router = express.Router();
 const app = express();
-app.use(express.json());
-app.use(express.static("express"));
-// default URL for website
-app.use('/', function(req,res){
-    res.sendFile(path.join(__dirname+'/profile.html'));
-    //__dirname : It will resolve to your project folder.
-  });
-const server = http.createServer(app);
-const port = 3000;
-server.listen(port);
-console.debug('Server listening on port ' + port);
+const port = process.env.PORT || 8080;
+app.use(express.static(__dirname));
+app.use(express.static(__dirname+'/ProfessorPages'));
+// sendFile will go here
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, '/profile.html'));
+});
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, '/main.html'));
+});
+
+app.get('/ProfessorPages', function(req, res) {
+  res.sendFile(path.join(__dirname, '/Professors.html'));
+});
+
+app.listen(port);
+console.log('Server started at http://localhost:' + port);
