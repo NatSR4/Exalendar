@@ -6,7 +6,9 @@
   "scripts": {
     "start-server": "node index.js",
     "test": "node ProfessorPages/APITest.js",
-    "ci": "start-server-and-test start-server http://localhost:8000 test"
+    "ci": "start-server-and-test start-server http://localhost:8000 test",
+    "start": "node server.js",
+    "devStart": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -19,19 +21,20 @@
   },
   "homepage": "https://github.com/NatSR4/Exalendar#readme",
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.20"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
-    "cookie-parser": "^1.4.5",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "express-session": "^1.17.1",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^8.6.0",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
     "mysql": "^2.18.1",
-    "mysql2": "^2.2.5",
-    "node-fetch": "^2.6.1",
-    "sequelize": "^6.11.0",
+    "mysql2": "^2.3.3",
+    "node-fetch": "^2.6.7",
+    "sequelize": "^6.22.1",
     "sequelize-auto": "^0.7.11",
-    "start-server-and-test": "^1.12.1"
-  }
+    "start-server-and-test": "^1.14.0"
+  },
+  "keywords": []
 }
