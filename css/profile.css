@@ -17,7 +17,7 @@
 .profile-box {
 	background: red;
 	text-align: center;
-	padding: 40px 90px;
+	padding: 40px 180px;
 	color: #fff;
 	position: relative;
 	border-radius: 20px;
@@ -37,7 +37,7 @@
 	top: 40px;
 }
 
-a {
+.btn {
 	background-color: maroon;
 	color: white;
 	padding: 14px 25px;
@@ -46,9 +46,10 @@ a {
 	display: inline-block;
 }
 
-a:hover, a:active {
+.btn:hover, .btn:active, .btn:focus {
 	color: white;
 	background-color: red;
+	text-decoration: none;
 }
 
 .profile-icon {
@@ -64,17 +65,14 @@ a:hover, a:active {
 	background: #fff;
 	color: #999;
 	padding: 60px 0;
-	margin-right: -90px;
-	margin-left: -90px;
+	margin-right: -180px;
+	margin-left: -180px;
 }
 
-/* h1 {
-	background-color: rgb(255, 40, 40); 
+h1 {
 	font-family: Dancing Script; 
 	color: rgb(240,240,240); 
-	margin-top: 0px; 
-	margin-bottom: 0px;
-	padding-bottom: 0.5em;
-	padding-top: 0.5em; 
+	margin: 0;
+	padding: 0;
 	text-align: center;
-} */
+}
