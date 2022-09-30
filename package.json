@@ -13,8 +13,8 @@
     "type": "git",
     "url": "git+https://github.com/NatSR4/Exalendar.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Sneha Ranjit",
+  "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/NatSR4/Exalendar/issues"
   },

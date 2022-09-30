@@ -6,8 +6,10 @@ To switch branch
 git switch "name of branch"
 note: new branches in the repo need to be pulled before switching to them 
 
+
 To create a new branch:
 git branch "name of the branch"
+note: the branch is made from the branch you were most recently in, you might need to switch to master or such before creating your branch
 
 To check status
 git status
@@ -29,9 +31,9 @@ git commit
 How to commit (my recommendation)
 status
 add
-commit - these are just the commands, the syntax is above
+commit // these are just the commands, the syntax is above
 
-git pull - get changes from repo into ur local
-git push - push commits from ur local into the repo where everyone can see them
+git pull // get changes from repo into ur local
+git push // push commits from ur local into the repo where everyone can see them
 
 I will add the merge commands at a later date that can be messy so I don't want to put that up yet
