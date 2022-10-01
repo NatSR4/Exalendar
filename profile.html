@@ -12,30 +12,50 @@
 	  <link rel = "stylesheet" href="css/profile.css"/>
 	  <link rel = "stylesheet" href="css/footer.css"/>
 
+	  <!-- Custom functions -->
+	  <script src="/js/profile.js" defer="defer"></script>
+
 	  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<div class="container">
 			<div class="profile-box">
-				<img src="media/menu-icon.png" class="menu-icon">
-				<h1> Exalendar </h1>
-				<img src="media/settings-icon.png" class="setting-icon">
+				<!-- <img src="media/menu-icon.png" class="menu-icon"> -->
+				<nav class="navbar">
+					<div class = "project-title"> Exalendar! </div>
+					<a href="#" class="toggle-button">
+						<span class="bar"></span>
+						<span class="bar"></span>
+						<span class="bar"></span>
+					</a>
+					<div class = "navbar-links">
+						<ul>
+							<li><a href="#">User Info</a></li>
+							<li><a href="#">Classes</a></li>
+							<li><a href="#">Calender Settings</a></li>
+						</ul>
+					</div>
+				</nav>
 				<img src="media/profile-default-icon.jpg" class="profile-icon">
 				<h3>Bill Nai</h3>
-				<h4>email</h4>
-				<h4>username</h4>
-				<button class="btn btn-passowrd-change">Change Password</button>
-				<div class="profile-content profile-classes">
+				<h4>Email: billnai1234@gmail.com</h4>
+				<h4>Username: Bill_Nai_1234 </h4>
+				<form class="password" action="" method = "">
+					<label for="password">Change Password:</label>
+					<input type="password" name="password" id="password" fill="Old_Password">
+					<button>Submit</button>
+				</form>
+
+				<a class="home" href="/main.html">Go To Calender</a>
+
+				<div class="profile-content">
 					<h2>Classes</h2>
 					<div class="class">Class 1</div>
 					<div class="class">Class 2</div>
 					<div class="class">Class 3</div>
 					<div class="class">Class 4</div>
 				</div>
-				<div class="profile-content">
-					<a href="main.html">Calendar</a>
-					<a href="/ProfessorPages/Professors.html">Professor</a>
-				</div>
+
 			</div>
 		</div>
 	</body>

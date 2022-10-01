@@ -8,48 +8,122 @@
 .container{
 	width: 100%;
 	height: 100vh;
-	background: linear-gradient(45deg, rgba(225, 40, 40,0.1), rgba(225, 40, 40,0.2));
+	background-image: url("/media/profile-background.jpg");
+	background-size: cover;
+	background-position: center;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
 .profile-box {
-	background: red;
+	background: rgba(255, 0, 0, 0.6);
 	text-align: center;
-	padding: 40px 180px;
+	padding: 60px 180px;
 	color: #fff;
 	position: relative;
-	border-radius: 20px;
+	box-shadow: 5px 5px 5px rgba(50, 47, 47, 0.7);
+	flex-shrink: 1;
+	flex-grow: 1;
+	max-width: 1400px;
+	min-width: 750px;
+	max-height: 80vh;
+	border-radius: 25px;
 }
 
-.menu-icon {
-	width: 25px;
+.navbar{
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	background-color: rgb(255, 0, 0);
+	margin-left: -180px;
+	margin-right: -180px;
+	margin-top: -65px;
+	border-radius: 0;
+	border-top-left-radius: 25px;
+	border-top-right-radius: 25px;
+	border-bottom: 1px solid maroon;
+}
+
+.toggle-button{
 	position: absolute;
-	left: 40px;
-	top: 40px;
+	top: 3rem;
+	right: 3rem;
+	display: none;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 30px;
+	height: 22px;
 }
 
-.setting-icon {
-	width: 25px;
-	position: absolute;
-	right: 40px;
-	top: 40px;
+.toggle-button .bar {
+	height: 3px;
+	width: 100%;
+	background-color: white;
+	border-radius: 10px;
 }
 
-.btn {
-	background-color: maroon;
-	color: white;
-	padding: 14px 25px;
-	text-align: center;
+@media (max-width: 1350px){
+	.toggle-button {
+		display: flex;
+	}
+	.navbar-links {
+		display: none;
+		width: 100%;
+	}
+
+	.navbar {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.navbar-links ul{
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.navbar-links li {
+		border-top: 1px solid maroon;
+		text-align: center;
+	}
+
+	.navbar-links li a {
+		padding: 0.5rem 1rem;
+	}
+
+	.navbar-links.active {
+		display: flex;
+	}
+}
+
+.navbar-links ul{
+	margin:0;
+	padding:0;
+	display: flex;
+}
+
+.navbar-links li{
+	list-style: none;
+}
+
+.navbar-links li a {
 	text-decoration: none;
-	display: inline-block;
+	color: #fff;
+	padding: 2rem;
+	display: block;
+	font-size: 2em;
 }
 
-.btn:hover, .btn:active, .btn:focus {
-	color: white;
-	background-color: red;
-	text-decoration: none;
+.navbar-links li:hover {
+	background-color: rgba(255, 255, 255, 0.5)
+}
+
+.project-title{
+	font-family: Dancing Script; 
+	font-size: 4em;
+	color: rgb(240,240,240); 
+	padding-top: 10px;
+	margin: 5px;
 }
 
 .profile-icon {
@@ -57,22 +131,88 @@
 	border-radius: 50%;
 	background: #fff;
 	padding: 6px;
-	margin-top: 40px;
+	margin-top: 60px;
 }
 
+.password{
+	margin-bottom: 10px;
+	color: #fff;
+	font-size: 1.2em;
+}
+
+.password input{
+	color: #000;
+}
+
+.password button{
+	color: white;
+	background-color: rgba(255,255,255, 0.3);
+	border-radius: 5px;
+	border: 1px solid white;
+	padding-inline: 10px;
+	padding: 5px;
+}
+
+.password button:hover{
+	color: red;
+	background-color: rgba(255,255,255, 0.8);
+	border-radius: 5px;
+	border: 1px solid white;
+	padding-inline: 10px;
+	padding: 5px;
+}
+
+.home{
+	background-color: #fff;
+	color: red;
+	border: none;
+	outline: none;
+	text-decoration: none;
+	border-radius: 30px;
+	margin-bottom: -50px;
+	box-shadow: 0 5px 10px rgba(244, 67, 54, 0.5);
+	padding: 15px 60px;
+	position: relative;
+	top: 10px;
+}
+
+.home:hover, .home:active, .home:focus {
+	background-color: rgb(231, 230, 230);
+	color: red;
+	border: none;
+	outline: none;
+	text-decoration: none;
+	border-radius: 30px;
+	margin-bottom: -50px;
+	box-shadow: 0 5px 10px rgba(244, 67, 54, 0.5);
+	padding: 15px 60px;
+}
 
 .profile-content{
 	background: #fff;
 	color: #999;
-	padding: 60px 0;
+	flex-grow: 1;
+	padding: 40px 20px;
 	margin-right: -180px;
 	margin-left: -180px;
+	margin-bottom: -60px;
+	border-radius: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: flex-start;
 }
 
-h1 {
-	font-family: Dancing Script; 
-	color: rgb(240,240,240); 
-	margin: 0;
-	padding: 0;
-	text-align: center;
+.profile-content h2{
+	font-size: 2em;
+	font-weight: bold;
 }
+
+.class{
+	width: 180px;
+	height: 40px;
+	padding: 10px;
+	margin: 10px;
+	border: 1px solid #777;
+}
+
