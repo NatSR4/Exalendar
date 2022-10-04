@@ -1,41 +1,39 @@
-//heroku test last used 11/1/2021
+// Imports
 var http = require('http');
-var fs = require('fs');
-var express = require('express');
-var path = require('path');
+const express = require('express')
+const app = express()
+const port = 8080
 
-var app = express();
+// Static Files
+app.use(express.static('public'));
+// Specific folder example
+app.use('/css', express.static(__dirname + 'public/css'))
+app.use('/js', express.static(__dirname + 'public/js'))
+app.use('/img', express.static(__dirname + 'public/images'))
+app.set('views', __dirname + '/public/views');
 
-var filePath = request;
-if (filePath == '/')
-  filePath = '/main.html';
+app.engine('html', require('ejs').renderFile)
+app.set('view engine', 'html');
 
-filePath = __dirname+filePath;
-var extname = path.extname(filePath);
-var contentType = 'text/html';
+// Navigation
+app.get('', (req, res) => {
+    res.render('main.html', { text: 'Hey' })
+})
 
-switch (extname) {
-    case '.js':
-        contentType = 'text/javascript';
-        break;
-    case '.css':
-        contentType = 'text/css';
-        break;
-}
+app.get('/contact', (req, res) => {
+   res.sendFile(__dirname + 'contact.html')
+})
 
+app.get('/login', (req, res) => {
+    res.sendFile(__dirname + 'login.html')
+ })
 
+ app.get('/loginPrimary', (req, res) => {
+    res.sendFile(__dirname + 'loginPrimary.html')
+ })
 
-const PORT=8080; 
-app.use(express.static(path.join(__dirname, '/')));
+ app.get('/signup', (req, res) => {
+    res.sendFile(__dirname + 'signup.html')
+ })
 
-
-fs.readFile(filePath, function (err, html) {
-
-    if (err) throw err;    
-
-    http.createServer(function(request, response) {  
-        response.writeHeader(200, {"Content-Type": contentType });  
-        response.write(html);  
-        response.end();  
-    }).listen(PORT);
-});
+app.listen(port, () => console.info(`App listening on port ${port}`))
