@@ -6,7 +6,6 @@ const port = 8080
 
 // Static Files
 app.use(express.static('public'));
-// Specific folder example
 app.use('/css', express.static(__dirname + 'public/css'))
 app.use('/js', express.static(__dirname + 'public/js'))
 app.use('/img', express.static(__dirname + 'public/images'))
@@ -28,12 +27,20 @@ app.get('/login', (req, res) => {
     res.sendFile(__dirname + 'login.html')
  })
 
- app.get('/loginPrimary', (req, res) => {
+app.get('/loginPrimary', (req, res) => {
     res.sendFile(__dirname + 'loginPrimary.html')
- })
+})
 
- app.get('/signup', (req, res) => {
+app.get('/signup', (req, res) => {
     res.sendFile(__dirname + 'signup.html')
- })
+})
+
+app.get('/signup', (req, res) => {
+    res.sendFile(__dirname + 'signup.html')
+})
+
+app.get('/calendar', (req, res) => {
+    res.sendFile(__dirname + 'calendar.html')
+})
 
 app.listen(port, () => console.info(`App listening on port ${port}`))
