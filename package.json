@@ -4,6 +4,7 @@
   "description": "Exalendar is a calendar-website for hosting academic deadlines across classes for both students and professors. Exalendar helps centralize due dates for students in a single space. Professors add due dates for a course (exams, homeworks, etc.), and all students who are part of that course will have those dates marked on a calendar.",
   "main": "index.js",
   "scripts": {
+    "start": "node app.js",
     "start-server": "node index.js",
     "test": "node ProfessorPages/APITest.js",
     "ci": "start-server-and-test start-server http://localhost:8000 test"
@@ -25,7 +26,8 @@
     "bcrypt": "^5.0.1",
     "cookie-parser": "^1.4.5",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
     "express-session": "^1.17.1",
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
