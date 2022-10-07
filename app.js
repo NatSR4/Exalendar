@@ -16,31 +16,35 @@ app.set('view engine', 'html');
 
 // Navigation
 app.get('', (req, res) => {
-    res.render('main.html', { text: 'Hey' })
+    res.render('main.html')
 })
 
-app.get('/contact', (req, res) => {
-   res.sendFile(__dirname + 'contact.html')
+app.get('/contact.html', (req, res) => {
+   res.render('contact.html')
 })
 
-app.get('/login', (req, res) => {
-    res.sendFile(__dirname + 'login.html')
+app.get('/login.html', (req, res) => {
+    res.render('login.html')
  })
 
-app.get('/loginPrimary', (req, res) => {
-    res.sendFile(__dirname + 'loginPrimary.html')
+app.get('/loginPrimary.html', (req, res) => {
+    res.render('loginPrimary.html')
 })
 
-app.get('/signup', (req, res) => {
-    res.sendFile(__dirname + 'signup.html')
+app.get('/signup.html', (req, res) => {
+    res.render('signup.html')
 })
 
-app.get('/signup', (req, res) => {
-    res.sendFile(__dirname + 'signup.html')
+app.get('/signup.html', (req, res) => {
+    res.render('signup.html')
 })
 
-app.get('/calendar', (req, res) => {
-    res.sendFile(__dirname + 'calendar.html')
+app.get('/calendar.html', (req, res) => {
+    res.render('calendar.html')
+})
+
+app.get('/professors.html', (req, res) => {
+    res.render('/professors.html')
 })
 
 app.listen(port, () => console.info(`App listening on port ${port}`))
