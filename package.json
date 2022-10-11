@@ -30,7 +30,7 @@
     "express": "^4.18.1",
     "express-session": "^1.17.1",
     "mysql": "^2.18.1",
-    "mysql2": "^2.2.5",
+    "mysql2": "^2.3.3",
     "node-fetch": "^2.6.1",
     "sequelize": "^6.11.0",
     "sequelize-auto": "^0.7.11",
