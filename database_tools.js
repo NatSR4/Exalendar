@@ -4,24 +4,65 @@ const class_tools = require('./class_tools.js');
 const setting_tools = require('./setting_tools.js');
 
 class Database_Tools {
-/* This class holds instances for each of the tools classes. This is so their
-   members can be called from one instance of this class
-
-   In order to call functions from these classes use the following syntax:
-   database_tool.classes.create_class(parameters...)
-   .then(result => { console.log(result); }) // prints true
-   .catch((err) => { console.log(err); });   // prints error if thrown
-
-*/
-
-  constructor(sequelize) {
-    this.sequelize =  sequelize;
-    this.sequelize.authenticate();
-    initModels(this.sequelize);
-
-    this.users = new user_tools(sequelize);
-    this.classes = new class_tools(sequelize);
-    this.settings = new setting_tools(sequelize);
+  constructor(connection) {
+    this.connection = connection;
+    this.query_tool = new query(connection);
   }
+
+/* creates an entry in the user table with provided parameters, then creates a
+*  corresponding entry in the user settings table */
+  create_user(first, last, username, password) {
+    // salt rounds for bcrypt
+    const rounds = 10
+    var hashed_pass;
+    bcrypt.hash(password, rounds, (err, hash) => {
+      if(err) return console.error(err);
+      else hashed_pass = hash;
+
+      let fields = ['first_name', 'last_name', 'username', 'password'];
+      let values = [first, last, username, hashed_pass];
+      // Inserts user into table, and calls cerate_user_settings if success
+      this.query_tool.simple_insert('users', fields, values, (err, result) => {
+        if(err) return console.error(err);
+        else {
+          let id = result.insertId;
+          this.create_user_settings(id);
+        }
+      });
+    });
+  }
+
+/* creates an entry in the user_settings table with the provided id */
+  create_user_settings(id) {
+    let fields = ['user_id'];
+    let values = [id];
+
+    // Inserts into user_settings table,
+    this.query_tool.simple_insert('user_settings', fields, values, (err, result) => {
+      if(err) return console.error(err);
+    });
+  }
+
+/* Verifies a username and password combo, returns true if match, false if not */
+  verify_user(username, password_attempt, callback) {
+    let columns = ['password'];
+    let condition = `username = ?`;
+    let values = username;
+
+    // Selects password from database where username = provided username
+    this.query_tool.simple_select('users', columns, condition, values, (err, result) => {
+      if(err) return console.error(err);
+      else {
+        if (result.length == 0) return callback(false);
+        // compare password and hash, callback result
+        bcrypt.compare(password_attempt, result[0].password, (err2, res) => {
+          if(err2) return console.error(err2);
+          else callback(res)
+        });
+      }
+    });
+  }
+
 }
+
 module.exports = Database_Tools;

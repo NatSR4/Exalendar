@@ -1,6 +1,8 @@
-const dotenv = require("dotenv").config();
+const result = require("dotenv").config();
 
 const express = require("express");
+const mysql = require("mysql");
+const db_tools = require('./database_tools');
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const session = require("express-session")
@@ -30,6 +32,23 @@ app.use(session({
     expires: 600000
   } 
 }));
+
+// Database Connection
+var connection = mysql.createConnection({
+	host	: process.env.DB_HOST,
+	user: process.env.DB_USER,
+	password: process.env.DB_PSWD,
+	database: 'exalendar'
+});
+
+connection.connect(function(err) {
+  if (err) {
+    console.error('error connecting: ' + err.stack);
+    return;
+  }
+  console.log('connected as id ' + connection.threadId);
+	db_tool = new db_tools(connection);
+});
 
 app.get("/", (req,res)=>{
   res.sendFile(views + 'login.html');
