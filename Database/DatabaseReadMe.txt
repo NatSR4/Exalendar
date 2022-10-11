@@ -47,3 +47,12 @@ sequelize-auto -h [host] -d [database name] -u [username] -x [password] --dialec
 For Windows:
 npx sequelize-auto -h [host] -d [database name] -u [username] -x [password] --dialect mysql -o Database/models/
 Refer to the sequelize-auto readme for more information.
+
+How to setup the backend for local use:
+Download MySQL
+We are using MySQL Workbench for ease, this is downloaded when you download MySql from the internet
+You will be directed to make a connection for your server, the default settings suffice for now
+Create your .env file with the information mentioned above, the sql host will likely be localhost, and the user and password will be whatever you've given it.
+Run the exalendar.sql file by selecting OPEN a SQL Script within your database
+Run the command mentioned above 
+You should be good to go now!
