@@ -271,13 +271,12 @@ function toggleDarkmode() {
     document.querySelector(".weekdays").classList.toggle("darkmode");
     document.querySelector(".days").classList.toggle("darkmode");
     parent.document.body.classList.toggle("darkmode");
+    parent.document.body.style.backgroundColor = "rgb(255,247,245)";
     darkmodeBool = false;
   }
 }
 
-function selectDate() {
-
-  
+function selectfDate() {
    this.css("backgroundColor","rgb(0,0,255)") = "blue";
 }
 
