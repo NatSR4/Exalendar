@@ -215,6 +215,15 @@ div .active{
     text-align: center;
 }
 
+.days div:selected{
+    border-style: solid;
+    border-width: thin;
+    border-color: red;
+}
+.note{
+    text-align: center;
+}
+
 /* DARK MODE THINGS BEGIN-SETUP ONLY, NOT IMPLEMENTED JUST YET*/
 .calendar .darkmode {
     background-color: rgba(0,0,0,0.8);
