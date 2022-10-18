@@ -35,10 +35,6 @@ app.get('/signup.html', (req, res) => {
     res.render('signup.html')
 })
 
-app.get('/signup.html', (req, res) => {
-    res.render('signup.html')
-})
-
 app.get('/calendar.html', (req, res) => {
     res.render('calendar.html')
 })
