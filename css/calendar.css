@@ -215,10 +215,10 @@ div .active{
     text-align: center;
 }
 
-.days div:selected{
+div .select{
     border-style: solid;
-    border-width: thin;
-    border-color: red;
+    border-width: thick;
+    border-color: rgb(255, 0, 191);
 }
 .note{
     text-align: center;

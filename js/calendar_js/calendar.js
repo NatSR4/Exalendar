@@ -106,7 +106,17 @@ function loadPrev() {
     loadCalendarDay();
   }
 }
-
+function reload(){
+  if (monthBool) {
+    loadCalendarMonth();
+  }
+  else if (weekBool) {
+    loadCalendarWeek();
+  }
+  else if (dayBool) {
+    loadCalendarDay();
+  }
+}
 //Function to load calendar
 function loadCalendarMonth() {
 	lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
@@ -294,9 +304,15 @@ function toggleDarkmode() {
 
 function selectDate(i) {
 
+  reload();
   select_date.setDate(i);
   console.log(select_date.getDate());
-
+  
+  for (const div of document.querySelectorAll('div')) {
+    if (div.textContent == i  && div.className === "daybox") {
+      div.className = "daybox select";
+    }
+  }
 
   //this.css("backgroundColor","rgb(0,0,255)") = "blue";
 }
