@@ -19,27 +19,27 @@ app.get('', (req, res) => {
     res.render('main.html')
 })
 
-app.get('/contact.html', (req, res) => {
+app.get('/contact', (req, res) => {
    res.render('contact.html')
 })
 
-app.get('/login.html', (req, res) => {
+app.get('/login', (req, res) => {
     res.render('login.html')
  })
 
-app.get('/loginPrimary.html', (req, res) => {
+app.get('/loginPrimary', (req, res) => {
     res.render('loginPrimary.html')
 })
 
-app.get('/signup.html', (req, res) => {
+app.get('/signup', (req, res) => {
     res.render('signup.html')
 })
 
-app.get('/calendar.html', (req, res) => {
+app.get('/calendar', (req, res) => {
     res.render('calendar.html')
 })
 
-app.get('/professors.html', (req, res) => {
+app.get('/professors', (req, res) => {
     res.render('/professors.html')
 })
 
