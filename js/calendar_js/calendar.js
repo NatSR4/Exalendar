@@ -141,11 +141,11 @@ function loadCalendarMonth() {
     {
 			days += `<div class="daybox active" onclick=selectDate(${i})>${i}</div>`;
 		}
-    else if (select_date.getFullYear() != 1){
-      days = `<div class="daybox select" onclick=selectDate(${i}>${i}</div>`;
+    else if (date.getDate() === select_date.getDate()){
+      days = `<div class="daybox select" onclick=selectDate(${i})>${i}</div>`;
     }
     else {
-			days += `<div class="daybox" onclick=selectDate(${i}})>${i}</div>`;
+			days += `<div class="daybox" onclick=selectDate(${i})>${i}</div>`;
 		}
 	}
 
