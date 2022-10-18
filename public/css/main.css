@@ -115,12 +115,12 @@ h3 {
 .noteLeft{
     position:relative;
     left: 1rem;
-    width: calc(2.89*20.7rem/4);
+    width: calc(25.6vw/2);
 }
 
 .noteRight{
     position:relative;
-    width: calc(25.7rem/4);
+    width: calc(25.6vw/3);
 }
 
 .noteRight li{
