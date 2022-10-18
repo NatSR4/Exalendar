@@ -4,7 +4,7 @@ const monthDays = document.querySelector('.days'); //The days shown on the page
 const currentDate = new Date(); // holds the current date
 document.querySelector('.date p').innerHTML = currentDate.toDateString(); //puts into the smaller text in the calendar header where the current date is and puts into it the current date
 
-var select_date;
+var select_date = new Date(1,1,1);
 
 var date; //stores the date
 var lastDay; //gets the last day of the month
@@ -141,11 +141,11 @@ function loadCalendarMonth() {
     {
 			days += `<div class="daybox active" onclick=selectDate(${i})>${i}</div>`;
 		}
-    else if (date.getDate() === select_date.getDate()){
-      days = `<div class="daybox select" onclick=selectDate(${i})>${date.getDate()}</div>`;
+    else if (select_date.getFullYear() != 1){
+      days = `<div class="daybox select" onclick=selectDate(${i}>${i}</div>`;
     }
     else {
-			days += `<div class="daybox" onclick=selectDate(${i})>${i}</div>`;
+			days += `<div class="daybox" onclick=selectDate(${i}})>${i}</div>`;
 		}
 	}
 
@@ -159,7 +159,7 @@ function loadCalendarMonth() {
       days += `<div class="daybox active" onclick=selectDate(${i})>${i}</div>`;
     }
     else if (date.getDate() === select_date.getDate()){
-      days = `<div class="daybox select" onclick=selectDate(${i})>${date.getDate()}</div>`;
+      days = `<div class="daybox select" onclick=selectDate(${i})>${i}</div>`;
     }  
     else {
       days += `<div class="daybox next-date" onclick=selectDate(${i})>${i}</div>`;
@@ -256,13 +256,13 @@ function loadCalendarDay() {
   // updating day
   let days;
   if (date.getDate() === currentDate.getDate()) {
-    days = `<div class="daybox active" onclick=selectDate(${i})>${date.getDate()}</div>`;
+    days = `<div class="daybox active" onclick=selectDate(${date.getDate()})>${date.getDate()}</div>`;
   }
   else if (date.getDate() === select_date.getDate()){
-    days = `<div class="daybox select" onclick=selectDate(${i})>${date.getDate()}</div>`;
+    days = `<div class="daybox select" onclick=selectDate(${date.getDate()})>${date.getDate()}</div>`;
   }
   else {
-    days = `<div class="daybox" onclick=selectDate(${i})>${date.getDate()}</div>`;
+    days = `<div class="daybox" onclick=selectDate(${date.getDate()})>${date.getDate()}</div>`;
   }
 
   // updating inner html
@@ -294,8 +294,8 @@ function toggleDarkmode() {
 
 function selectDate(i) {
 
-  select_date = new Date(currentDate).setDate(i);
-  console.log(select_date);
+  select_date.setDate(i);
+  console.log(select_date.getDate());
 
 
   //this.css("backgroundColor","rgb(0,0,255)") = "blue";
