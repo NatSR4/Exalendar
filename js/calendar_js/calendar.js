@@ -136,9 +136,9 @@ function loadCalendarMonth() {
 		if (i === currentDate.getDate() &&
       date.getMonth() === currentDate.getMonth() && date.getFullYear() === currentDate.getFullYear())
    {
-			days += `<div class="daybox active" onclick=this.selectDate()>${i}</div>`;
+			days += `<div class="daybox active" onclick=selectDate()>${i}</div>`;
 		} else {
-			days += `<div class="daybox" onclick=this.selectDate()>${i}</div>`;
+			days += `<div class="daybox" onclick=selectDate()>${i}</div>`;
 		}
 	}
 
