@@ -278,6 +278,6 @@ function toggleDarkmode() {
 function selectDate() {
 
   
-   this.css("backgroundColor","rgb(0,0,255)") = "blue";
+  this.style.color = "blue";
 }
 
