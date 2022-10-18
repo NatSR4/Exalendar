@@ -40,7 +40,7 @@ app.get('/calendar', (req, res) => {
 })
 
 app.get('/professors', (req, res) => {
-    res.render('/professors.html')
+    res.render('professors.html')
 })
 
 app.listen(port, () => console.info(`App listening on port ${port}`))
