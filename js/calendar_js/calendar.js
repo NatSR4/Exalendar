@@ -106,6 +106,8 @@ function loadPrev() {
     loadCalendarDay();
   }
 }
+
+//Function to reload, month depends on whether 
 function reload(){
   if (monthBool) {
     loadCalendarMonth();
@@ -149,13 +151,13 @@ function loadCalendarMonth() {
 		if (i === currentDate.getDate() &&
       date.getMonth() === currentDate.getMonth() && date.getFullYear() === currentDate.getFullYear())
     {
-			days += `<div class="daybox active" onclick=selectDate(${i})>${i}</div>`;
+			days += `<div class="daybox active" onclick="selectDate(${i},'daybox active')">${i}</div>`;
 		}
     else if (date.getDate() === select_date.getDate()){
-      days = `<div class="daybox select" onclick=selectDate(${i})>${i}</div>`;
+      days = `<div class="daybox select" onclick="selectDate(${i},'daybox select')">${i}</div>`;
     }
     else {
-			days += `<div class="daybox" onclick=selectDate(${i})>${i}</div>`;
+			days += `<div class="daybox" onclick="selectDate(${i},'daybox')">${i}</div>`;
 		}
 	}
 
@@ -166,13 +168,13 @@ function loadCalendarMonth() {
     ((date.getMonth() + 1 === currentDate.getMonth() && date.getFullYear() === currentDate.getFullYear()) || 
     (0 == currentDate.getMonth() && date.getFullYear() + 1 === currentDate.getFullYear())))
       {
-      days += `<div class="daybox active" onclick=selectDate(${i})>${i}</div>`;
+      days += `<div class="daybox active" onclick="selectDate(${i},'daybox active')">${i}</div>`;
     }
     else if (date.getDate() === select_date.getDate()){
-      days = `<div class="daybox select" onclick=selectDate(${i})>${i}</div>`;
+      days = `<div class="daybox select" onclick="selectDate(${i},'daybox select')">${i}</div>`;
     }  
     else {
-      days += `<div class="daybox next-date" onclick=selectDate(${i})>${i}</div>`;
+      days += `<div class="daybox next-date" onclick="selectDate(${i},'daybox next-date')">${i}</div>`;
     }
 	}
 
@@ -216,23 +218,23 @@ function loadCalendarWeek() {
     (firstWeekDay.getMonth() == currentDate.getMonth() || lastWeekDay.getMonth() == currentDate.getMonth()) &&
     (firstWeekDay.getFullYear() == currentDate.getFullYear() || lastWeekDay.getFullYear() == currentDate.getFullYear()))
      {
-      days += `<div class="daybox active" onclick=selectDate(${i})>${i}</div>`;
+      days += `<div class="daybox active" onclick="selectDate(${i},'daybox active')">${i}</div>`;
     }
     //case for previous days
     else if (firstWeekDay.getMonth() === prevLastDay.getMonth() && i > 7) {
-      days += `<div class="daybox prev-date" onclick=selectDate(${i})>${i}</div>`;
+      days += `<div class="daybox prev-date" onclick="selectDate(${i},'daybox prev-date')">${i}</div>`;
     }
     //case for next days
     else if (((lastWeekDay.getMonth() === lastDay.getMonth() + 1) ||
     lastWeekDay.getMonth() === 0) && i < 7) {
-      days += `<div class="daybox next-date" onclick=selectDate(${i})>${i}</div>`;
+      days += `<div class="daybox next-date" onclick="selectDate(${i},'daybox next-date')">${i}</div>`;
     }
     else if (date.getDate() === select_date.getDate()){
-      days = `<div class="daybox select" onclick=selectDate(${i})>${date.getDate()}</div>`;
+      days = `<div class="daybox select" onclick="selectDate(${i},'daybox select')">${date.getDate()}</div>`;
     }
       //normal case
     else {
-      days += `<div class="daybox" onclick=selectDate(${i})>${i}</div>`;
+      days += `<div class="daybox" onclick="selectDate(${i},'daybox')">${i}</div>`;
     }
 
     // setting i to 1 at the edge cases
@@ -266,13 +268,13 @@ function loadCalendarDay() {
   // updating day
   let days;
   if (date.getDate() === currentDate.getDate()) {
-    days = `<div class="daybox active" onclick=selectDate(${date.getDate()})>${date.getDate()}</div>`;
+    days = `<div class="daybox active" onclick="selectDate(${date.getDate()},"daybox active")">${date.getDate()}</div>`;
   }
   else if (date.getDate() === select_date.getDate()){
-    days = `<div class="daybox select" onclick=selectDate(${date.getDate()})>${date.getDate()}</div>`;
+    days = `<div class="daybox select" onclick="selectDate(${date.getDate()},"daybox select")">${date.getDate()}</div>`;
   }
   else {
-    days = `<div class="daybox" onclick=selectDate(${date.getDate()})>${date.getDate()}</div>`;
+    days = `<div class="daybox" onclick="selectDate(${date.getDate()}),"daybox")">${date.getDate()}</div>`;
   }
 
   // updating inner html
@@ -302,17 +304,35 @@ function toggleDarkmode() {
   }
 }
 
-function selectDate(i) {
-
+function selectDate(i,classname) {
+  
   reload();
+  if (classname =="daybox next-date"){
+    select_date.setMonth(date.getMonth()+1);
+  }else if (classname == "daybox prev-date"){
+    select_date.setMonth(date.getMonth()-1);
+  }else if (classname == "daybox select" || classname == "daybox active"){
+    //do nothing
+    return;
+  }else{
+    select_date.setMonth(date.getMonth());
+  }
   select_date.setDate(i);
+  select_date.setFullYear(date.getFullYear());
+
+  
+
+  console.log(select_date.getMonth());
   console.log(select_date.getDate());
+  console.log(select_date.getFullYear());
+
   
   for (const div of document.querySelectorAll('div')) {
-    if (div.textContent == i  && div.className === "daybox") {
+    if (div.textContent == i  && div.className === classname ) {
       div.className = "daybox select";
     }
   }
+
 
   //this.css("backgroundColor","rgb(0,0,255)") = "blue";
 }
