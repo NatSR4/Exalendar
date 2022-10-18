@@ -136,23 +136,16 @@ function loadCalendarMonth() {
 		if (i === currentDate.getDate() &&
       date.getMonth() === currentDate.getMonth() && date.getFullYear() === currentDate.getFullYear())
    {
-			days += `<div class="daybox active" onclick=this.selectDate()>${i}</div>`;
+			days += `<div class="daybox active" id=${i} onclick=selectDate(${i})>${i}</div>`;
 		} else {
-			days += `<div class="daybox" onclick=this.selectDate()>${i}</div>`;
+			days += `<div class="daybox" id=${i} onclick=selectDate(${i})>${i}</div>`;
 		}
 	}
 
 	//prints the days of the next month, should the previous month end on a day other than Saturday. If the month ends on a Thursday it should print out Friday the 1st and Saturday the 2nd of the next month, and no more.
 	//next days and previous days should look different than the current/selected month's days
 	for(let i = 1; i <= nextDays; i++){
-    if (i === currentDate.getDate() && 
-    ((date.getMonth() + 1 === currentDate.getMonth() && date.getFullYear() === currentDate.getFullYear()) || 
-    (0 == currentDate.getMonth() && date.getFullYear() + 1 === currentDate.getFullYear())))
-      {
-      days += `<div class="daybox active" onclick=selectDate()>${i}</div>`;
-    } else {
       days += `<div class="daybox next-date" onclick=selectDate()>${i}</div>`;
-    }
 	}
 
   //updating inner html
@@ -276,7 +269,10 @@ function toggleDarkmode() {
   }
 }
 
-function selectfDate() {
-   this.css("backgroundColor","rgb(0,0,255)") = "blue";
+
+
+function selectDate(idname) {
+  console.log(idname);
+  document.getElementById(idname).style.color = "blue";
 }
 
