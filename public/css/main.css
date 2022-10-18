@@ -6,7 +6,6 @@
 
 body {
     background-color: #FFF7F5;
-    /*rgba(255,255,255,.5);*/
 }
 
 * {
@@ -50,6 +49,10 @@ h3 {
 #addevent-btn:hover {
     border: solid red 2px;
     color: red;
+}
+
+#closebutton{
+    padding: 3px;
 }
 
 #addevent-menu {
