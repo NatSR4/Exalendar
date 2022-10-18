@@ -3,6 +3,9 @@
 const monthDays = document.querySelector('.days'); //The days shown on the page
 const currentDate = new Date(); // holds the current date
 document.querySelector('.date p').innerHTML = currentDate.toDateString(); //puts into the smaller text in the calendar header where the current date is and puts into it the current date
+
+var select_date;
+
 var date; //stores the date
 var lastDay; //gets the last day of the month
 var prevLastDay; //gets the last day of the PREVIOUS month
@@ -136,9 +139,9 @@ function loadCalendarMonth() {
 		if (i === currentDate.getDate() &&
       date.getMonth() === currentDate.getMonth() && date.getFullYear() === currentDate.getFullYear())
    {
-			days += `<div class="daybox active" onclick=selectDate()>${i}</div>`;
+			days += `<div class="daybox active" onclick=this.selectDate()>${i}</div>`;
 		} else {
-			days += `<div class="daybox" onclick=selectDate()>${i}</div>`;
+			days += `<div class="daybox" onclick=this.selectDate()>${i}</div>`;
 		}
 	}
 
@@ -149,9 +152,13 @@ function loadCalendarMonth() {
     ((date.getMonth() + 1 === currentDate.getMonth() && date.getFullYear() === currentDate.getFullYear()) || 
     (0 == currentDate.getMonth() && date.getFullYear() + 1 === currentDate.getFullYear())))
       {
-      days += `<div class="daybox active" onclick=selectDate()>${i}</div>`;
-    } else {
-      days += `<div class="daybox next-date" onclick=selectDate()>${i}</div>`;
+      days += `<div class="daybox active" onclick=selectDate(${i})>${i}</div>`;
+    }
+    else if (date.getDate() === select_date.getDate()){
+      days = `<div class="daybox select" onclick=selectDate(${i})>${date.getDate()}</div>`;
+    }  
+    else {
+      days += `<div class="daybox next-date" onclick=selectDate(${i})>${i}</div>`;
     }
 	}
 
@@ -195,20 +202,23 @@ function loadCalendarWeek() {
     (firstWeekDay.getMonth() == currentDate.getMonth() || lastWeekDay.getMonth() == currentDate.getMonth()) &&
     (firstWeekDay.getFullYear() == currentDate.getFullYear() || lastWeekDay.getFullYear() == currentDate.getFullYear()))
      {
-      days += `<div class="daybox active">${i}</div>`;
+      days += `<div class="daybox active" onclick=selectDate(${i})>${i}</div>`;
     }
     //case for previous days
     else if (firstWeekDay.getMonth() === prevLastDay.getMonth() && i > 7) {
-      days += `<div class="daybox prev-date">${i}</div>`;
+      days += `<div class="daybox prev-date" onclick=selectDate(${i})>${i}</div>`;
     }
     //case for next days
     else if (((lastWeekDay.getMonth() === lastDay.getMonth() + 1) ||
     lastWeekDay.getMonth() === 0) && i < 7) {
-      days += `<div class="daybox next-date">${i}</div>`;
+      days += `<div class="daybox next-date" onclick=selectDate(${i})>${i}</div>`;
     }
-    //normal case
+    else if (date.getDate() === select_date.getDate()){
+      days = `<div class="daybox select" onclick=selectDate(${i})>${date.getDate()}</div>`;
+    }
+      //normal case
     else {
-      days += `<div class="daybox">${i}</div>`;
+      days += `<div class="daybox" onclick=selectDate(${i})>${i}</div>`;
     }
 
     // setting i to 1 at the edge cases
@@ -242,10 +252,13 @@ function loadCalendarDay() {
   // updating day
   let days;
   if (date.getDate() === currentDate.getDate()) {
-    days = `<div class="daybox active">${date.getDate()}</div>`;
+    days = `<div class="daybox active" onclick=selectDate(${i})>${date.getDate()}</div>`;
+  }
+  else if (date.getDate() === select_date.getDate()){
+    days = `<div class="daybox select" onclick=selectDate(${i})>${date.getDate()}</div>`;
   }
   else {
-    days = `<div class="daybox">${date.getDate()}</div>`;
+    days = `<div class="daybox" onclick=selectDate(${i})>${date.getDate()}</div>`;
   }
 
   // updating inner html
@@ -275,9 +288,12 @@ function toggleDarkmode() {
   }
 }
 
-function selectDate() {
+function selectDate(i) {
+
+  select_date = new Date(currentDate).setDate(i);
+  console.log(select_date);
 
   
-  this.style.color = "blue";
+   this.css("backgroundColor","rgb(0,0,255)") = "blue";
 }
 
