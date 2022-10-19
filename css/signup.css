@@ -41,15 +41,15 @@ h1 {
 }
 
 .row {
-  margin-left: 7em;
-  margin-right: 0em;
+  width: 100%;
   display: flex;
+  margin: 0;
 }
 
-.row:after {
+.row::after {
   content: "";
-  display: table;
-  margin-left: 7em;
+  display: block;
+  margin-left: 0em;
   margin-right: 0em;
   clear: both;
 
@@ -57,7 +57,8 @@ h1 {
 
 .form-signin {
   width: 55%;
-  margin-right: 7em;
+  display: block;
+  margin: auto;
   /*color: rgb(255, 99, 71);*/
 }
 
