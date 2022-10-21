@@ -2,7 +2,9 @@
 // Harshita Garg Spring 2021
 
 //object with the current Date
-const date = new Date();
+import displayedDate from './calendar_js/calendar';
+const date = displayedDate;
+console.log(date);
 
 //Sets the header in the events sidebar to be the current date
 document.getElementById("noteDate").innerHTML = (date.getMonth()+1) + " / " +date.getDate()+" / "+date.getFullYear();

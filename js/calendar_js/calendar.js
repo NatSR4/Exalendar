@@ -7,6 +7,8 @@ document.querySelector('.date p').innerHTML = currentDate.toDateString(); //puts
 var select_date = new Date(1,1,1);
 
 var date; //stores the date
+var displayedDate = currentDate; //stores the date displayed in the Event panel
+
 var lastDay; //gets the last day of the month
 var prevLastDay; //gets the last day of the PREVIOUS month
 var firstDayIndex; //gets the day of the week of the FIRST DAY of the month (so that we know if we need to draw prev month days, to fill space)
@@ -325,15 +327,19 @@ function selectDate(i,classname) {
   console.log(select_date.getMonth());
   console.log(select_date.getDate());
   console.log(select_date.getFullYear());
-
   
   for (const div of document.querySelectorAll('div')) {
     if (div.textContent == i  && div.className === classname ) {
       div.className = "daybox select";
     }
   }
+  displayedDate = select_date;
+  console.log(displayedDate.getMonth());
+  console.log(displayedDate.getDate());
+  console.log(displayedDate.getFullYear());
 
 
   //this.css("backgroundColor","rgb(0,0,255)") = "blue";
 }
 
+export var displayedDate; //accessing displayedDate in mainPage.js
