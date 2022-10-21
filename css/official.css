@@ -1,0 +1,135 @@
+*{
+    font-family: 'Russo One', sans-serif;
+}
+
+
+body{
+    margin: 0;
+    color: #333;
+    background: #fff;
+    overflow-x: hidden;
+}
+
+section{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 300px;
+    padding: 100px 20vw;
+
+}
+
+.red{
+    background-color: red;
+}
+
+.red p, .red h1 {
+    color: white;
+}
+
+.white{
+    background: #fff;
+}
+
+.white p , .white h1 {
+    
+}
+
+.curve{
+    position: absolute;
+    height: 225px;
+    width: 100%;
+    bottom: 0;
+}
+
+.curve::before{
+    content: '';
+    display: block;
+    position: absolute;
+    /* eclipse with vertical, then horizontal radius as arguments */
+    border-radius: 100% 50%;
+    width: 55%;
+    height: 100%;
+    /* transform property with translate function parameters are (x,y) */
+    transform: translate(85%,60%);
+    background: #fff;
+}
+
+.curve::after {
+    content: '';
+    display: block;
+    position: absolute;
+    /* eclipse with vertical, then horizontal radius as arguments */
+    border-radius: 100% 50%;
+    width: 55%;
+    height: 100%;
+    background-color: red;
+    /* transform property with translate function parameters are (x,y) */
+    transform: translate(-4%,40%);
+    z-index: -1;
+}
+
+.bubble::after {
+    content: '';
+    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50% 100%;
+    position: absolute;
+    bottom: 0;
+    height: 50%;
+    width: 100%;
+    background-color: #0f0f10;
+    z-index: -1;
+}
+
+.frequency {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.frequency svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 74px;
+}
+
+.frequency .shape-fill {
+    fill: #FF0000;
+}
+
+.layer1{
+    background-image: url('../media/layers1.svg');
+}
+.layer2{
+    background-image: url('../media/layers2.svg');
+}
+
+.spacer { 
+    aspect-ratio: 960/300;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.flip{
+    transform: rotate(180deg)
+}
+
+.blob-motion {
+    position: absolute;
+    transform: translateY(-20%);
+    z-index: 1;
+}
+
+p, h1 {
+    z-index: 2;
+    font-family: Dancing Script
+}
+

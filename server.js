@@ -21,5 +21,9 @@ app.get('/LoginSignup', function(req, res) {
   res.sendFile(path.join(__dirname, '/views/signup.html'));
 });
 
+app.get('/Official', (req, res) => {
+  res.sendFile(path.join(__dirname, '/views/official.html'));
+})
+
 app.listen(port);
 console.log('Server started at http://localhost:' + port);
