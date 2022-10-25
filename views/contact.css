@@ -1,0 +1,31 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: red;
+    padding: 0 10px;
+}
+
+
+h3{
+    text-align: center;
+}
+
+.general{
+    max-width: 500px;
+    width: 100%;
+    background: grey;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 15px;
+    color: white;
+}
+
+
+.text-alignment{
+    padding-left: 20px;
+}
