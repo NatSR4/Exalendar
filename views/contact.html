@@ -2,6 +2,9 @@
     <head>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 	<link rel = "stylesheet" href="contact.css"/>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     </head>
     <body>
@@ -17,7 +20,7 @@
 	<div class="general">
 		<h3>FILL OUT THE FORM</h3>
 	    <br/>
-	    <form class="form-horizontal" role="form" style="width: 50%;">
+	    <form class="form-horizontal" role="form" style="width: 100%;">
 		<div class="form-group">
 		    <label for="name" class="col-sm-2 control-label">Name</label>
 		    <div class="col-sm-10">	
@@ -27,7 +30,9 @@
 		<div class="form-group">
 		    <label for="email" class="col-sm-2 control-label">Email</label>
 		    <div class="col-sm-10">
-			<input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com" value="">
+			<div class="input-box">
+				<input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com" value="">
+			</div>
 		    </div>
 		</div>
 		<div class="form-group">

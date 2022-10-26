@@ -13,19 +13,32 @@ body{
 
 h3{
     text-align: center;
+    color: red;
+    font-family: 'Poppins', sans-serif;
 }
 
 .general{
     max-width: 500px;
     width: 100%;
-    background: grey;
+    background: white;
     margin: 20px auto;
     padding: 30px;
     border-radius: 15px;
-    color: white;
+    color: black;
+    border-style: solid;
+    border-color: black;
+    
 }
 
+.general form{
+    width: 100%;
+}
 
-.text-alignment{
-    padding-left: 20px;
+form input,textarea{
+    max-width: 400px;
+    align-items: center;
+}
+
+textarea{
+    padding: 0px;
 }
