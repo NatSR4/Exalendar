@@ -310,9 +310,11 @@ function selectDate(i,classname) {
   
   reload();
   if (classname =="daybox next-date"){
-    select_date.setMonth(date.getMonth()+1);
+    //select_date.setMonth(date.getMonth()+1);
+    loadNext();
   }else if (classname == "daybox prev-date"){
-    select_date.setMonth(date.getMonth()-1);
+    //select_date.setMonth(date.getMonth()-1);
+    loadPrev();
   }else if (classname == "daybox select" || classname == "daybox active"){
     //do nothing
     return;
@@ -329,7 +331,7 @@ function selectDate(i,classname) {
   console.log(select_date.getFullYear());
   
   for (const div of document.querySelectorAll('div')) {
-    if (div.textContent == i  && div.className === classname ) {
+    if (div.textContent == i  && div.className === "daybox" ) {
       div.className = "daybox select";
     }
   }
@@ -338,8 +340,10 @@ function selectDate(i,classname) {
   console.log(displayedDate.getDate());
   console.log(displayedDate.getFullYear());
 
+  //changing the date in sidebar
+  //document.getElementById("noteDate").innerHTML = (displayedDate.getMonth()+1) + " / " +displayedDate.getDate()+" / "+displayedDate.getFullYear();
 
-  //this.css("backgroundColor","rgb(0,0,255)") = "blue";
+
 }
 
-export var displayedDate; //accessing displayedDate in mainPage.js
+module.exports = displayedDate;

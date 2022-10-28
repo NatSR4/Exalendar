@@ -1,9 +1,9 @@
 /**Kyra Sanchez Fall 2020**/
 // Harshita Garg Spring 2021
 
-//object with the current Date
-import displayedDate from './calendar_js/calendar';
-const date = displayedDate;
+//import { displayedDate } from "./calendar_js/calendar";
+//const displayedDate = require("./calendar_js/calendar")
+const date = Date();
 console.log(date);
 
 //Sets the header in the events sidebar to be the current date
