@@ -141,9 +141,11 @@ function loadCalendarMonth() {
       ((date.getMonth() - 1 === currentDate.getMonth() && date.getFullYear() == currentDate.getFullYear()) ||
       (11 === currentDate.getMonth() && date.getFullYear() - 1 == currentDate.getFullYear()))) 
       {
-      days += `<div class="daybox active">${prevLastDay - i + 1}</div>`;
+      //days += `<div class="daybox active">${prevLastDay - i + 1}</div>`;
+      days += `<div class="daybox active" onclick="selectDate(${prevLastDay - i + 1},'daybox prev-date')">${prevLastDay - i + 1}</div>`;
     } else {
-      days += `<div class="daybox prev-date">${prevLastDay - i + 1}</div>`;
+      //days += `<div class="daybox prev-date">${prevLastDay - i + 1}</div>`;
+      days += `<div class="daybox prev-date" onclick="selectDate(${prevLastDay - i + 1},'daybox prev-date')">${prevLastDay - i + 1}</div>`;
     }
 	}
 
