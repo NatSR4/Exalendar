@@ -3,6 +3,8 @@ var http = require('http');
 const express = require('express')
 const app = express()
 const port = 8080
+const mysql = require('mysql')
+require('dotenv').config()
 
 // Static Files
 app.use(express.static('public'));
@@ -13,6 +15,13 @@ app.set('views', __dirname + '/public/views');
 
 app.engine('html', require('ejs').renderFile)
 app.set('view engine', 'html');
+
+// SQL Connection
+const connection = mysql.createConnection({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PSWD,
+  });
 
 // Navigation
 app.get('', (req, res) => {

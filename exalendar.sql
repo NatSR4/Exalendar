@@ -1,3 +1,6 @@
+CREATE DATABASE exalendar;
+USE exalendar;
+
 CREATE TABLE `users` (
   `user_id` int PRIMARY KEY AUTO_INCREMENT,
   `first_name` varchar(255) NOT NULL,

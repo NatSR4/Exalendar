@@ -10,6 +10,9 @@ document.getElementById("noteDate").innerHTML = (date.getMonth()+1) + " / " +dat
 
 let modalNum = 0; // for id creation
 
+import Connection from 'mysql2/typings/mysql/lib/Connection.js';
+import query from './query.js';
+
 function addModal() {
 	document.body.innerHTML += `<div class="modal" id="modal` + ++modalNum + `"></div>`;
 }
@@ -42,4 +45,6 @@ function closeAddEvent() {
 	document.getElementById("modal").style.zIndex = null;
 	document.getElementById("addevent-menu").style.display = null;
 	document.getElementById("addevent-menu").style.zIndex = null;
+	let newevent = new query(Connection)
+	newevent.simple_insert(classes, [classid, class_name], [69420, 'Test'])
 }
