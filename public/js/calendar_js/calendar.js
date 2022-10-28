@@ -51,11 +51,11 @@ function changeWeek() {
   loadCalendarWeek();
 }
 
-function changeDay() {
+function changeDay(idname) {
   monthBool = false;
   weekBool = false;
   dayBool = true;
-  loadCalendarDay();
+  loadCalendarDay(idname);
 }
 
 //Function to get the current date and load the calendar
@@ -228,7 +228,7 @@ function loadCalendarWeek() {
 }
 
 //Function to load calendar days
-function loadCalendarDay() {
+function loadCalendarDay(idname) {
   // updating month
   document.querySelector('.date h2').innerHTML = months[date.getMonth()] + ', ' + date.getFullYear();
 
@@ -236,9 +236,11 @@ function loadCalendarDay() {
   let days;
   if (date.getDate() === currentDate.getDate()) {
     days = `<div class="daybox active">${date.getDate()}</div>`;
+    console.log("current date");
   }
   else {
     days = `<div class="daybox">${date.getDate()}</div>`;
+    console.log("not current date");
   }
 
   // updating inner html
@@ -273,6 +275,6 @@ function toggleDarkmode() {
 
 function selectDate(idname) {
   console.log(idname);
-  document.getElementById(idname).style.color = "blue";
+  changeDay(idname);
 }
 

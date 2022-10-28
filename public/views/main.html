@@ -44,7 +44,7 @@
 			<button id="closebutton" onclick="closeAddEvent()">X</button>
 			<h3>Add Event</h3>
 			<div id="content-box">
-			<form id="addevent-form">
+			<form  id="addevent-form" onsubmit="validateForm()">
 				<label for="eclass">Class:</label>
 				<select name="eclass">
 					<option disabled selected>Choose class</option>
@@ -60,17 +60,19 @@
 				<select name="etype">
 					<option disabled selected>Choose event type</option>
 					<option value="homework">Homework</option>
-					<option value="quizz">Quizz</option>
+					<option value="quiz">Quiz</option>
 					<option value="testexam">Test/Exam</option>
 					<option value="project">Project</option>
 				</select><br/>
 				<label>Details:</label><br/>
-				<textarea></textarea>
+				<textarea style="resize: none; width: 438px; height: 66px;"></textarea>
+				<input type="submit" name="Submit"></input>
 			</form>
 			<!-- <button onclick="document.getElementById('addevent-form').submit()">Submit</button> -->
-			<button onclick="closeAddEvent()">Submit</button>
+		<!--	<button type="submit" onclick="validateForm()">Submit</button>-->
 			</div>
 		</div>
+		<script src="./js/addevent.js" ></script>
 		<div class="noteContain"><!--Notes and Events are on the right of this div-->
 			<h1 class="noteHeader">Exalendar </h1>
 			<h2 class="center-header"><button id="addevent-btn" onclick="openAddEvent()">+</button><span id = "noteDate">a</span></h2> <!--javaScript changes displayed date MM/DD/YYYY to current (by default) OR selected day-->
