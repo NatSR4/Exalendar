@@ -1,0 +1,61 @@
+<!--Trent Maffeo Fall 2022-->
+
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "">
+        <meta name = "viewport" 
+        content = "width =device-width, 
+        initial-scale = 1.0"> 
+        <title>Exalendar</title>
+        <link rel = "stylesheet" href="css/preferences.css"/>
+        <link rel = "stylesheet" href="css/sidebar.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+     </head>
+     <body>
+        <div id="sidebar">
+			<button id="buttonBar" style="border-color: rgb(199, 40, 40)" onclick="opencloseNav()">☰</button><!--Generic menu button with 3-bars you know how it be-->
+			<h2 style="margin-top:20px;">Exalendar Menu</h2>
+			<ul id="exalendarMenu"> <!--Currently using react.js images, change to images in files if needed-->
+				
+				<!--Dashboard-->
+				<li><svg viewBox="0 0 24 24" fill=black height="1em" width="1em" {...props}>
+				<path d="M19 5v2h-4V5h4M9 5v6H5V5h4m10 8v6h-4v-6h4M9 17v2H5v-2h4M21 3h-8v6h8V3M11 3H3v10h8V3m10 8h-8v10h8V11m-10 4H3v6h8v-6z" />
+				</svg>&nbsp;&nbsp;Dashboard</li>
+
+				<!--Calendar-->
+				<li><svg viewBox="0 0 1024 1024" fill=black height="1em" width="1em" {...props}>
+      			<path d="M880 184H712v-64c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v64H384v-64c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v64H144c-17.7 0-32 14.3-32 32v664c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V216c0-17.7-14.3-32-32-32zm-40 656H184V460h656v380zM184 392V256h128v48c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-48h256v48c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-48h128v136H184z" />
+    			</svg> &nbsp;&nbsp;Calendar</li>
+
+				<!--Profile-->
+				<li><svg viewBox="0 0 24 24" fill=black height="1em" width="1em" {...props}>
+					<path d="M12 2A10.13 10.13 0 002 12a10 10 0 004 7.92V20h.1a9.7 9.7 0 0011.8 0h.1v-.08A10 10 0 0022 12 10.13 10.13 0 0012 2zM8.07 18.93A3 3 0 0111 16.57h2a3 3 0 012.93 2.36 7.75 7.75 0 01-7.86 0zm9.54-1.29A5 5 0 0013 14.57h-2a5 5 0 00-4.61 3.07A8 8 0 014 12a8.1 8.1 0 018-8 8.1 8.1 0 018 8 8 8 0 01-2.39 5.64z" />
+					<path d="M12 6a3.91 3.91 0 00-4 4 3.91 3.91 0 004 4 3.91 3.91 0 004-4 3.91 3.91 0 00-4-4zm0 6a1.91 1.91 0 01-2-2 1.91 1.91 0 012-2 1.91 1.91 0 012 2 1.91 1.91 0 01-2 2z" />
+				</svg>&nbsp;&nbsp;Profile</li>
+				<!--feel free to add to the list and fill with relevant links and icons to other pages-->
+			</ul>
+			<h2>Other Menu</h2>
+			<ul>
+				<li><img src="media/settings-icon.png" class="menuIcon">&nbsp;&nbsp;Preferences</li>
+				<li><img src="media/signout.png" class="menuIcon">&nbsp;&nbsp;Logout</li>
+				<!--feel free to add to the list and fill with relevant links and icons to other pages-->
+			</ul>
+		</div>
+		<script src="js/sidebar.js"></script>
+
+        <h1>
+            Exalendar
+        </h1>
+          
+        <form>
+            <p>
+                Pick a color:
+                <input type="color" value="red" id="color" />
+            </p>
+            <input type="submit" value="submit">
+        </form>
+     </body>
+</html>
