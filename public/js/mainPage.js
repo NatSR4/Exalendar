@@ -11,46 +11,35 @@ document.getElementById("noteDate").innerHTML = (date.getMonth()+1) + " / " +dat
 let modalNum = 0; // for id creation
 
 function addModal() {
-	document.body.innerHTML += `<div class="modal" id="modal` + ++modalNum + `"></div>`;
+    document.body.innerHTML += `<div class="modal" id="modal` + ++modalNum + `"></div>`;
 }
 
 // Handle page load (for adding buttons etc.)
 // Adds professor page to sidebar if current user is a professor
 function loadMain() {
-	// Onload, update the sidebar if the user is a professor
-	// TODO: Need to add professor authentication
-	if (true) {
-    	var exalendarMenu = document.getElementById("exalendarMenu");
-		exalendarMenu.innerHTML += `<li><img src="50x50.png"
-			class="menuIcon">&nbsp;&nbsp;<a href="professors">Professor</a></li>`;
-	}
+    // Onload, update the sidebar if the user is a professor
+    // TODO: Need to add professor authentication
+    if (true) {
+        var exalendarMenu = document.getElementById("exalendarMenu");
+        exalendarMenu.innerHTML += `<li><img src="50x50.png"
+            class="menuIcon">&nbsp;&nbsp;<a href="professors.html">Professor</a></li>`;
+    }
 }
 
 function openAddEvent() {
-	let modal = document.getElementById("modal");
-	modal.style.display = "block";
-	modal.style.zIndex = 3;
-	document.getElementById("addevent-menu").style.display = "block";
-	document.getElementById("addevent-menu").style.zIndex = 4;
-	window.onclick = function(event) {
-		if (event.target == modal) closeAddEvent();
-	}
+    let modal = document.getElementById("modal");
+    modal.style.display = "block";
+    modal.style.zIndex = 3;
+    document.getElementById("addevent-menu").style.display = "block";
+    document.getElementById("addevent-menu").style.zIndex = 4;
+    window.onclick = function(event) {
+        if (event.target == modal) closeAddEvent();
+    }
 }
 
 function closeAddEvent() {
-	/*document.getElementById("modal").style.display = null;
-	document.getElementById("modal").style.zIndex = null;
-	document.getElementById("addevent-menu").style.display = null;
-	document.getElementById("addevent-menu").style.zIndex = null;
-	let newevent = new query(Connection)
-	newevent.simple_insert(classes, [classid, class_name], [69420, 'Test'])*/
-
-	let title = document.forms["addevent-form"]["ename"].value;
-    if(title == "")
-    {
-        alert("Must have a name for your event");
-        return false;
-    }
-        console.log(title);
-    return;
+    document.getElementById("modal").style.display = null;
+    document.getElementById("modal").style.zIndex = null;
+    document.getElementById("addevent-menu").style.display = null;
+    document.getElementById("addevent-menu").style.zIndex = null;
 }
