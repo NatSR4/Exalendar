@@ -14,7 +14,7 @@
 		<link rel = "stylesheet" href="./css/footer.css"/>
 		<link rel = "stylesheet" href="./css/sidebar.css"/>
 
-		<script src="./js/query.js"></script>
+		<script type="module" src="./js/query.js"></script>
 		<!-- <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet"> -->
 	</head>
 	<body onload="loadMain()"><!---------------------------------------------------MAIN CONTENTS BEGIN-------------------------------------------------------------------------------->
@@ -37,7 +37,7 @@
 				<!--feel free to add to the list and fill with relevant links and icons to other pages-->
 			</ul>
 		</div>
-		<script src="./js/sidebar.js"></script>
+		<script type="module" src="./js/sidebar.js"></script>
 		<!--SIDEBAR END-->
 		<!--CALENDAR IS CORRECT, THE DAYS AND WEEK WORK CORRECTLY. DO NOT CHANGE THE JS IT WORKS PERFECTLY-->
 		<iframe class="calendar" src="./calendar"></iframe>
@@ -62,7 +62,7 @@
 				<select name="etype">
 					<option disabled selected>Choose event type</option>
 					<option value="homework">Homework</option>
-					<option value="quizz">Quizz</option>
+					<option value="quiz">Quiz</option>
 					<option value="testexam">Test/Exam</option>
 					<option value="project">Project</option>
 				</select><br/>
@@ -75,7 +75,10 @@
 		</div>
 		<div class="noteContain"><!--Notes and Events are on the right of this div-->
 			<h1 class="noteHeader">Exalendar </h1>
-			<h2 class="center-header"><button id="addevent-btn" onclick="openAddEvent()">+</button><span id = "noteDate">a</span></h2> <!--javaScript changes displayed date MM/DD/YYYY to current (by default) OR selected day-->
+			<h2 class="center-header">
+				<button id="addevent-btn" onclick="openAddEvent()">+</button>
+				<span id = "noteDate">a</span></h2> 
+				<!--javaScript changes displayed date MM/DD/YYYY to current (by default) OR selected day-->
 			<!--Please Note that this sidebar intends to display events happening on the current/selected day, so remember to add functionality to that and connect it to some database for the user's events-->
 			<hr>
 			<div class="noteLeft" style = "float: left;">
@@ -103,7 +106,7 @@
 			</div>
 		</div>
 		<!---------------------------------------------------MAIN CONTENTS END---------------------------------------------------------------------------------->
-		<script src="./js/mainPage.js"></script>
+		<script type="module" src="../js/mainPage.js"></script>
 		</body>
 		<footer class="footer">
 			<nav class="menu">
