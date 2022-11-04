@@ -197,6 +197,13 @@ div .active{
     border-color: rgba(255,40,40,0.80);
     color:white;
 }
+div .only{
+    background-color: rgba(255, 255, 255, 0.8);
+    border-color: rgba(255,40,40,0.80);
+    color:rgb(0, 0, 0);
+    padding: 350px 0;
+    text-align:center;
+}
 
 .next-date{
     color: grey;
