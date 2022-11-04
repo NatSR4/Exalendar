@@ -311,10 +311,10 @@ function toggleDarkmode() {
 function selectDate(i,classname) {
   
   reload();
-  if (classname =="daybox next-date"){
+  if (classname =="daybox next-date" && monthBool){
     //select_date.setMonth(date.getMonth()+1);
     loadNext();
-  }else if (classname == "daybox prev-date"){
+  }else if (classname == "daybox prev-date" && monthBool){
     //select_date.setMonth(date.getMonth()-1);
     loadPrev();
   }else if (classname == "daybox select" || classname == "daybox active"){
