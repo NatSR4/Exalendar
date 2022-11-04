@@ -42,4 +42,19 @@ function closeAddEvent() {
     document.getElementById("modal").style.zIndex = null;
     document.getElementById("addevent-menu").style.display = null;
     document.getElementById("addevent-menu").style.zIndex = null;
+
+	let etitle = document.forms["addevent-form"]["ename"].value;
+	let edate = document.forms["addevent-form"]["edate"].value;
+	let etim = document.forms["addevent-form"]["etime"].value;
+	let eclass = document.forms["addevent-form"]["eclass"].value;
+	let edetail = document.forms["addevent-form"]["edetails"].value;
+	let etype = document.forms["addevent-form"]["etype"].value;
+    
+    console.log(etitle);
+	console.log(edate);
+	console.log(etim);
+	console.log(eclass);
+	console.log(edetail);
+	console.log(etype);
+   
 }
