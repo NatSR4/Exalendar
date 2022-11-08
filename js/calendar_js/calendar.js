@@ -7,7 +7,7 @@ document.querySelector('.date p').innerHTML = currentDate.toDateString(); //puts
 var select_date = new Date(1,1,1);
 
 var date; //stores the date
-var displayedDate = currentDate; //stores the date displayed in the Event panel
+export var displayedDate = currentDate; //stores the date displayed in the Event panel
 
 var lastDay; //gets the last day of the month
 var prevLastDay; //gets the last day of the PREVIOUS month
@@ -348,4 +348,3 @@ function selectDate(i,classname) {
 
 }
 
-module.exports = displayedDate;
