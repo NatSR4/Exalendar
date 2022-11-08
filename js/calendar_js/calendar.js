@@ -272,7 +272,7 @@ function loadCalendarDay() {
   // updating day
   let days;
   if (date.getDate() === currentDate.getDate()) {
-    days = `<div class="daybox active" onclick="selectDate(${date.getDate()},"daybox active")">${date.getDate()}</div>`;
+    days = `<div class="daybox only" onclick="selectDate(${date.getDate()},"daybox")">${date.getDate()}</div>`;
   }
   else if (date.getDate() === select_date.getDate()){
     days = `<div class="daybox select" onclick="selectDate(${date.getDate()},"daybox select")">${date.getDate()}</div>`;
@@ -286,6 +286,7 @@ function loadCalendarDay() {
 
   // height and width changes
   let dayboxes = document.getElementsByClassName('daybox');
+  dayboxes[0].classname ="daybox";
   dayboxes[0].style.height = "calc(100vh - 120px)";
   dayboxes[0].style.width = "100%";
 }
@@ -311,10 +312,10 @@ function toggleDarkmode() {
 function selectDate(i,classname) {
   
   reload();
-  if (classname =="daybox next-date"){
+  if (classname =="daybox next-date" && monthBool){
     //select_date.setMonth(date.getMonth()+1);
     loadNext();
-  }else if (classname == "daybox prev-date"){
+  }else if (classname == "daybox prev-date" && monthBool){
     //select_date.setMonth(date.getMonth()-1);
     loadPrev();
   }else if (classname == "daybox select" || classname == "daybox active"){
