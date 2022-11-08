@@ -95,40 +95,70 @@ html {
 
 /*---BEGINNING OF ARROW SECTION---*/
 /*Here are the arrows at the side of the main calendar*/
-.arrow{
-    border: solid white;
+
+.arrow {
     margin-top: 30px;
     display: inline-block;
     padding: .5rem;
+	width: 6vmin;
+	height: 6vmin;
+	box-sizing: border-box;
+	position: absolute;
+	transform: rotate(-45deg);
     color: rgb(255,255,255);
-    position: absolute;
 }
 
-.right{
-    transform: rotate(-45deg);
-    border-width: 0 4px 4px 0;
-    margin-left: 140px;
-    position: fixed;
+.arrow::before {
+	content: '';
+	width: 100%;
+	height: 100%;
+	border-width: .8vmin .8vmin 0 0;
+	border-style: solid;
+	border-color: #fafafa;
+	transition: .2s ease;
+	display: block;
+	transform-origin: 100% 0;
+}
+	
+.arrow::after {
+	content: '';
+	float: left;
+	position: relative;
+	top: -100%;
+	width: 100%;
+	height: 100%;
+	border-width: 0 .8vmin 0 0;
+	border-style: solid;
+	border-color: #fafafa;
+	transform-origin: 100% 0;
+	transition:.2s ease;
+}
+	
+.arrow:hover::after {
+	transform: rotate(45deg);
+	border-color: green;
+	height: 120%;
 }
 
-.right:hover{
-    border: solid grey;
-    border-width: 0 4px 4px 0;
-    transition: 0.3s;
+.arrow:hover::before {
+	border-color: green;
+	transform: scale(.8);
 }
 
 .left{
-    transform: rotate(45deg);
+    transform: rotate(-135deg);
     border-width: 0 0 4px 4px;
     margin-left: -164px;
     position: fixed;
 }
 
-.left:hover{
-    border: solid grey;
-    border-width: 0 0 4px 4px;
-    transition: 0.3s;
+.right{
+    transform: rotate(45deg);
+    border-width: 0 4px 4px 0;
+    margin-left: 140px;
+    position: fixed;
 }
+
 /*---END OF ARROW SECTION---*/
 
 /*The Month itself "September" etc.*/
