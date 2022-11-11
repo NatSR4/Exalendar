@@ -318,9 +318,11 @@ function selectDate(i,classname) {
   }else if (classname == "daybox prev-date" && monthBool){
     //select_date.setMonth(date.getMonth()-1);
     loadPrev();
-  }else if (classname == "daybox select" || classname == "daybox active"){
+  }else if (classname == "daybox active"){
     //do nothing
     return;
+  }else if (classname == "daybox select"){
+    loadToday();
   }else{
     select_date.setMonth(date.getMonth());
   }
