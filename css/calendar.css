@@ -97,14 +97,12 @@ html {
 /*Here are the arrows at the side of the main calendar*/
 
 .arrow {
-    margin-top: 30px;
     display: inline-block;
     padding: .5rem;
-	width: 6vmin;
-	height: 6vmin;
+	width: 7vmin;
+	height: 7vmin;
 	box-sizing: border-box;
 	position: absolute;
-	transform: rotate(-45deg);
     color: rgb(255,255,255);
 }
 
@@ -133,30 +131,43 @@ html {
 	transform-origin: 100% 0;
 	transition:.2s ease;
 }
-	
-.arrow:hover::after {
-	transform: rotate(45deg);
-	border-color: green;
-	height: 120%;
-}
-
-.arrow:hover::before {
-	border-color: green;
-	transform: scale(.8);
-}
 
 .left{
     transform: rotate(-135deg);
     border-width: 0 0 4px 4px;
-    margin-left: -164px;
+    margin-left: -184px;
+    margin-top: 25px;
     position: fixed;
 }
 
 .right{
     transform: rotate(45deg);
-    border-width: 0 4px 4px 0;
+    border-width: 0 0 4px 4px;
     margin-left: 140px;
+    margin-top: 18px;
     position: fixed;
+}
+
+.left:hover::after{
+    transform: rotate(45deg);
+	border-color: rgb(255, 166, 245);
+	height: 120%;
+}
+
+.left:hover::before{
+    border-color: rgb(255, 166, 245);
+	transform: scale(.8);
+}
+
+.right:hover::after{
+    transform: rotate(45deg);
+	border-color: rgb(255, 166, 245);
+	height: 120%;
+}
+
+.right:hover::before{
+    border-color: rgb(255, 166, 245);
+	transform: scale(.8);
 }
 
 /*---END OF ARROW SECTION---*/
