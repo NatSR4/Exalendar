@@ -34,5 +34,5 @@
     "sequelize-auto": "^0.7.11",
     "start-server-and-test": "^1.12.1"
   },
-  "type": "module"
+  "type": "commonjs"
 }
