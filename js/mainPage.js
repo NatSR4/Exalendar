@@ -1,7 +1,7 @@
 /**Kyra Sanchez Fall 2020**/
 // Harshita Garg Spring 2021
 
-//import { displayedDate } from "./calendar_js/calendar";
+import { displayedDate } from "./calendar_js/calendar";
 //const displayedDate = require("./calendar_js/calendar")
 const date = Date();
 console.log(date);
