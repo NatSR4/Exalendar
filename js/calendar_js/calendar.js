@@ -7,7 +7,11 @@ document.querySelector('.date p').innerHTML = currentDate.toDateString(); //puts
 var select_date = new Date(1,1,1);
 
 var date; //stores the date
+<<<<<<< Updated upstream
 export var displayedDate = currentDate; //stores the date displayed in the Event panel
+=======
+//export var displayedDate = currentDate; //stores the date displayed in the Event panel
+>>>>>>> Stashed changes
 
 var lastDay; //gets the last day of the month
 var prevLastDay; //gets the last day of the PREVIOUS month
@@ -270,24 +274,35 @@ function loadCalendarDay() {
   document.querySelector('.date h2').innerHTML = months[date.getMonth()] + ', ' + date.getFullYear();
 
   // updating day
+  // generating a schedule table for certain day
   let days;
-  if (date.getDate() === currentDate.getDate()) {
-    days = `<div class="daybox only" onclick="selectDate(${date.getDate()},"daybox")">${date.getDate()}</div>`;
+  days += `<table class="table select">`;
+  days += `<tr><td>Time Grid</td><td>Events</td>`;
+
+  for(let i = 0; i < 24; i += 2){
+    days += `<tr>`;
+    days += `<td>${i}:00</td><td>&nbsp;</td>`;
+    days += `</tr>`;
   }
-  else if (date.getDate() === select_date.getDate()){
-    days = `<div class="daybox select" onclick="selectDate(${date.getDate()},"daybox select")">${date.getDate()}</div>`;
-  }
-  else {
-    days = `<div class="daybox" onclick="selectDate(${date.getDate()}),"daybox")">${date.getDate()}</div>`;
-  }
+
+
+  // if (date.getDate() === currentDate.getDate()) {
+  //   days = `<div class="daybox only" onclick="selectDate(${date.getDate()},"daybox")">${date.getDate()}</div>`;
+  // }
+  // else if (date.getDate() === select_date.getDate()){
+  //   days = `<div class="daybox select" onclick="selectDate(${date.getDate()},"daybox select")">${date.getDate()}</div>`;
+  // }
+  // else {
+  //   days = `<div class="daybox" onclick="selectDate(${date.getDate()}),"daybox")">${date.getDate()}</div>`;
+  // }
 
   // updating inner html
   monthDays.innerHTML = days;
 
   // height and width changes
-  let dayboxes = document.getElementsByClassName('daybox');
-  dayboxes[0].classname ="daybox";
-  dayboxes[0].style.height = "calc(100vh - 120px)";
+  let dayboxes = document.getElementsByClassName('table select');
+  dayboxes[0].classname ="table select";
+  dayboxes[0].style.height = "calc(100vh - 100px)";
   dayboxes[0].style.width = "100%";
 }
 
