@@ -46,7 +46,7 @@
 			<button onclick="closeAddEvent()">X</button>
 			<h3>Add Event</h3>
 			<div id="content-box">
-			<form id="addevent-form">
+			<form action="/submit-event" method="post">
 				<label for="eclass">Class:</label>
 				<select name="eclass">
 					<option disabled selected>Choose class</option>
@@ -67,10 +67,10 @@
 					<option value="project">Project</option>
 				</select><br/>
 				<label for="edetails">Details:</label><br/>
-				<textarea name="edetails"></textarea>
+				<textarea name="edetails"></textarea><br/>
+				<input type="submit" value="Submit">
 			</form>
 			<!-- <button onclick="document.getElementById('addevent-form').submit()">Submit</button> -->
-			<button onclick="closeAddEvent()">Submit</button>
 			</div>
 		</div>
 		<div class="noteContain"><!--Notes and Events are on the right of this div-->
