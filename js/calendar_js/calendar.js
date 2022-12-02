@@ -37,6 +37,29 @@ const months = [
 	"December"
 ];
 
+//displaying Events elements in the grid 
+//Codes below are just place holders, need to extract data from backend
+class Event{
+  constructor(year,month,day,startTime,endTime,text){
+    this.year = year;
+    this.month = month;
+    this.day = day;
+    this.startTime = startTime;
+    this.endTime = endTime;
+    this.text = text;
+  }
+}
+
+//place holder part
+let event1 = new Event(2022,12,1,8,10,"CompOrg HW Due");
+let event2 = new Event(2022,12,1,10,11,"CompOrg Office Hour");
+let event3 = new Event(2022,12,1,11,13,"CompOrg Lab Due");
+let event4 = new Event(2022,12,1,15,17,"CompOrg Whatever Due");
+
+events = [event1,event2,event3,event4];
+
+
+
 //Calling initial calendar draw funciton
 loadToday();
 
@@ -272,14 +295,33 @@ function loadCalendarDay() {
   // updating day
   // generating a schedule table for certain day
   let days;
-  days += `<table class="table select">`;
-  days += `<tr><td>Time Grid</td><td>Events</td>`;
+  days += `<div class="scheduleContainer">`;
 
-  for(let i = 0; i < 24; i += 2){
-    days += `<tr>`;
-    days += `<td>${i}:00</td><td>&nbsp;</td>`;
-    days += `</tr>`;
+  //different times
+  for(let i = 7; i < 24; i += 1){
+    days += `<div class="time start-${i}00">${i}:00</div>`;
   }
+
+  //events
+  for(let i = 0; i < events.length; i++){
+    //displaying events in current date
+    if(events[i].month == date.getMonth() + 1 && events[i].day == date.getDate()){
+      days += `<div class="event start-${events[i].startTime} end-${events[i].endTime}"${events[i].text}</div>`;
+    }
+  }
+
+  days += `</div>`
+
+
+
+  // days += `<table class="table select">`;
+  // days += `<tr><td>Time Grid</td><td>Events</td>`;
+
+  // for(let i = 0; i < 24; i += 2){
+  //   days += `<tr>`;
+  //   days += `<td>${i}:00</td><td>&nbsp;</td>`;
+  //   days += `</tr>`;
+  // }
 
 
   // if (date.getDate() === currentDate.getDate()) {
@@ -296,8 +338,8 @@ function loadCalendarDay() {
   monthDays.innerHTML = days;
 
   // height and width changes
-  let dayboxes = document.getElementsByClassName('table select');
-  dayboxes[0].classname ="table select";
+  let dayboxes = document.getElementsByClassName('scheduleContainer');
+  dayboxes[0].classname ="schedule select";
   dayboxes[0].style.height = "calc(100vh - 100px)";
   dayboxes[0].style.width = "100%";
 }
