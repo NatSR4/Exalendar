@@ -75,6 +75,15 @@ html {
 }
 
 /*The area in which the title, month name and date are stored.*/
+
+.dot {
+    height: 25px;
+    width: 25px;
+    background-color: rgb(100, 100, 100);
+    border-radius: 50%;
+    display: inline-block;
+  }
+
 .month{
     width: calc(100% - 5vw);
     right: 0;

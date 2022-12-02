@@ -51,10 +51,10 @@ class Event{
 }
 
 //place holder part
-let event1 = new Event(2022,12,1,8,10,"CompOrg HW Due");
-let event2 = new Event(2022,12,1,10,11,"CompOrg Office Hour");
-let event3 = new Event(2022,12,1,11,13,"CompOrg Lab Due");
-let event4 = new Event(2022,12,1,15,17,"CompOrg Whatever Due");
+let event1 = new Event(2022,12,5,8,10,"CompOrg HW Due");
+let event2 = new Event(2022,12,2,10,11,"CompOrg Office Hour");
+let event3 = new Event(2022,12,3,11,13,"CompOrg Lab Due");
+let event4 = new Event(2022,12,4,15,17,"CompOrg Whatever Due");
 
 events = [event1,event2,event3,event4];
 
@@ -165,11 +165,17 @@ function loadCalendarMonth() {
       (11 === currentDate.getMonth() && date.getFullYear() - 1 == currentDate.getFullYear()))) 
       {
       //days += `<div class="daybox active">${prevLastDay - i + 1}</div>`;
-      days += `<div class="daybox active" onclick="selectDate(${prevLastDay - i + 1},'daybox prev-date')">${prevLastDay - i + 1}</div>`;
+      days += `<div class="daybox active" onclick="selectDate(${prevLastDay - i + 1},'daybox prev-date')">${prevLastDay - i + 1}`;
     } else {
       //days += `<div class="daybox prev-date">${prevLastDay - i + 1}</div>`;
-      days += `<div class="daybox prev-date" onclick="selectDate(${prevLastDay - i + 1},'daybox prev-date')">${prevLastDay - i + 1}</div>`;
+      days += `<div class="daybox prev-date" onclick="selectDate(${prevLastDay - i + 1},'daybox prev-date')">${prevLastDay - i + 1}`;
     }
+
+    if (checkevents(prevLastDay-i+1,events)){
+      days += `<span class="dot"></span>`;
+    }
+    days += `</div>`;
+  
 	}
 
 	//prints the days of the current/selected month. (ex: 1 - 30) if the day it's currently printed is TODAY, it's div is of the class "active". Today is visually different than other day and should be different than
@@ -178,14 +184,18 @@ function loadCalendarMonth() {
 		if (i === currentDate.getDate() &&
       date.getMonth() === currentDate.getMonth() && date.getFullYear() === currentDate.getFullYear())
     {
-			days += `<div class="daybox active" onclick="selectDate(${i},'daybox active')">${i}</div>`;
+			days += `<div class="daybox active" onclick="selectDate(${i},'daybox active')">${i}`;
 		}
     else if (date.getDate() === select_date.getDate()){
-      days = `<div class="daybox select" onclick="selectDate(${i},'daybox select')">${i}</div>`;
+      days = `<div class="daybox select" onclick="selectDate(${i},'daybox select')">${i}`;
     }
     else {
-			days += `<div class="daybox" onclick="selectDate(${i},'daybox')">${i}</div>`;
+			days += `<div class="daybox" onclick="selectDate(${i},'daybox')">${i}`;
 		}
+    if (checkevents(i,events)){
+      days += `<span class="dot"></span>`;
+    }
+    days += `</div>`;
 	}
 
 	//prints the days of the next month, should the previous month end on a day other than Saturday. If the month ends on a Thursday it should print out Friday the 1st and Saturday the 2nd of the next month, and no more.
@@ -195,14 +205,18 @@ function loadCalendarMonth() {
     ((date.getMonth() + 1 === currentDate.getMonth() && date.getFullYear() === currentDate.getFullYear()) || 
     (0 == currentDate.getMonth() && date.getFullYear() + 1 === currentDate.getFullYear())))
       {
-      days += `<div class="daybox active" onclick="selectDate(${i},'daybox active')">${i}</div>`;
+      days += `<div class="daybox active" onclick="selectDate(${i},'daybox active')">${i}`;
     }
     else if (date.getDate() === select_date.getDate()){
-      days = `<div class="daybox select" onclick="selectDate(${i},'daybox select')">${i}</div>`;
+      days = `<div class="daybox select" onclick="selectDate(${i},'daybox select')">${i}`;
     }  
     else {
-      days += `<div class="daybox next-date" onclick="selectDate(${i},'daybox next-date')">${i}</div>`;
+      days += `<div class="daybox next-date" onclick="selectDate(${i},'daybox next-date')">${i}`;
     }
+    if (checkevents(i,events)){
+      days += `<span class="dot"></span>`;
+    }
+    days += `</div>`;
 	}
 
   //updating inner html
@@ -362,6 +376,15 @@ function toggleDarkmode() {
   }
 }
 
+function checkevents(day,eventslist){
+  for (var i=0;i<eventslist.length;i++){
+    if (eventslist[i].day == day){
+      return true;
+    }
+    return false;
+  }
+}
+
 function selectDate(i,classname) {
   
   reload();
@@ -384,9 +407,6 @@ function selectDate(i,classname) {
 
   
 
-  console.log(select_date.getMonth());
-  console.log(select_date.getDate());
-  console.log(select_date.getFullYear());
   
   for (const div of document.querySelectorAll('div')) {
     if (div.textContent == i  && div.className === "daybox" ) {
