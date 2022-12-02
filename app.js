@@ -19,7 +19,7 @@ app.engine('html', require('ejs').renderFile)
 app.set('view engine', 'html');
 
 // SQL Connection
-const connection = mysql.createConnection({
+const connection = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PSWD,
@@ -34,30 +34,24 @@ app.get('', (req, res) => {
 
 app.post('/submit-event', urlencodedParser, function (req, res) {
     console.log(req.body);
-    var class_id = req.body.eclass;
+    var class_id = 1;
     var event_title = req.body.ename;
     var event_type = req.body.etype;
     var event_description = req.body.edetails;
     var event_date = req.body.edate + " " + req.body.etime;
-    var event_id = 0;
     console.log(event_date)
+    const sql_code = `INSERT INTO events (class_id, event_type, event_title, event_description, event_date) VALUES (
+        ${"'"+class_id+"'"},
+        ${"'"+event_type+"'"},
+        ${"'"+event_title+"'"},
+        ${"'"+event_description+"'"},
+        ${"'"+event_date+"'"}
+    )`;
 
-    connection.connect(function (err) {
+
+    connection.query(sql_code, function (err) {
         if (err) throw err;
-        console.log("connected");
-
-        var id_sql = "SELECT max(event_id) from events;"
-        connection.query(id_sql, function(err, results, fields) {
-            if (err) throw err;
-            console.log(results[0]);
-        });
-            
-
-        var sql = "INSERT INTO events (class_id, event_id, event_type, event_title, event_description, event_date) VALUES (class_id, event_id, event_title, event_type, event_description, event_date)";
-        connection.query(sql, function (err) {
-            if (err) throw err;
-            console.log("One record inserted");
-        });
+        console.log("One record inserted");
     });
     res.render('main.html', { data: req.body });
 });
