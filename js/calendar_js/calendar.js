@@ -381,8 +381,8 @@ function checkevents(day,eventslist){
     if (eventslist[i].day == day){
       return true;
     }
-    return false;
   }
+  return false;
 }
 
 function selectDate(i,classname) {

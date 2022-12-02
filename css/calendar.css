@@ -79,10 +79,13 @@ html {
 .dot {
     height: 25px;
     width: 25px;
+    position:relative;
+    right: 7px;
+    top: 140px;
     background-color: rgb(100, 100, 100);
     border-radius: 50%;
     display: inline-block;
-  }
+}
 
 .month{
     width: calc(100% - 5vw);
@@ -233,8 +236,8 @@ div .only{
 
 div .select{
     border-style: solid;
-    border-width: thick;
-    border-color: rgb(255, 0, 191);
+    border-width: 2px;
+    border-color: rgb(255, 0, 255);
 }
 .note{
     text-align: center;
