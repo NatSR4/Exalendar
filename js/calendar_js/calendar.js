@@ -297,7 +297,7 @@ function loadCalendarDay() {
   let days;
   days += `<div class="scheduleContainer">`;
 
-  //different times
+  //different time grids
   for(let i = 7; i < 24; i += 1){
     days += `<div class="time start-${i}00">${i}:00</div>`;
   }
@@ -305,9 +305,11 @@ function loadCalendarDay() {
   //events
   for(let i = 0; i < events.length; i++){
     //displaying events in current date
-    if(events[i].month == date.getMonth() + 1 && events[i].day == date.getDate()){
-      days += `<div class="event start-${events[i].startTime} end-${events[i].endTime}"${events[i].text}</div>`;
+    if(events[i].month == date.getMonth() && events[i].day == date.getDate()){
+      days += `<div class="event start-${events[i].startTime} end-${events[i].endTime}"
+      style="grid-column: ${events[i].startTime} / ${events[i].endTime} ">${events[i].text}</div>`;
     }
+    console.log(date);
   }
 
   days += `</div>`
@@ -338,10 +340,10 @@ function loadCalendarDay() {
   monthDays.innerHTML = days;
 
   // height and width changes
-  let dayboxes = document.getElementsByClassName('scheduleContainer');
-  dayboxes[0].classname ="schedule select";
-  dayboxes[0].style.height = "calc(100vh - 100px)";
-  dayboxes[0].style.width = "100%";
+  //let dayboxes = document.getElementsByClassName('scheduleContainer');
+  // dayboxes[0].classname ="schedule select";
+  // dayboxes[0].style.height = "calc(100vh - 100px)";
+  //dayboxes[0].style.width = "100%";
 }
 
 function toggleDarkmode() {
