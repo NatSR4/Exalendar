@@ -308,16 +308,14 @@ function loadCalendarWeek() {
 function loadCalendarDay() {
   // updating month
   document.querySelector('.date h2').innerHTML = months[date.getMonth()] + ', ' + date.getFullYear();
-  console.log(date);
   // updating day
   // generating a schedule table for certain day
-  let days;
+  let days="";
   days += `<div class="scheduleContainer" style="height: calc(100vh - 120px); width: 100%">`;
 
   //different time grids
   for(let i = 8; i < 24; i += 2){
     days += `<div class="time">${i}:00</div>`;
-    
   }
 
   //events
@@ -335,10 +333,8 @@ function loadCalendarDay() {
   monthDays.innerHTML = days;
 
   // height and width changes
-  let dayboxes = document.getElementsByClassName('scheduleContainer');
-  // dayboxes[0].classname ="schedule select";
-  dayboxes[0].style.height = "calc(100vh - 100px)";
-  dayboxes[0].style.width = "100%";
+  let dayboxes = document.getElementsByClassName('days').innerHTML="";
+
 }
 
 function toggleDarkmode() {
