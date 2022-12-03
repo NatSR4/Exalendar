@@ -296,7 +296,7 @@ div .active .darkmode{
     height: calc(100vh - 120px);
     width: 100%;
     grid-gap: 2 px;
-    grid-template-columns: 5rem auto;
+    grid-template-columns: 2rem auto;
     grid-template-rows: repeat(8,auto);
 
 }
