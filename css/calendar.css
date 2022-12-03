@@ -281,50 +281,28 @@ div .active .darkmode{
 /* The style sheet for event schedule in Day view */
 .scheduleContainer{
     display: grid;
-    height: 100 px;
-    grid-gap: 2px;
-    grid-template-columns: 20rem auto;
-    grid-template-rows: auto;
-    grid-template-areas: 
-    "time events"
-    "time events"
-    "time events"
-    "time events"
-    "time events"
-    "time events"
-    "time events"
-    "time events"
-    "time events"
-    "time events"
-    "time events"
-    "time events"
-    "time events"
-    "time events"
-    "time events"
-    "time events"
-    "time events";
+    height: calc(100vh - 120px);
+    width: 100%;
+    grid-gap: 2 px;
+    grid-template-columns: 10rem auto;
+    grid-template-rows: repeat(8,auto);
 
 }
 /* Time*/
-.time{
-    /*display: flex;*/
+div .time{
+    display: flex;
     align-items: center;
     justify-content: flex-end;
     border-top: thin dotted lightcyan;
-    
-    /*grid-area: time;*/
     grid-column: 1;
 }
 
 /*Event*/
-.event{
-    /*display: flex;*/
+div .event{
+    display: flex;
     justify-content: center;
     flex-direction: column;
     background-color: orange;
     font-size: 0.8rem;
-    
-
-    /*grid-area: event;*/
     grid-column: 2;
 }
