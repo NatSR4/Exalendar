@@ -295,6 +295,7 @@ function loadCalendarDay() {
   // updating day
   // generating a schedule table for certain day
   let days;
+  days += `<div class="daybox">${date.getDate()}</div>`;
   days += `<div class="scheduleContainer">`;
 
   //different time grids
@@ -312,9 +313,8 @@ function loadCalendarDay() {
     console.log(date);
   }
 
-  days += `</div>`
-
-
+  days += `</div>`;
+  days += `</div>`;
 
   // days += `<table class="table select">`;
   // days += `<tr><td>Time Grid</td><td>Events</td>`;
