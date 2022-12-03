@@ -51,12 +51,15 @@ class Event{
 }
 
 //place holder part
-let event1 = new Event(2022,12,5,8,10,"CompOrg HW Due");
-let event2 = new Event(2022,12,2,10,11,"CompOrg Office Hour");
-let event3 = new Event(2022,12,3,11,13,"CompOrg Lab Due");
-let event4 = new Event(2022,12,4,15,17,"CompOrg Whatever Due");
+let event1 = new Event(2022,12,1,8,10,"CompOrg HW Due");
+let event2 = new Event(2022,12,1,10,12,"CompOrg Office Hour");
+let event3 = new Event(2022,12,1,12,16,"CompOrg Lab Due");
+let event4 = new Event(2022,12,3,8,10,"CompOrg HW Due");
+let event5 = new Event(2022,12,3,12,14,"CompOrg HW Due");
+let event6 = new Event(2022,12,6,8,10,"CompOrg HW Due");
+let event7 = new Event(2022,12,6,12,16,"CompOrg HW Due");
 
-events = [event1,event2,event3,event4];
+events = [event1,event2,event3,event4,event5,event6,event7];
 
 
 
@@ -305,55 +308,34 @@ function loadCalendarWeek() {
 function loadCalendarDay() {
   // updating month
   document.querySelector('.date h2').innerHTML = months[date.getMonth()] + ', ' + date.getFullYear();
-
+  console.log(date);
   // updating day
   // generating a schedule table for certain day
   let days;
-  days += `<div class="scheduleContainer">`;
+  days += `<div class="scheduleContainer" style="height: calc(100vh - 120px); width: 100%">`;
 
-  //different times
-  for(let i = 7; i < 24; i += 1){
-    days += `<div class="time start-${i}00">${i}:00</div>`;
+  //different time grids
+  for(let i = 8; i < 24; i += 2){
+    days += `<div class="time">${i}:00</div>`;
   }
 
   //events
   for(let i = 0; i < events.length; i++){
     //displaying events in current date
-    if(events[i].month == date.getMonth() + 1 && events[i].day == date.getDate()){
-      days += `<div class="event start-${events[i].startTime} end-${events[i].endTime}"${events[i].text}</div>`;
+    if(events[i].month == date.getMonth()+1 && events[i].day == date.getDate()){
+      days += `<div class="event"
+      style="grid-row: ${(events[i].startTime-6)/2} / span${(events[i].endTime-events[i].startTime)/2}">${events[i].text}</div>`;
     }
   }
 
-  days += `</div>`
-
-
-
-  // days += `<table class="table select">`;
-  // days += `<tr><td>Time Grid</td><td>Events</td>`;
-
-  // for(let i = 0; i < 24; i += 2){
-  //   days += `<tr>`;
-  //   days += `<td>${i}:00</td><td>&nbsp;</td>`;
-  //   days += `</tr>`;
-  // }
-
-
-  // if (date.getDate() === currentDate.getDate()) {
-  //   days = `<div class="daybox only" onclick="selectDate(${date.getDate()},"daybox")">${date.getDate()}</div>`;
-  // }
-  // else if (date.getDate() === select_date.getDate()){
-  //   days = `<div class="daybox select" onclick="selectDate(${date.getDate()},"daybox select")">${date.getDate()}</div>`;
-  // }
-  // else {
-  //   days = `<div class="daybox" onclick="selectDate(${date.getDate()}),"daybox")">${date.getDate()}</div>`;
-  // }
+  days += `</div>`;
 
   // updating inner html
   monthDays.innerHTML = days;
 
   // height and width changes
   let dayboxes = document.getElementsByClassName('scheduleContainer');
-  dayboxes[0].classname ="schedule select";
+  // dayboxes[0].classname ="schedule select";
   dayboxes[0].style.height = "calc(100vh - 100px)";
   dayboxes[0].style.width = "100%";
 }
