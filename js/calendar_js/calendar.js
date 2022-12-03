@@ -317,7 +317,7 @@ function loadCalendarDay() {
   //different time grids
   for(let i = 8; i < 24; i += 2){
     days += `<div class="time">${i}:00</div>`;
-    days += `<div class="grid-hour"></div>`;
+    
   }
 
   //events
