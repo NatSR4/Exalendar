@@ -25,7 +25,7 @@ html {
 
 .calendar{
     width: calc(100% - 5vw);
-    height: 100%;
+    height: 64.55vw;
     background-color: white;
     position: fixed;
     right: 0;
@@ -36,23 +36,22 @@ html {
     position: fixed;
     left: 0;
     width: 4.3vw;
-    /* top: calc(100% - 15vw - 19px - 55vh); */
-    top: 80px;
+    top: 5.3vw;
 }
 
 .tabs button {
     z-index: 1;
     width: 5vw;
     height: 5vw;
-    padding-right: 100px;
+    padding-right: 6.625vw;
     padding-left: calc((5vw / 2) - 1vw); /* artificially center letter */
-    margin-bottom: 5px;
+    margin-bottom: .331vw;
     background-color: white;
     color: black;
     border: inset white;
     font-size: 2.2vw;
     /*text-shadow: -4px 3px 0 grey;*/
-    border-radius: 4px;
+    border-radius: .265vw;
 }
 /*.tab button [title~=Darkmode]
 {
@@ -90,7 +89,7 @@ html {
 .month{
     width: calc(100% - 5vw);
     right: 0;
-    height: 80px;
+    height: 5.3vw;
     background-color: rgb(225, 40, 40);
     align-items: center;
     text-align: center;
@@ -100,16 +99,16 @@ html {
 }
 
 .header{
-    width: 329px;
-    height: 80px;
+    width: 21.796vw;
+    height: 5.3vw;
     margin: auto;
 }
 
 .date{
     /* max width of box is 262 and default height is 74.8 */
-    width: 262px;
-    margin: 2.6px 33.39px;
-    padding-left: 2.75px;
+    width: 17.35vw;
+    margin: .172vw 2.212vw;
+    padding-left: .182vw;
     position: fixed;
     align-self: center;
 }
@@ -117,17 +116,17 @@ html {
 /*Here are the arrows at the side of the main calendar*/
 .arrow {
     border: solid white;
-    margin-top: 30px;
+    margin-top: 1.98vw;
     display: inline-block;
-    padding: .5rem;
+    padding: .7vw;
     color: rgb(255,255,255);
   }
   
 .right {
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
-    border-width: 0 4px 4px 0;
-    margin-left: 140px;
+    border-width: 0 .26vw .26vw 0;
+    margin-left: 9vw;
     position: fixed;
     color: rgb(255,255,255);
   }
@@ -135,8 +134,8 @@ html {
 .left {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
-    border-width: 0 0 4px 4px;
-    margin-left: -164px;
+    border-width: 0 0 .26vw .26vw;
+    margin-left: -10.5vw;
     position: fixed;
   }
 
@@ -144,8 +143,8 @@ html {
 
 /*The Month itself "September" etc.*/
 .month h2{
-    font-size: 2rem;
-    margin-top: 7px;
+    font-size: 2.3vw;
+    margin-top: .463vw;
     font-weight: 400;
     /* font-weight: 700;
     font-family: 'Dancing Script', 'Roboto', sans-serif; */
@@ -153,15 +152,15 @@ html {
 
 /*The Date "Sun September 27, 2020"*/
 .month p{
-    font-size: 1rem;
+    font-size: 1.3vw;
     font-style: italic;
 }
 /*weekdays container*/
 .weekdays{
-    margin: 80px 0 0 1vw;
+    margin: 5.3vw 0 0 1vw;
     width: calc(100% - 5vw);
     right: 0;
-    height: 40px;
+    height: 2.65vw;
     background: rgba(199, 199, 199,0.65);
     display: flex;
     align-items: center;
@@ -171,7 +170,7 @@ html {
 
 /*27      28      29    ...etc*/
 .weekdays div{
-    font-size: 1.1rem;
+    font-size: 1.6vw;
     font-weight: 500;
     width: calc(100% / 7); /*the main container width (minus the weekdays padding) divided by the number of days in a week*/
     display: flex;
@@ -181,7 +180,7 @@ html {
 }
 
 .days{
-    margin: 120px 0 0 0;
+    margin: 7.9vw 0 0 0;
     width: 100%;
     float:right;
     display: flex;
@@ -190,17 +189,16 @@ html {
 }
 
 .days div {
-    font-size: 1rem;
-    /* margin-left: calc(1vw / 7); */
+    font-size: 1.5vw;
     width: calc(100% / 7);
-    height: calc((100vh - 120px) / 5);
+    height: calc((64.55vw - 7.9vw) / 5);
     border-style: solid;
     border-width: thin;
     border-color: rgb(199,199,199,0.65);
 }
 
 .event {
-    padding: 2px;
+    padding: .13vw;
     list-style-type: none;
 }
 

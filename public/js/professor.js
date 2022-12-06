@@ -8,12 +8,12 @@ function generateProfessorView(){
 	//place authentication here instead of true
 	if(false){
 		//create button for adding events
-		var button = document.createElement("Button");
-		var text = document.createTextNode("Add Event");
+		const button = document.createElement("Button");
+		const text = document.createTextNode("Add Event");
 		button.appendChild(text);
 		button.onclick= function(){addEvent()};
 		//monthElement coresponds to the upper(red) region of the calendar
-		var monthElement = document.getElementsByClassName('month')[0];
+		const monthElement = document.getElementsByClassName('month')[0];
 		monthElement.appendChild(button);
 	}
 	
