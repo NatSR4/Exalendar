@@ -67,9 +67,6 @@ function openNav() {
 function closeNav() {
 	let bar = document.getElementById("sidebar");
 	bar.style.width = null;
-	// bar.style.left = null;
-	// document.getElementById("main").style.marginLeft = "0";
-	// document.getElementById("containCalendar").style.marginLeft="0";
 	let button = document.getElementById("buttonBar");
 	button.style.backgroundColor = null;
 	button.style.color = null;
