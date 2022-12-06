@@ -75,6 +75,18 @@ html {
 }
 
 /*The area in which the title, month name and date are stored.*/
+
+.dot {
+    height: 25px;
+    width: 25px;
+    position:relative;
+    right: 7px;
+    top: 140px;
+    background-color: rgb(100, 100, 100);
+    border-radius: 50%;
+    display: inline-block;
+}
+
 .month{
     width: calc(100% - 5vw);
     right: 0;
@@ -197,6 +209,13 @@ div .active{
     border-color: rgba(255,40,40,0.80);
     color:white;
 }
+div .only{
+    background-color: rgba(255, 255, 255, 0.8);
+    border-color: rgba(255,40,40,0.80);
+    color:rgb(0, 0, 0);
+    padding: 350px 0;
+    text-align:center;
+}
 
 .next-date{
     color: grey;
@@ -210,6 +229,15 @@ div .active{
     border-style: solid;
     border-width: thin;
     border-color: red;
+}
+.note{
+    text-align: center;
+}
+
+div .select{
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(255, 0, 255);
 }
 .note{
     text-align: center;
@@ -260,3 +288,37 @@ div .active .darkmode{
 .MWD:hover{
     border-style: inset;
 } */
+
+
+/* The style sheet for event schedule in Day view */
+.scheduleContainer{
+    display: grid;
+    height: calc(100vh - 120px);
+    width: 100%;
+    grid-gap: 2 px;
+    grid-template-columns: 3rem auto;
+    grid-template-rows: repeat(8,auto);
+
+}
+/* Time*/
+div .time{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-top: thin dotted lightcyan;
+    grid-column: 1;
+    height: 100%;
+    width: 100%;
+}
+
+/*Event*/
+div .event{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: orange;
+    font-size: 0.8rem;
+    grid-column: 2;
+    width: 100%;
+
+}
