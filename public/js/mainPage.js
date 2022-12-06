@@ -24,7 +24,7 @@ function loadMain() {
 	if (true) {
     	var exalendarMenu = document.getElementById("exalendarMenu");
 		exalendarMenu.innerHTML += `<li><img src="50x50.png"
-			class="menuIcon">&nbsp;&nbsp;<a href="Professor/professor.html">Professor</a></li>`;
+			class="menuIcon">&nbsp;&nbsp;<a href="professors">Professor</a></li>`;
 	}
 }
 
