@@ -3,18 +3,18 @@
 const monthDays = document.querySelector('.days'); //The days shown on the page
 const currentDate = new Date(); // holds the current date
 document.querySelector('.date p').innerHTML = currentDate.toDateString(); //puts into the smaller text in the calendar header where the current date is and puts into it the current date
-var date; //stores the date
-var lastDay; //gets the last day of the month
-var prevLastDay; //gets the last day of the PREVIOUS month
-var firstDayIndex; //gets the day of the week of the FIRST DAY of the month (so that we know if we need to draw prev month days, to fill space)
-var lastDayIndex; //gets the day of the week of the LAST DAY of the month (so we know if we need to draw NEXT month days, to fill space)
-var nextDays; //basically how many days after the end of the month we need to print in order to have it line up properly. (the additional -1 is there because index starts at 0, not 1)
-var firstWeekDay; //gets the first day of the week
-var lastWeekDay; //gets the last day of the week
-var monthBool = true; //tells the program that the calendar is in month mode
-var weekBool = false; //tells the program that the calendar is in week mode
-var dayBool = false; //tells the program that the calendar is in day mode
-var darkmodeBool = false; //tells the program if it is on darkmode or lightmode
+let date; //stores the date
+let lastDay; //gets the last day of the month
+let prevLastDay; //gets the last day of the PREVIOUS month
+let firstDayIndex; //gets the day of the week of the FIRST DAY of the month (so that we know if we need to draw prev month days, to fill space)
+let lastDayIndex; //gets the day of the week of the LAST DAY of the month (so we know if we need to draw NEXT month days, to fill space)
+let nextDays; //basically how many days after the end of the month we need to print in order to have it line up properly. (the additional -1 is there because index starts at 0, not 1)
+let firstWeekDay; //gets the first day of the week
+let lastWeekDay; //gets the last day of the week
+let monthBool = true; //tells the program that the calendar is in month mode
+let weekBool = false; //tells the program that the calendar is in week mode
+let dayBool = false; //tells the program that the calendar is in day mode
+let darkmodeBool = false; //tells the program if it is on darkmode or lightmode
 
 ////The months of the year
 const months = [
@@ -161,16 +161,16 @@ function loadCalendarMonth() {
   //daybox height calculation
 	let dayboxes = document.getElementsByClassName('daybox');
 	if ((firstDayIndex + lastDay + nextDays) / 7 > 5) {
-		for (let i = 0; i < dayboxes.length; ++i) {
-			dayboxes[i].style.height = "calc((100vh - 120px) / 6)";
+		for (const element of dayboxes) {
+			element.style.height = "calc((100vh - 120px) / 6)";
 		}
   } else if (((firstDayIndex + lastDay + nextDays) / 7 < 5)) {
-		for (let i = 0; i < dayboxes.length; ++i) {
-			dayboxes[i].style.height = "calc((100vh - 120px) / 4)";
+		for (const element of dayboxes) {
+			element.style.height = "calc((100vh - 120px) / 4)";
 		}
   } else {
-		for (let i = 0; i < dayboxes.length; ++i) {
-			dayboxes[i].style.height = null;
+		for (const element of dayboxes) {
+			element.style.height = null;
 		}
   }
 }
@@ -229,8 +229,8 @@ function loadCalendarWeek() {
 
   // daybox height calculation
   let dayboxes = document.getElementsByClassName('daybox');
-  for (let i = 0; i < dayboxes.length; ++i) {
-    dayboxes[i].style.height = "calc(100vh - 120px)";
+  for (const element of dayboxes) {
+    element.style.height = "calc(100vh - 120px)";
   }
 }
 
@@ -263,7 +263,6 @@ function toggleDarkmode() {
     document.querySelector(".calendar").classList.toggle("darkmode");
     document.querySelector(".weekdays").classList.toggle("darkmode");
     document.querySelector(".days").classList.toggle("darkmode");
-   // parent.document.body.classList.toggle("darkmode");
     parent.document.body.style.backgroundColor = "rgba(0,0,0,0.8)";
     darkmodeBool = true;
   } else {
