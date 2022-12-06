@@ -19,8 +19,8 @@ function addModal() {
 function loadMain() {
 	// Onload, update the sidebar if the user is a professor
 	// TODO: Need to add professor authentication
-	if (true) {
-    	var exalendarMenu = document.getElementById("exalendarMenu");
+	if (true) { //why always true?
+    	const exalendarMenu = document.getElementById("exalendarMenu");
 		exalendarMenu.innerHTML += `<li><img src="50x50.png"
 			class="menuIcon">&nbsp;&nbsp;<a href="professors">Professor</a></li>`;
 	}
