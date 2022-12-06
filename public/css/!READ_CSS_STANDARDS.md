@@ -15,3 +15,9 @@
 ## vw conversions ###
 - in your view/monitor, measure width. total page width is 100vw.
 - Do px/totalpix (of window-width) if measurement is formally in px --> result is vw
+
+
+## overflow-x: auto is okay ##
+- some resolutions (or people shrinking windows) might cause things to overflow downward.
+- overflow-y is bad, scrolling left-right is not convienent. Especially if there's also overflow-x. 
+- Keep user experience in mind. do you need a component to be that large?
