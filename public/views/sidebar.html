@@ -1,0 +1,21 @@
+<template id="side-bar-template">
+    <link rel = "stylesheet" href="../css/sidebar.css"/>
+    <div id="sidebar">
+        <button id="buttonBar" onclick="opencloseNav()">☰</button><!--Generic menu button with 3-bars you know how it be-->
+        <h2 style="margin-top:20px;">Exalendar Menu</h2>
+        <ul id="exalendarMenu"> <!--The 50x50.png does not actually exist here, fill with actual image file name/path-->
+            <li><img src="../media/50x50.png" class="menuIcon">&nbsp;&nbsp;Dashboard</li>
+            <li><img src="../media/50x50.png" class="menuIcon">&nbsp;&nbsp;Calendar</li>
+            <li><img src="../media/50x50.png" class="menuIcon">&nbsp;&nbsp;Other Page</li>
+            <!--feel free to add to the list and fill with relevant links and icons to other pages-->
+        </ul>
+        <h2>Other Menu</h2>
+        <ul>
+            <li><img src="../media/settings-icon.png" class="menuIcon">&nbsp;&nbsp;Preferences</li>
+            <li><img src="../media/signout.png" class="menuIcon">&nbsp;&nbsp;Logout</li>
+            <!--feel free to add to the list and fill with relevant links and icons to other pages-->
+        </ul>
+    </div>
+</template>
+
+<script src="../js/sidebar.js"></script>

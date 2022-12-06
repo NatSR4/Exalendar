@@ -9,23 +9,22 @@
 	<body>
 		<div id="modal"></div>
 		<!--SIDEBAR (this contains the menus on the left)-->
-		<!-- NOTE: K.S. FALL 2022 -> MOVE SIDEBAR TO COMPONENT-STYLE OBJECT -->
+		<!-- NOTE: K.S. FALL 2022 -> Once custom component is working replace <div id="sidebar".... with <side-bar/> -->
 		<div id="sidebar">
-			<button id="buttonBar" onclick="opencloseNav()">☰</button><!--Generic menu button with 3-bars you know how it be-->
+			<button id="buttonBar" onclick="opencloseNav()">☰</button>
 			<h2 style="margin-top:20px;">Exalendar Menu</h2>
-			<ul id="exalendarMenu"> <!--The 50x50.png does not actually exist here, fill with actual image file name/path-->
+			<ul id="exalendarMenu"> 
 				<li><img src="../media/50x50.png" class="menuIcon">&nbsp;&nbsp;Dashboard</li>
 				<li><img src="../media/50x50.png" class="menuIcon">&nbsp;&nbsp;Calendar</li>
 				<li><img src="../media/50x50.png" class="menuIcon">&nbsp;&nbsp;Other Page</li>
-				<!--feel free to add to the list and fill with relevant links and icons to other pages-->
 			</ul>
 			<h2>Other Menu</h2>
 			<ul>
 				<li><img src="../media/settings-icon.png" class="menuIcon">&nbsp;&nbsp;Preferences</li>
 				<li><img src="../media/signout.png" class="menuIcon">&nbsp;&nbsp;Logout</li>
-				<!--feel free to add to the list and fill with relevant links and icons to other pages-->
 			</ul>
 		</div>
+		<side-bar/>
 		<script src="../js/sidebar.js"></script>
 		<!--SIDEBAR END-->
 		<!-- Extra work to make it look like the text is FULLY centered, there's probably a better way sorry, SR:its clever though lol, funny work around-->
