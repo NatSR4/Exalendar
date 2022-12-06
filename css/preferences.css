@@ -1,0 +1,13 @@
+#rectangle{
+    box-sizing: border-box;
+    width:span;
+    height:100px;
+    background:red;
+    color: white;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.notif{
+    font-family: 'Roboto', sans-serif;
+}

@@ -55,17 +55,46 @@
 			</ul>
 		</div>
 		<script src="js/sidebar.js"></script>
-
-        <h1>
-            Exalendar
-        </h1>
+		<div id="rectangle">
+			<h1>
+				Preferences
+			</h1>
+		</div>
           
         <form>
             <p>
-                Pick a color:
+                Change site color:
                 <input type="color" value="red" id="color" />
             </p>
-            <input type="submit" value="submit">
-        </form>
+
+            <input type="submit" value="Submit"><br>
+			<label for="notif">
+				<input type="checkbox" name="accept" value="yes" id="accept">Turn notifications on:<br>
+				<input type="checkbox" name="accept" value="yes" id="accept">Changes in weather<br>
+				<input type="checkbox" name="accept" value="yes" id="accept">Upcoming assignments<br>
+				<input type="checkbox" name="accept" value="yes" id="accept">New updates<br>
+			</label><br>
+			<label for="time">
+				<input type="checkbox" name="accept" value="yes" id="accept">Display time
+			</label><br>
+			<label for="weather">
+				<input type="checkbox" name="accept" value="yes" id="accept">Display weather
+			</label><br>
+			<p>
+				<button id="btn">Save settings</button>
+			</p>
+        </form><br>
+
+		<script>
+			const btn = document.querySelector('#btn');
+			btn.addEventListener('click', (event) => {
+				let checkboxes = document.querySelectorAll('input[name="yes"]:checked');
+				let values = [];
+				checkboxes.forEach((checkbox) => {
+					values.push(checkbox.value);
+				});
+			});    
+		</script>
+
      </body>
 </html>
