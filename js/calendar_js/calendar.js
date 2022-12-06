@@ -1,4 +1,5 @@
 /**Kyra Sanchez Fall 2020**/
+/**Trent Maffeo Fall 2022**/
 //Declaring globals needed to draw the calendar
 const monthDays = document.querySelector('.days'); //The days shown on the page
 const currentDate = new Date(); // holds the current date
@@ -270,7 +271,8 @@ function toggleDarkmode() {
     document.querySelector(".calendar").classList.toggle("darkmode");
     document.querySelector(".weekdays").classList.toggle("darkmode");
     document.querySelector(".days").classList.toggle("darkmode");
-    parent.document.body.classList.toggle("darkmode");
+    //parent.document.body.classList.toggle("darkmode");
+    parent.document.body.style.backgroundColor = "rgba(255,255,255)";
     darkmodeBool = false;
   }
 }
