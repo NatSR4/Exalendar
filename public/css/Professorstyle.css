@@ -19,7 +19,7 @@ body {
 	background-color: rgb(199, 33, 33);
 	font-family: Dancing Script;
 	font-weight: bold;
-	font-size: 180%;
+	font-size: 1.3vw;
 	color:white;
 	text-align:center;
 	display:block;
@@ -58,18 +58,20 @@ li a:hover {
 
 /*end Header extra css*/
 
+/* K.S. 2022 NOTES: Resize class to be smaller, text doesn't actually ellipse on overflow. */
+
 div.class {
 	display: inline-block;
-	border-radius: 5px;
+	border-radius: .331vw;
 	background-color: white;
-	height: 180px;
-	width: 280px;
-	margin: 10px 0 0 10px;
+	height: 9.5vw;
+	width: 15.55vw;
+	margin: .6625vw 0 0 .6625vw;
 	cursor: pointer;
-	padding: 10px;
+	padding: .6625vw;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	box-shadow: 5px 5px 5px #E2E1E0;
+	box-shadow: .331vw .331vw .331vw #E2E1E0;
 }
 
 .class:hover {
@@ -77,7 +79,7 @@ div.class {
 }
 
 #classes-ctn {
-	margin-bottom: 35px;
+	margin-bottom: 2.318vw;
 }
 
 .class h2, .class h3, .class h4, .class h5, .class h6, .class p {
@@ -86,22 +88,27 @@ div.class {
 
 .course-id {
 	display: inline;
-	font-size: 1.5rem;
+	font-size: 1vw;
 	padding: 0;
+}
+
+.class h2 {
+	font-size: 1vw;
 }
 
 .section-num {
 	float: right;
-	font-size: 1rem;
-	padding-top: 0.5rem;
+	font-size: .65vw !important;;
+	padding-top: 0.3vw;
 }
 
 .class h3 {
+	font-size: .8vw !important;
 	font-weight: 600;
 }
 
 .class h4 {
-	font-size: 0.9rem;
+	font-size: 0.6vw;
 	font-weight: 400;
 }
 
@@ -111,19 +118,19 @@ div.class {
 
 .option-do {
     color: black;
-    padding-left: 10px;
+    padding-left: .6625vw;
 }
 
 .fullview {
-	height: 380px;
-	width: 380px;
+	height: 25.175vw;
+	width: 25.175vw;
 	position: fixed;
-	top: calc(50% - 190px);
-	left: calc(50% - 190px);
+	top: calc(50% - 12.5875vw);
+	left: calc(50% - 12.5875vw);
 	background-color: white;
 	z-index: 5;
-	padding: 10px;
-	border-radius: 10px;
+	padding: .6625vw;
+	border-radius: .6625vw;
 	display: none;
 }
 
