@@ -3,22 +3,22 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    width: 2.5vw;
-    height: 2.5vw;
+    width: 3vw;
+    height: 3vw;
     position: fixed;
-    top: 15px;
+    top: 0.993vw;
     left: 1vw;
     background-color: rgb(199, 40, 40);
-	border: 2px solid white;
-    //border: 0;
+	border: .1325vw solid white;
+    border: 0;
     color: black;
 	transition-duration: 0.4s;
-    font-size: 1.1vw;
+    font-size: 1.6vw;
 }
 
 #buttonBar:hover {
 	background-color: var(--sidebar);
-    border: 2px solid white;
+    border: .01335vw solid white;
 	color: white;
 }
 
@@ -61,7 +61,7 @@
     font-family: 'Roboto', sans-serif;
     text-align: center;
     color: white;
-    font-size: 20px;
+    font-size: 1.335vw;
     font-weight: 100;
 }
 
@@ -70,8 +70,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    height: 1rem;
-    width: 1rem;
+    height: 1vw;
+    width: 1vw;
 }
 
 #sidebar li {
@@ -79,8 +79,9 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    margin: 0 0 1px 1.5vw;
+    margin: 0 0 .006vw 1.5vw;
     list-style: none;
+    font-size: 1vw;
 }
 
 #sidebar ul {
@@ -88,7 +89,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    margin: 4px 0 7px 0;
+    margin: .265vw 0 .5vw 0;
 }
 
 :root {
