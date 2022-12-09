@@ -13,6 +13,7 @@
 
 html {
     font-size: 13pt;
+    overflow-y: auto;
 }
 
 .divright{
@@ -21,15 +22,17 @@ html {
 
 .container{
     display: flex;
+    overflow-y: auto;
 }
 
 .calendar{
     width: calc(100% - 5vw);
-    height: 64.55vw;
+    height: calc(100% - 3vh);
     background-color: white;
     position: fixed;
     right: 0;
     z-index: 2;
+    overflow-y: auto;
 }
 
 .tabs {
@@ -111,6 +114,7 @@ html {
     padding-left: .182vw;
     position: fixed;
     align-self: center;
+    overflow-y: auto;
 }
 
 /*Here are the arrows at the side of the main calendar*/
@@ -160,7 +164,7 @@ html {
     margin: 5.3vw 0 0 1vw;
     width: calc(100% - 5vw);
     right: 0;
-    height: 2.65vw;
+    height: 2.65vh;
     background: rgba(199, 199, 199,0.65);
     display: flex;
     align-items: center;
@@ -182,19 +186,22 @@ html {
 .days{
     margin: 7.9vw 0 0 0;
     width: 100%;
+    height: 100%;
     float:right;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    overflow-y: hidden;
 }
 
 .days div {
     font-size: 1.5vw;
     width: calc(100% / 7);
-    height: calc((64.55vw - 7.9vw) / 5);
+    height: calc(100% / 5);
     border-style: solid;
     border-width: thin;
     border-color: rgb(199,199,199,0.65);
+    
 }
 
 .event {

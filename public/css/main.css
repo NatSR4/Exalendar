@@ -6,6 +6,7 @@
 
 body {
     background-color: #FFF7F5;
+    overflow-y: scroll;
     /*rgba(255,255,255,.5);*/
 }
 
@@ -14,6 +15,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+   
 }
 
 /* EVENT INPUT FORM CSS STARTS*/
@@ -32,6 +34,7 @@ h3 {
     font-weight: bolder;
     line-height: 1.6;
     margin-left: 1.5485vw;
+    overflow-y: scroll;
 }
 
 #addevent-btn {
@@ -77,8 +80,10 @@ h3 {
     position: fixed;
     left: 1.1vw;
     top: 0.993vw;
-    height: 64.55vw;
+    height: 95.55vh;
     width: 70.9vw;
+    overflow: hidden;
+    display: flex;
     /*box-shadow: 5px 5px 5px #E2E1E0;*/
 }
 
@@ -156,9 +161,11 @@ h3 {
 
 #containCalendar {
   transition: margin-left .5s; /* If you want a transition effect */
+  overflow: scroll;
 }
 
 body .darkmode
 {
+    overflow: scroll;
     background-color: rgba(0,0,0,0.9);
 }
