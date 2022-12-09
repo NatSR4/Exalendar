@@ -3,18 +3,20 @@
 const monthDays = document.querySelector('.days'); //The days shown on the page
 const currentDate = new Date(); // holds the current date
 document.querySelector('.date p').innerHTML = currentDate.toDateString(); //puts into the smaller text in the calendar header where the current date is and puts into it the current date
-var date; //stores the date
-var lastDay; //gets the last day of the month
-var prevLastDay; //gets the last day of the PREVIOUS month
-var firstDayIndex; //gets the day of the week of the FIRST DAY of the month (so that we know if we need to draw prev month days, to fill space)
-var lastDayIndex; //gets the day of the week of the LAST DAY of the month (so we know if we need to draw NEXT month days, to fill space)
-var nextDays; //basically how many days after the end of the month we need to print in order to have it line up properly. (the additional -1 is there because index starts at 0, not 1)
-var firstWeekDay; //gets the first day of the week
-var lastWeekDay; //gets the last day of the week
-var monthBool = true; //tells the program that the calendar is in month mode
-var weekBool = false; //tells the program that the calendar is in week mode
-var dayBool = false; //tells the program that the calendar is in day mode
-var darkmodeBool = false; //tells the program if it is on darkmode or lightmode
+
+let select_date = new Date(1,1,1);; //stores the date
+let lastDay; //gets the last day of the month
+let prevLastDay; //gets the last day of the PREVIOUS month
+let firstDayIndex; //gets the day of the week of the FIRST DAY of the month (so that we know if we need to draw prev month days, to fill space)
+let lastDayIndex; //gets the day of the week of the LAST DAY of the month (so we know if we need to draw NEXT month days, to fill space)
+let nextDays; //basically how many days after the end of the month we need to print in order to have it line up properly. (the additional -1 is there because index starts at 0, not 1)
+let firstWeekDay; //gets the first day of the week
+let lastWeekDay; //gets the last day of the week
+let monthBool = true; //tells the program that the calendar is in month mode
+let weekBool = false; //tells the program that the calendar is in week mode
+let dayBool = false; //tells the program that the calendar is in day mode
+let darkmodeBool = false; //tells the program if it is on darkmode or lightmode
+
 
 ////The months of the year
 const months = [
@@ -31,6 +33,32 @@ const months = [
 	"November",
 	"December"
 ];
+
+//displaying Events elements in the grid 
+//Codes below are just place holders, need to extract data from backend
+class Event{
+  constructor(year,month,day,startTime,endTime,text){
+    this.year = year;
+    this.month = month;
+    this.day = day;
+    this.startTime = startTime;
+    this.endTime = endTime;
+    this.text = text;
+  }
+}
+
+//place holder part
+let event1 = new Event(2022,12,1,8,10,"CompOrg HW Due");
+let event2 = new Event(2022,12,1,10,12,"CompOrg Office Hour");
+let event3 = new Event(2022,12,1,12,16,"CompOrg Lab Due");
+let event4 = new Event(2022,12,3,8,10,"CompOrg HW Due");
+let event5 = new Event(2022,12,3,12,14,"CompOrg HW Due");
+let event6 = new Event(2022,12,6,8,10,"CompOrg HW Due");
+let event7 = new Event(2022,12,6,12,16,"CompOrg HW Due");
+
+events = [event1,event2,event3,event4,event5,event6,event7];
+
+
 
 //Calling initial calendar draw funciton
 loadToday();
@@ -104,6 +132,18 @@ function loadPrev() {
   }
 }
 
+//Function to reload, month depends on whether 
+function reload(){
+  if (monthBool) {
+    loadCalendarMonth();
+  }
+  else if (weekBool) {
+    loadCalendarWeek();
+  }
+  else if (dayBool) {
+    loadCalendarDay();
+  }
+}
 //Function to load calendar
 function loadCalendarMonth() {
 	lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
@@ -124,10 +164,18 @@ function loadCalendarMonth() {
       ((date.getMonth() - 1 === currentDate.getMonth() && date.getFullYear() == currentDate.getFullYear()) ||
       (11 === currentDate.getMonth() && date.getFullYear() - 1 == currentDate.getFullYear()))) 
       {
-      days += `<div class="daybox active">${prevLastDay - i + 1}</div>`;
+      //days += `<div class="daybox active">${prevLastDay - i + 1}</div>`;
+      days += `<div class="daybox active" onclick="selectDate(${prevLastDay - i + 1},'daybox prev-date')">${prevLastDay - i + 1}`;
     } else {
-      days += `<div class="daybox prev-date">${prevLastDay - i + 1}</div>`;
+      //days += `<div class="daybox prev-date">${prevLastDay - i + 1}</div>`;
+      days += `<div class="daybox prev-date" onclick="selectDate(${prevLastDay - i + 1},'daybox prev-date')">${prevLastDay - i + 1}`;
     }
+
+    if (checkevents(prevLastDay-i+1,events)){
+      days += `<span class="dot"></span>`;
+    }
+    days += `</div>`;
+  
 	}
 
 	//prints the days of the current/selected month. (ex: 1 - 30) if the day it's currently printed is TODAY, it's div is of the class "active". Today is visually different than other day and should be different than
@@ -135,11 +183,19 @@ function loadCalendarMonth() {
 	for(let i = 1; i <= lastDay; i++){
 		if (i === currentDate.getDate() &&
       date.getMonth() === currentDate.getMonth() && date.getFullYear() === currentDate.getFullYear())
-   {
-			days += `<div class="daybox active" onclick=this.selectDate()>${i}</div>`;
-		} else {
-			days += `<div class="daybox" onclick=this.selectDate()>${i}</div>`;
+    {
+			days += `<div class="daybox active" onclick="selectDate(${i},'daybox active')">${i}`;
 		}
+    else if (date.getDate() === select_date.getDate()){
+      days = `<div class="daybox select" onclick="selectDate(${i},'daybox select')">${i}`;
+    }
+    else {
+			days += `<div class="daybox" onclick="selectDate(${i},'daybox')">${i}`;
+		}
+    if (checkevents(i,events)){
+      days += `<span class="dot"></span>`;
+    }
+    days += `</div>`;
 	}
 
 	//prints the days of the next month, should the previous month end on a day other than Saturday. If the month ends on a Thursday it should print out Friday the 1st and Saturday the 2nd of the next month, and no more.
@@ -149,10 +205,18 @@ function loadCalendarMonth() {
     ((date.getMonth() + 1 === currentDate.getMonth() && date.getFullYear() === currentDate.getFullYear()) || 
     (0 == currentDate.getMonth() && date.getFullYear() + 1 === currentDate.getFullYear())))
       {
-      days += `<div class="daybox active" onclick=selectDate()>${i}</div>`;
-    } else {
-      days += `<div class="daybox next-date" onclick=selectDate()>${i}</div>`;
+      days += `<div class="daybox active" onclick="selectDate(${i},'daybox active')">${i}`;
     }
+    else if (date.getDate() === select_date.getDate()){
+      days = `<div class="daybox select" onclick="selectDate(${i},'daybox select')">${i}`;
+    }  
+    else {
+      days += `<div class="daybox next-date" onclick="selectDate(${i},'daybox next-date')">${i}`;
+    }
+    if (checkevents(i,events)){
+      days += `<span class="dot"></span>`;
+    }
+    days += `</div>`;
 	}
 
   //updating inner html
@@ -161,16 +225,16 @@ function loadCalendarMonth() {
   //daybox height calculation
 	let dayboxes = document.getElementsByClassName('daybox');
 	if ((firstDayIndex + lastDay + nextDays) / 7 > 5) {
-		for (let i = 0; i < dayboxes.length; ++i) {
-			dayboxes[i].style.height = "calc((100vh - 120px) / 6)";
+		for (const element of dayboxes) {
+			element.style.height = "calc((100vh - 120px) / 6)";
 		}
   } else if (((firstDayIndex + lastDay + nextDays) / 7 < 5)) {
-		for (let i = 0; i < dayboxes.length; ++i) {
-			dayboxes[i].style.height = "calc((100vh - 120px) / 4)";
+		for (const element of dayboxes) {
+			element.style.height = "calc((100vh - 120px) / 4)";
 		}
   } else {
-		for (let i = 0; i < dayboxes.length; ++i) {
-			dayboxes[i].style.height = null;
+		for (const element of dayboxes) {
+			element.style.height = null;
 		}
   }
 }
@@ -195,20 +259,23 @@ function loadCalendarWeek() {
     (firstWeekDay.getMonth() == currentDate.getMonth() || lastWeekDay.getMonth() == currentDate.getMonth()) &&
     (firstWeekDay.getFullYear() == currentDate.getFullYear() || lastWeekDay.getFullYear() == currentDate.getFullYear()))
      {
-      days += `<div class="daybox active">${i}</div>`;
+      days += `<div class="daybox active" onclick="selectDate(${i},'daybox active')">${i}</div>`;
     }
     //case for previous days
     else if (firstWeekDay.getMonth() === prevLastDay.getMonth() && i > 7) {
-      days += `<div class="daybox prev-date">${i}</div>`;
+      days += `<div class="daybox prev-date" onclick="selectDate(${i},'daybox prev-date')">${i}</div>`;
     }
     //case for next days
     else if (((lastWeekDay.getMonth() === lastDay.getMonth() + 1) ||
     lastWeekDay.getMonth() === 0) && i < 7) {
-      days += `<div class="daybox next-date">${i}</div>`;
+      days += `<div class="daybox next-date" onclick="selectDate(${i},'daybox next-date')">${i}</div>`;
     }
-    //normal case
+    else if (date.getDate() === select_date.getDate()){
+      days = `<div class="daybox select" onclick="selectDate(${i},'daybox select')">${date.getDate()}</div>`;
+    }
+      //normal case
     else {
-      days += `<div class="daybox">${i}</div>`;
+      days += `<div class="daybox" onclick="selectDate(${i},'daybox')">${i}</div>`;
     }
 
     // setting i to 1 at the edge cases
@@ -229,8 +296,8 @@ function loadCalendarWeek() {
 
   // daybox height calculation
   let dayboxes = document.getElementsByClassName('daybox');
-  for (let i = 0; i < dayboxes.length; ++i) {
-    dayboxes[i].style.height = "calc(100vh - 120px)";
+  for (const element of dayboxes) {
+    element.style.height = "calc(100vh - 120px)";
   }
 }
 
@@ -238,23 +305,33 @@ function loadCalendarWeek() {
 function loadCalendarDay() {
   // updating month
   document.querySelector('.date h2').innerHTML = months[date.getMonth()] + ', ' + date.getFullYear();
-
   // updating day
-  let days;
-  if (date.getDate() === currentDate.getDate()) {
-    days = `<div class="daybox active">${date.getDate()}</div>`;
+  // generating a schedule table for certain day
+  let days="";
+  days += `<div class="scheduleContainer" style="height: calc(100vh - 120px); width: 100%">`;
+
+  //different time grids
+  for(let i = 8; i < 24; i += 2){
+    days += `<div class="time">${i}:00</div>`;
   }
-  else {
-    days = `<div class="daybox">${date.getDate()}</div>`;
+
+  //events
+  for(let i = 0; i < events.length; i++){
+    //displaying events in current date
+    if(events[i].month == date.getMonth()+1 && events[i].day == date.getDate()){
+      days += `<div class="event"
+      style="grid-row: ${(events[i].startTime-6)/2} / span${(events[i].endTime-events[i].startTime)/2}">${events[i].text}</div>`;
+    }
   }
+
+  days += `</div>`;
 
   // updating inner html
   monthDays.innerHTML = days;
 
   // height and width changes
-  let dayboxes = document.getElementsByClassName('daybox');
-  dayboxes[0].style.height = "calc(100vh - 120px)";
-  dayboxes[0].style.width = "100%";
+  let dayboxes = document.getElementsByClassName('days').innerHTML="";
+
 }
 
 function toggleDarkmode() {
@@ -263,7 +340,6 @@ function toggleDarkmode() {
     document.querySelector(".calendar").classList.toggle("darkmode");
     document.querySelector(".weekdays").classList.toggle("darkmode");
     document.querySelector(".days").classList.toggle("darkmode");
-   // parent.document.body.classList.toggle("darkmode");
     parent.document.body.style.backgroundColor = "rgba(0,0,0,0.8)";
     darkmodeBool = true;
   } else {
@@ -275,9 +351,51 @@ function toggleDarkmode() {
   }
 }
 
-function selectDate() {
+function checkevents(day,eventslist){
+  for (var i=0;i<eventslist.length;i++){
+    if (eventslist[i].day == day){
+      return true;
+    }
+  }
+  return false;
+}
+
+function selectDate(i,classname) {
+  
+  reload();
+  if (classname =="daybox next-date" && monthBool){
+    //select_date.setMonth(date.getMonth()+1);
+    loadNext();
+  }else if (classname == "daybox prev-date" && monthBool){
+    //select_date.setMonth(date.getMonth()-1);
+    loadPrev();
+  }else if (classname == "daybox active"){
+    //do nothing
+    return;
+  }else if (classname == "daybox select"){
+    loadToday();
+  }else{
+    select_date.setMonth(date.getMonth());
+  }
+  select_date.setDate(i);
+  select_date.setFullYear(date.getFullYear());
 
   
-   this.css("backgroundColor","rgb(0,0,255)") = "blue";
+
+  
+  for (const div of document.querySelectorAll('div')) {
+    if (div.textContent == i  && div.className === "daybox" ) {
+      div.className = "daybox select";
+    }
+  }
+  displayedDate = select_date;
+  console.log(displayedDate.getMonth());
+  console.log(displayedDate.getDate());
+  console.log(displayedDate.getFullYear());
+
+  //changing the date in sidebar
+  //document.getElementById("noteDate").innerHTML = (displayedDate.getMonth()+1) + " / " +displayedDate.getDate()+" / "+displayedDate.getFullYear();
+
+
 }
 

@@ -23,32 +23,32 @@ h3 {
 }
 
 #content-box {
-
     background-color: rgb(240,240,240);
-    height: 35vh;
-    border-radius: 10px;
-    padding-left: 10px;
-    padding-top: 10px;
+    height: 20vw;
+    width: 40vw;
+    border-radius: .6625vw;
+    padding-left: .6625vw;
+    padding-top: .6625vw;
     font-weight: bolder;
     line-height: 1.6;
-
+    margin-left: 1.5485vw;
 }
 
 #addevent-btn {
     border-radius: 50%;
-    height: 20px;
-    width: 20px;
+    height: 1.325vw;
+    width: 1.325vw;
     position: absolute;
-    left: 4px;
-    top: 4px;
+    left: .265vw;
+    top: .265vw;
     background-color: white;
-    border: solid black 2px;
+    border: solid black .1325vw;
     font-weight: 500;
     transition-duration: 0.4s;
 }
 
 #addevent-btn:hover {
-    border: solid red 2px;
+    border: solid red .1325vw;
     color: red;
 }
 
@@ -56,18 +56,18 @@ h3 {
     display: none;
     background-color: rgb(225, 40, 40);
     position: fixed;
-    height: 50vh;
-    width: 80vw;
+    height: 25vw;
+    width: 45vw;
     z-index: 2;
-    left: 10vw;
-    top: 30vh;
-    border-radius: 10px;
-    padding: 10px;
+    left: 27.5vw;
+    top: 10vw;
+    border-radius: .6625vw;
+    padding: .6625vw;
 }
 
 #addevent-menu input, #addevent-menu select, #addevent-menu textarea {
-    border-radius: 3px;
-    border: solid 0.65px;
+    border-radius: .19875vw;
+    border: solid 0.04vw;
 }
 
 /* EVENT INPUT FORM ENDS STARTS*/
@@ -76,8 +76,8 @@ h3 {
     border: none;
     position: fixed;
     left: 1.1vw;
-    top: 15px;
-    height: calc(100vh - 55px);
+    top: 0.993vw;
+    height: 64.55vw;
     width: 70.9vw;
     /*box-shadow: 5px 5px 5px #E2E1E0;*/
 }
@@ -94,15 +94,14 @@ h3 {
     position: fixed;
     width: 25.6vw;
     left: 73vw;
-    top: 15px;
-    height: calc(100vh - 55px);
+    top: 0.993vw;
+    height: 45.76vw;
     /*box-shadow: 5px 5px 5px #E2E1E0;*/
 }
 
 .noteList{
-    padding-top: .5rem;
-    padding-bottom: .5rem;
-   
+    padding-top: .5vw;
+    padding-bottom: .5vw;
 }
 
 .noteContain label{   
@@ -111,13 +110,13 @@ h3 {
 
 .noteLeft{
     position:relative;
-    left: 1rem;
-    width: calc(2.89*20.7rem/4);
+    left: 1vw;
+    width: calc(2.89*20.7vw/4);
 }
 
 .noteRight{
     position:relative;
-    width: calc(25.7rem/4);
+    width: calc(25.7vw/4);
 }
 
 .noteRight li{
@@ -146,13 +145,13 @@ h3 {
     border-bottom-color: maroon;
     color: black;
     font-weight: 900;
-    font-size: 1.3rem;
+    font-size: 1.3vw;
     text-align: center;
     align-items: center;
-    padding-right: 200px;
+    padding-right: 13.25vw;
     background-color: #F10020;
     position: relative;
-    top: 1rem;
+    top: 1vw;
 }
 
 #containCalendar {
