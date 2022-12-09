@@ -13,35 +13,50 @@ document.getElementById("noteDate").innerHTML = (date.getMonth()+1) + " / " +dat
 let modalNum = 0; // for id creation
 
 function addModal() {
-	document.body.innerHTML += `<div class="modal" id="modal` + ++modalNum + `"></div>`;
+    document.body.innerHTML += `<div class="modal" id="modal` + ++modalNum + `"></div>`;
 }
 
 // Handle page load (for adding buttons etc.)
 // Adds professor page to sidebar if current user is a professor
 function loadMain() {
-	// Onload, update the sidebar if the user is a professor
-	// TODO: Need to add professor authentication
-	if (true) { //why always true? -- oh because prof check when auth added.
-    	const exalendarMenu = document.getElementById("exalendarMenu");
-		exalendarMenu.innerHTML += `<li><img src="50x50.png"
-			class="menuIcon">&nbsp;&nbsp;<a href="professors">Professor</a></li>`;
-	}
+    // Onload, update the sidebar if the user is a professor
+    // TODO: Need to add professor authentication
+    if (true) {
+        var exalendarMenu = document.getElementById("exalendarMenu");
+        exalendarMenu.innerHTML += `<li><img src="50x50.png"
+            class="menuIcon">&nbsp;&nbsp;<a href="professors.html">Professor</a></li>`;
+    }
 }
 
 function openAddEvent() {
-	let modal = document.getElementById("modal");
-	modal.style.display = "block";
-	modal.style.zIndex = 3;
-	document.getElementById("addevent-menu").style.display = "block";
-	document.getElementById("addevent-menu").style.zIndex = 4;
-	window.onclick = function(event) {
-		if (event.target == modal) closeAddEvent();
-	}
+    let modal = document.getElementById("modal");
+    modal.style.display = "block";
+    modal.style.zIndex = 3;
+    document.getElementById("addevent-menu").style.display = "block";
+    document.getElementById("addevent-menu").style.zIndex = 4;
+    window.onclick = function(event) {
+        if (event.target == modal) closeAddEvent();
+    }
 }
 
 function closeAddEvent() {
-	document.getElementById("modal").style.display = null;
-	document.getElementById("modal").style.zIndex = null;
-	document.getElementById("addevent-menu").style.display = null;
-	document.getElementById("addevent-menu").style.zIndex = null;
+    document.getElementById("modal").style.display = null;
+    document.getElementById("modal").style.zIndex = null;
+    document.getElementById("addevent-menu").style.display = null;
+    document.getElementById("addevent-menu").style.zIndex = null;
+
+	let etitle = document.forms["addevent-form"]["ename"].value;
+	let edate = document.forms["addevent-form"]["edate"].value;
+	let etim = document.forms["addevent-form"]["etime"].value;
+	let eclass = document.forms["addevent-form"]["eclass"].value;
+	let edetail = document.forms["addevent-form"]["edetails"].value;
+	let etype = document.forms["addevent-form"]["etype"].value;
+    
+    console.log(etitle);
+	console.log(edate);
+	console.log(etim);
+	console.log(eclass);
+	console.log(edetail);
+	console.log(etype);
+   
 }
