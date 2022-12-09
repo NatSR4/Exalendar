@@ -1,3 +1,6 @@
+CREATE DATABASE exalendar;
+USE exalendar;
+
 CREATE TABLE `users` (
   `user_id` int PRIMARY KEY AUTO_INCREMENT,
   `first_name` varchar(255) NOT NULL,
@@ -30,7 +33,7 @@ CREATE TABLE `classes` (
 
 CREATE TABLE `events` (
   `class_id` int,
-  `event_id` int PRIMARY KEY NOT NULL,
+  `event_id` int PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `event_type` varchar(255) NOT NULL,
   `event_title` varchar(255) NOT NULL,
   `event_description` varchar(255),
@@ -55,3 +58,5 @@ ALTER TABLE `events` ADD FOREIGN KEY (`class_id`) REFERENCES `classes` (`class_i
 ALTER TABLE `class_admins` ADD FOREIGN KEY (`user_id`) REFERENCES `user_classes` (`user_id`);
 
 ALTER TABLE `class_admins` ADD FOREIGN KEY (`class_id`) REFERENCES `classes` (`class_id`);
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '12345';
