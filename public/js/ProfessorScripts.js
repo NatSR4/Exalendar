@@ -83,9 +83,16 @@ async function getEvents() {
             currentEvent.innerHTML += `<h4>${data[i]["event_description"]}</h4>`
             currentEvent.innerHTML += `<h4>${data[i]["event_type"]}</h4>`
             currentEvent.innerHTML += `<h4>${data[i]["event_date"]}</h4>`
+            if(document.getElementById("list-events") == NULL || document.getElementById("list-events") == "")
+            {
+                console.log("error element dne");
+            }else{
             document.getElementById("list-events").appendChild(currentEvent);
+            }
         }
     });
 }
+
+  
 
 //document.getElementById('modal').style.zIndex = 3;
