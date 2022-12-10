@@ -272,6 +272,11 @@ function toggleDarkmode() {
 
 function selectDate(idname) {
   console.log(idname);
-  changeDay(idname);
+  if(idname == NULL)
+  {
+    changeDay(currentDate);
+  }else{
+    changeDay(idname);
+  }
 }
 

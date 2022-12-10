@@ -43,3 +43,11 @@ function closeAddEvent() {
 	document.getElementById("addevent-menu").style.display = null;
 	document.getElementById("addevent-menu").style.zIndex = null;
 }
+
+function changeProf() {
+	document.getElementById("profinp").style.display = visible;
+	if(profinp == NULL)
+	{
+		console.log("error: id dne");
+	}
+}
