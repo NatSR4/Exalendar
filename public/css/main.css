@@ -1,0 +1,171 @@
+@import "standard.css";
+@import "sidebar.css";
+@import "footer.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+body {
+    background-color: #FFF7F5;
+    overflow-y: scroll;
+    /*rgba(255,255,255,.5);*/
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+   
+}
+
+/* EVENT INPUT FORM CSS STARTS*/
+h3 {
+    text-align: center;
+    color: white;
+}
+
+#content-box {
+    background-color: rgb(240,240,240);
+    height: 20vw;
+    width: 40vw;
+    border-radius: .6625vw;
+    padding-left: .6625vw;
+    padding-top: .6625vw;
+    font-weight: bolder;
+    line-height: 1.6;
+    margin-left: 1.5485vw;
+    overflow-y: scroll;
+}
+
+#addevent-btn {
+    border-radius: 50%;
+    height: 1.325vw;
+    width: 1.325vw;
+    position: absolute;
+    left: .265vw;
+    top: .265vw;
+    background-color: white;
+    border: solid black .1325vw;
+    font-weight: 500;
+    transition-duration: 0.4s;
+}
+
+#addevent-btn:hover {
+    border: solid red .1325vw;
+    color: red;
+}
+
+#addevent-menu {
+    display: none;
+    background-color: rgb(225, 40, 40);
+    position: fixed;
+    height: 25vw;
+    width: 45vw;
+    z-index: 2;
+    left: 27.5vw;
+    top: 10vw;
+    border-radius: .6625vw;
+    padding: .6625vw;
+}
+
+#addevent-menu input, #addevent-menu select, #addevent-menu textarea {
+    border-radius: .19875vw;
+    border: solid 0.04vw;
+}
+
+/* EVENT INPUT FORM ENDS STARTS*/
+
+.calendar {
+    border: none;
+    position: fixed;
+    left: 1.1vw;
+    top: 0.993vw;
+    height: 95.55vh;
+    width: 70.9vw;
+    overflow: hidden;
+    display: flex;
+    /*box-shadow: 5px 5px 5px #E2E1E0;*/
+}
+
+.noteHeader {
+    background-color: rgb(225, 40, 40);
+    color: white;
+    text-align:center;
+    font-family: Dancing Script;
+
+}
+.noteContain{
+    background-color: white;
+    position: fixed;
+    width: 25.6vw;
+    left: 73vw;
+    top: 0.993vw;
+    height: 45.76vw;
+    /*box-shadow: 5px 5px 5px #E2E1E0;*/
+}
+
+.noteList{
+    padding-top: .5vw;
+    padding-bottom: .5vw;
+}
+
+.noteContain label{   
+    text-align: center;
+}
+
+.noteLeft{
+    position:relative;
+    left: 1vw;
+    width: calc(2.89*20.7vw/4);
+}
+
+.noteRight{
+    position:relative;
+    width: calc(25.7vw/4);
+}
+
+.noteRight li{
+    text-align: center;
+    list-style-type: none;
+}
+
+.center-header{
+    text-align: center;
+    background-color: rgb(225, 40, 40);
+    color: white;
+}
+
+.menuTop{
+    align-items: center;
+    text-align: center;
+}
+.menuTop li{
+    display:inline;
+    text-align: center;
+}
+
+.timeSpan {
+    border-style: ridge;
+    border-color: #000000;
+    border-bottom-color: maroon;
+    color: black;
+    font-weight: 900;
+    font-size: 1.3vw;
+    text-align: center;
+    align-items: center;
+    padding-right: 13.25vw;
+    background-color: #F10020;
+    position: relative;
+    top: 1vw;
+}
+
+#containCalendar {
+  transition: margin-left .5s; /* If you want a transition effect */
+  overflow: scroll;
+}
+
+body .darkmode
+{
+    overflow: scroll;
+    background-color: rgba(0,0,0,0.9);
+}

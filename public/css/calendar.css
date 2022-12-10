@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/* check out https://fonts.google.com/specimen/Roboto for info on the different weights available */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+/* https://fonts.google.com/specimen/Dancing+Script */
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    font-size: 13pt;
+    overflow-y: auto;
+}
+
+.divright{
+    border-style: solid;
+}
+
+.container{
+    display: flex;
+    overflow-y: auto;
+}
+
+.calendar{
+    width: calc(100% - 5vw);
+    height: calc(100% - 3vh);
+    background-color: white;
+    position: fixed;
+    right: 0;
+    z-index: 2;
+    overflow-y: auto;
+}
+
+.tabs {
+    position: fixed;
+    left: 0;
+    width: 4.3vw;
+    top: 5.3vw;
+}
+
+.tabs button {
+    z-index: 1;
+    width: 5vw;
+    height: 5vw;
+    padding-right: 6.625vw;
+    padding-left: calc((5vw / 2) - 1vw); /* artificially center letter */
+    margin-bottom: .331vw;
+    background-color: white;
+    color: black;
+    border: inset white;
+    font-size: 2.2vw;
+    /*text-shadow: -4px 3px 0 grey;*/
+    border-radius: .265vw;
+}
+/*.tab button [title~=Darkmode]
+{
+    padding-left: 10px;
+    padding-right: 0px;
+}
+.tabs .button span{
+    z-index: 1;
+    width: 5vw;
+    height: 5vw;
+   
+    padding-left: 0px; /* artificially center letter
+    margin-bottom: 5px;
+    background-color: white;
+    color: black;
+    border: inset white;
+    font-size: 2.2vw;
+    text-shadow: -4px 3px 0 grey;
+    border-radius: 4px;
+}
+
+/*The area in which the title, month name and date are stored.*/
+
+.dot {
+    height: 25px;
+    width: 25px;
+    position:relative;
+    right: 7px;
+    top: 140px;
+    background-color: rgb(100, 100, 100);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.month{
+    width: calc(100% - 5vw);
+    right: 0;
+    height: 5.3vw;
+    background-color: rgb(225, 40, 40);
+    align-items: center;
+    text-align: center;
+    display: flex;
+    position: fixed;
+    color: rgb(255,255,255);
+}
+
+.header{
+    width: 21.796vw;
+    height: 5.3vw;
+    margin: auto;
+}
+
+.date{
+    /* max width of box is 262 and default height is 74.8 */
+    width: 17.35vw;
+    margin: .172vw 2.212vw;
+    padding-left: .182vw;
+    position: fixed;
+    align-self: center;
+    overflow-y: auto;
+}
+
+/*Here are the arrows at the side of the main calendar*/
+.arrow {
+    border: solid white;
+    margin-top: 1.98vw;
+    display: inline-block;
+    padding: .7vw;
+    color: rgb(255,255,255);
+  }
+  
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    border-width: 0 .26vw .26vw 0;
+    margin-left: 9vw;
+    position: fixed;
+    color: rgb(255,255,255);
+  }
+
+.left {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    border-width: 0 0 .26vw .26vw;
+    margin-left: -10.5vw;
+    position: fixed;
+  }
+
+/*Arrows Stuff ends....*/
+
+/*The Month itself "September" etc.*/
+.month h2{
+    font-size: 2.3vw;
+    margin-top: .463vw;
+    font-weight: 400;
+    /* font-weight: 700;
+    font-family: 'Dancing Script', 'Roboto', sans-serif; */
+}
+
+/*The Date "Sun September 27, 2020"*/
+.month p{
+    font-size: 1.3vw;
+    font-style: italic;
+}
+/*weekdays container*/
+.weekdays{
+    margin: 5.3vw 0 0 1vw;
+    width: calc(100% - 5vw);
+    right: 0;
+    height: 2.65vh;
+    background: rgba(199, 199, 199,0.65);
+    display: flex;
+    align-items: center;
+    position: fixed;
+}
+
+
+/*27      28      29    ...etc*/
+.weekdays div{
+    font-size: 1.6vw;
+    font-weight: 500;
+    width: calc(100% / 7); /*the main container width (minus the weekdays padding) divided by the number of days in a week*/
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    /*background: rgba(199, 199, 199,0.20);*/
+}
+
+.days{
+    margin: 7.9vw 0 0 0;
+    width: 100%;
+    height: 100%;
+    float:right;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    overflow-y: hidden;
+}
+
+.days div {
+    font-size: 1.5vw;
+    width: calc(100% / 7);
+    height: calc(100% / 5);
+    border-style: solid;
+    border-width: thin;
+    border-color: rgb(199,199,199,0.65);
+    
+}
+
+.event {
+    padding: .13vw;
+    list-style-type: none;
+}
+
+div .active{
+    background-color: rgba(255,40,40,0.80);
+    border-color: rgba(255,40,40,0.80);
+    color:white;
+}
+div .only{
+    background-color: rgba(255, 255, 255, 0.8);
+    border-color: rgba(255,40,40,0.80);
+    color:rgb(0, 0, 0);
+    padding: 350px 0;
+    text-align:center;
+}
+
+.next-date{
+    color: grey;
+}
+
+.prev-date{
+    color: lightgrey;
+}
+
+.days div:hover{
+    border-style: solid;
+    border-width: thin;
+    border-color: red;
+}
+.note{
+    text-align: center;
+}
+
+div .select{
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(255, 0, 255);
+}
+.note{
+    text-align: center;
+}
+
+/* DARK MODE THINGS BEGIN-SETUP ONLY, NOT IMPLEMENTED JUST YET*/
+.calendar .darkmode {
+    background-color: rgba(0,0,0,0.8);
+    color:white;
+
+}
+
+div .active .darkmode{
+    background-color: rgba(0,0,0,0.40);
+    border-color: rgba(255,40,40,0.80);
+    color:white;
+}
+
+.weekdays .darkmode {
+    background-color: rgba(199, 199, 199,0.5);
+}
+.days .darkmode{
+    color:white;
+}
+/* DARK MODE THINGS END-IMAGE IS ON THE DISCORD SERVER, GENERAL/PINS*/
+
+/*Month-Week-Day Buttons, no functionality currently - 3-4-2021*/
+/* .MWD-Buttons{
+    align-items: center;
+    width: 15vw;
+    height: 3vw;
+}
+
+.buttonList li{
+    display: inline;
+    padding-right: 0.01vw;
+}
+
+.MWD{
+    width: calc(5vw - 0.01vw);
+    height: 3vw;
+    border-style: outset;
+    border-width: bold;
+    background-color:#F10020;
+    border-color: #be041d;
+}
+
+.MWD:hover{
+    border-style: inset;
+} */
+
+
+/* The style sheet for event schedule in Day view */
+.scheduleContainer{
+    display: grid;
+    height: calc(100vh - 120px);
+    width: 100%;
+    grid-gap: 2 px;
+    grid-template-columns: 3rem auto;
+    grid-template-rows: repeat(8,auto);
+
+}
+/* Time*/
+div .time{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-top: thin dotted lightcyan;
+    grid-column: 1;
+    height: 100%;
+    width: 100%;
+}
+
+/*Event*/
+div .event{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: orange;
+    font-size: 0.8rem;
+    grid-column: 2;
+    width: 100%;
+
+}

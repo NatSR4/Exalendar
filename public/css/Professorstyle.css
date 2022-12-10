@@ -1,0 +1,145 @@
+@import "../Prototyping/css/standard.css";
+@import "../Prototyping/css/sidebar.css";
+@import "../Prototyping/css/footer.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #FFF7F5;
+	color: black;
+}
+
+.header {
+	height: 50px;
+	width: 100%;
+	z-index: -1;
+	float: center;
+	background-color: rgb(199, 33, 33);
+	font-family: Dancing Script;
+	font-weight: bold;
+	font-size: 1.3vw;
+	color:white;
+	text-align:center;
+	display:block;
+	/*align-content: center;*/
+	text-align-last: center;
+}
+
+
+/* Header extra css - delete if necessary after page and db are linked fully
+If we put more stuff to the header kind of like a navbar
+this stuff would be used, its ready for that case */
+/* commented out for footer functionality, add ids/classes if used instead of
+   applying to all elements */
+/* ul {
+	list-style-type: none;
+	margin: 0%;
+	padding: 0%;
+	overflow: hidden;
+}
+
+li {
+	float: left;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+li a:hover {
+	background-color: #db1204;
+} */
+
+/*end Header extra css*/
+
+/* K.S. 2022 NOTES: Resize class to be smaller, text doesn't actually ellipse on overflow. */
+
+div.class {
+	display: inline-block;
+	border-radius: .331vw;
+	background-color: white;
+	height: 9.5vw;
+	width: 15.55vw;
+	margin: .6625vw 0 0 .6625vw;
+	cursor: pointer;
+	padding: .6625vw;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	box-shadow: .331vw .331vw .331vw #E2E1E0;
+}
+
+.class:hover {
+	background-color: #c7c7c7;
+}
+
+#classes-ctn {
+	margin-bottom: 2.318vw;
+}
+
+.class h2, .class h3, .class h4, .class h5, .class h6, .class p {
+	margin: 0;
+}
+
+.course-id {
+	display: inline;
+	font-size: 1vw;
+	padding: 0;
+}
+
+.class h2 {
+	font-size: 1vw;
+}
+
+.section-num {
+	float: right;
+	font-size: .65vw !important;;
+	padding-top: 0.3vw;
+}
+
+.class h3 {
+	font-size: .8vw !important;
+	font-weight: 600;
+}
+
+.class h4 {
+	font-size: 0.6vw;
+	font-weight: 400;
+}
+
+.class h4 b {
+	font-weight: 500;
+}
+
+.option-do {
+    color: black;
+    padding-left: .6625vw;
+}
+
+.fullview {
+	height: 25.175vw;
+	width: 25.175vw;
+	position: fixed;
+	top: calc(50% - 12.5875vw);
+	left: calc(50% - 12.5875vw);
+	background-color: white;
+	z-index: 5;
+	padding: .6625vw;
+	border-radius: .6625vw;
+	display: none;
+}
+
+/*
+body .darkmode {
+	background-color: #333
+}
+
+.option-do .darkmode {
+    color: white;
+}
+*/
