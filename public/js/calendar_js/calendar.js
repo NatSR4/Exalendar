@@ -230,16 +230,15 @@ function loadCalendarWeek() {
 //Function to load calendar days
 function loadCalendarDay(idname) {
   // updating month
-  document.querySelector('.date h2').innerHTML = months[date.getMonth()] + ', ' + date.getFullYear();
-
+  document.querySelector('.date h2').innerHTML = months[idname.getMonth()] + ', ' + date.getFullYear();
   // updating day
   let days;
-  if (date.getDate() === currentDate.getDate()) {
-    days = `<div class="daybox active">${date.getDate()}</div>`;
+  if (idname === currentDate.getDate()) {
+    days = `<div class="daybox active">${currentDate.getDate()}</div>`;
     console.log("current date");
   }
   else {
-    days = `<div class="daybox">${date.getDate()}</div>`;
+    days = `<div class="daybox">${idname}</div>`;
     console.log("not current date");
   }
 
@@ -270,8 +269,6 @@ function toggleDarkmode() {
     darkmodeBool = false;
   }
 }
-
-
 
 function selectDate(idname) {
   console.log(idname);
