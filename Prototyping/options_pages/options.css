@@ -86,7 +86,8 @@
 
   .option-do {
     width: 30%;
-    margin-right: 20%;
+    float: none;
+    margin: 0 auto;
   }
 
   body { 

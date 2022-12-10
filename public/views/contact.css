@@ -1,0 +1,44 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: red;
+    padding: 0 10px;
+}
+
+
+h3{
+    text-align: center;
+    color: red;
+    font-family: 'Poppins', sans-serif;
+}
+
+.general{
+    max-width: 500px;
+    width: 100%;
+    background: white;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 15px;
+    color: black;
+    border-style: solid;
+    border-color: black;
+    
+}
+
+.general form{
+    width: 100%;
+}
+
+form input,textarea{
+    max-width: 400px;
+    align-items: center;
+}
+
+textarea{
+    padding: 0px;
+}
