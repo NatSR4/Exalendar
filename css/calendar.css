@@ -176,9 +176,8 @@ html {
 .month h2{
     font-size: 2rem;
     margin-top: 7px;
-    font-weight: 400;
-    /* font-weight: 700;
-    font-family: 'Dancing Script', 'Roboto', sans-serif; */
+    font-weight: 700;
+    font-family: 'Dancing Script', 'Roboto', sans-serif;
 }
 
 /*The Date "Sun September 27, 2020"*/
@@ -233,17 +232,6 @@ html {
     border-color: red;
     transition: 0.25s;
 }
-
-/*Might delete, not of use currently*/
-/*
-.note{
-    text-align: center;
-}
-
-.event {
-    padding: 2px;
-    list-style-type: none;
-}*/
 
 div .active{
     background-color: rgba(255,40,40,0.80);
