@@ -49,10 +49,11 @@ app.post('/', urlencodedParser, function (req, res) {
     )`;
 
 
-    connection.query(sql_code, function (err) {
+    connection.query(sql_code, function (err, results) {
         if (err) throw err;
-        console.log("One record inserted");
+        console.log(results);
     });
+
     res.render('main.html', { data: req.body });
 });
 
