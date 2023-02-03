@@ -28,11 +28,11 @@ const connection = mysql.createPool({
 
 
 // Navigation
-app.get('', (req, res) => {
+app.get('/', (req, res) => {
     res.render('main.html')
 })
 
-app.post('/submit-event', urlencodedParser, function (req, res) {
+app.post('/', urlencodedParser, function (req, res) {
     console.log(req.body);
     var class_id = 1;
     var event_title = req.body.ename;
