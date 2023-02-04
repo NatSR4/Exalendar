@@ -50,7 +50,7 @@
     width: 0;
     height: 100%;
     background-color: var(--sidebar);
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     transition: 0.4s;
 }
 
