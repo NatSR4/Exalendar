@@ -75,16 +75,38 @@
 			<h1 class="noteHeader">Exalendar </h1>
 			<h2 class="center-header">
 				<button id="addevent-btn" onclick="openAddEvent()">+</button>
+				<form id="form" onsubmit="return false;">
+					<input style="position:absolute; top:90%; left:5%; width:40%;" type="text" id="userInput" />
+					<input style="position:absolute; top:90%; left:50%; width:40%;" type="submit" onclick="othername();" />
+				</form>
+				<script>
+				var event = {
+					text: null,
+					tier: null
+				}
+				var events = [];
+				function openAddEvent() {
+					document.getElementById("demo").innerHTML = "Hello Dear Visitor!</br> We are happy that you've chosen our website to learn programming languages. We're sure you'll become one of the best programmers in your country. Good luck to you!";
+					var newEvent = new event("chicken", "low");
+					document.getElementById("demo").innerHTML = "Hello Dear Visitor!</br> We are happy that you've chosen our website to learn programming languages. We're sure you'll become one of the best programmers in your country. Good luck to you!";
+					events.push(newEvent);
+					console.log("A new person has been created!");
+					document.getElementById("demo").innerHTML = "Hello Dear Visitor!</br> We are happy that you've chosen our website to learn programming languages. We're sure you'll become one of the best programmers in your country. Good luck to you!";
+				}
+				function othername() {
+					var input = document.getElementById("userInput").value;
+				}
+				</script>
 				<span id = "noteDate">a</span></h2> 
 				<!--javaScript changes displayed date MM/DD/YYYY to current (by default) OR selected day-->
 			<!--Please Note that this sidebar intends to display events happening on the current/selected day, so remember to add functionality to that and connect it to some database for the user's events-->
 			<hr>
 			<div class="noteLeft" style = "float: left;">
-
 				<!--Basically it should Contain the Event's Name, the Timespan of the Event & the Event Tier, these lists might be gotten rid for better visual/functioning replacements but the function of the
 				side Event and Notes bar should remain the same-->
 				<ul>
 					<label class="noteList"><h3 style="color: black;">Events</h3></label>
+					<p id="demo"></p>
 					<li class="noteList">Event 1 - all day</li>
 					<li class="noteList">Event 2 - 12PM - 3PM</li>
 					<li class="noteList"> </li>
