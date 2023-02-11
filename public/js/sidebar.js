@@ -78,3 +78,12 @@ customElements.define('side-bar', SideBar)
 // 	if (document.getElementById("buttonBar").style.color == "white") closeNav();
 // 	else openNav();
 // }
+
+
+function opensideBar(){
+	document.getElementById("sidebar").style.display = "block";
+}
+
+function closeSidebar(){
+	document.getElementById("sidebar").style.display = "none";
+}
