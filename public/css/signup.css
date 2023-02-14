@@ -55,6 +55,11 @@ h1 {
 
 }
 
+.form-signin {
+	width: 75%;
+	max-width: 500px;
+}
+
 .form-signup {
   width: 30vw;
   margin-left: calc((100vw - 38vw)/2);
@@ -111,3 +116,8 @@ h1 {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+.form-control {
+	margin-bottom: 10px;
+}
+

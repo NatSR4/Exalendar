@@ -27,6 +27,7 @@ const connection = mysql.createPool({
   });
 
 
+
 // Navigation
 app.get('', (req, res) => {
     res.render('main.html')
