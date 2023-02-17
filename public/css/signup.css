@@ -32,6 +32,10 @@ h1 {
   box-sizing: border-box;
 }
 
+.logo-href:hover{
+	text-decoration:none;
+}
+
 
 .column {
   float: left;
