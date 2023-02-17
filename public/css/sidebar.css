@@ -43,14 +43,14 @@
 #sidebar{
     
     margin: 10px;
-    background-color: aqua;
+    background-color: rgb(236, 80, 80);
     padding: 15px;
     z-index: 2;
     position: fixed;
     transition: 0.4s;
     display: none;
     height: 100%;
-    
+    color: white;
    
 }
 /* gets rif of the styling in the list container */
