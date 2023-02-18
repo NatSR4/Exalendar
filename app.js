@@ -35,21 +35,15 @@ app.get('/', (req, res) => {
 app.post('/', urlencodedParser, function (req, res) {
     console.log(req.body);
     var class_id = 1;
-    var event_title = req.body.ename;
-    var event_type = req.body.etype;
-    var event_description = req.body.edetails;
-    var event_date = req.body.edate + " " + req.body.etime;
-    console.log(event_date)
-    const sql_code = `INSERT INTO events (class_id, event_type, event_title, event_description, event_date) VALUES (
-        ${"'"+class_id+"'"},
-        ${"'"+event_type+"'"},
-        ${"'"+event_title+"'"},
-        ${"'"+event_description+"'"},
-        ${"'"+event_date+"'"}
-    )`;
+    var event_title = mysql.escape(req.body.ename);
+    var event_type = mysql.escape(req.body.etype);
+    var event_description = mysql.escape(req.body.edetails);
+    var event_date = mysql.escape(req.body.edate) + " " + mysql.escape(req.body.etime);
 
+    const sql_code = `INSERT INTO events (class_id, event_type, event_title, event_description, event_date) 
+                      VALUES (?,?,?,?,?)`;
 
-    connection.query(sql_code, function (err, results) {
+    connection.query(sql_code, [class_id, event_type, event_title, event_description, event_date], function (err) {
         if (err) throw err;
         console.log(results);
     });
