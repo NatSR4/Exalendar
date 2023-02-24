@@ -81,4 +81,8 @@ app.get('/professors', (req, res) => {
     res.render('professors.html')
 })
 
+app.get('/about', (req, res) => {
+    res.render('about.html')
+})
+
 app.listen(port, () => console.info(`App listening on port ${port}`))
