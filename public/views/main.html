@@ -14,28 +14,57 @@
 		<link rel = "stylesheet" href="../css/footer.css"/>
 		<link rel = "stylesheet" href="../css/sidebar.css"/>
 		<!-- <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet"> -->
+		<!-- script for sidebar -->
+		<script src="../js/sidebar.js" defer> </script>
 	</head>
 	<body onload="loadMain()"><!---------------------------------------------------MAIN CONTENTS BEGIN-------------------------------------------------------------------------------->
 		<div id="modal"></div>
 		<!--SIDEBAR (this contains the menus on the left)-->
 		<!--At the moment only the calendar moves, notes do not. The header with monthly/weekly etc. does not move yet-->
-		<div id="sidebar">
-			<button id="buttonBar" style="border-color: rgb(199, 40, 40)" onclick="opencloseNav()">☰</button><!--Generic menu button with 3-bars you know how it be-->
-			<h2 style="margin-top:20px;">Exalendar Menu</h2>
-			<ul id="exalendarMenu"> <!--The 50x50.png does not actually exist here, fill with actual image file name/path-->
+		<!-- <button id="buttonForSidebar" onclick="opensideBar()" style="border-color: rgb(199, 40, 40)"> ☰ hello</button> -->
+		<button style="border-color: rgb(199, 40, 40)" onclick="opensideBar()" id="buttonBar">☰</button>
+
+
+		<!-- <div  id="sidebarMenu">
+			<button onclick="closeSidebar()"> &times; Close</button>
+			<h2 >Exalendar Menu</h2>
+			<ul>
 				<li><img src="./media/50x50.png" class="menuIcon">&nbsp;&nbsp;Dashboard</li>
 				<li><img src="./media/50x50.png" class="menuIcon">&nbsp;&nbsp;Calendar</li>
 				<li><img src="./media/50x50.png" class="menuIcon">&nbsp;&nbsp;Other Page</li>
-				<!--feel free to add to the list and fill with relevant links and icons to other pages-->
 			</ul>
+			<h2>Other Menu</h2>
+			<ul>
+				<li><img src="../media/settings-icon.png" class="menuIcon">&nbsp;&nbsp;Preferences</li>
+				<li><img src="../media/signout.png" class="menuIcon">&nbsp;&nbsp;Logout</li>
+				
+			</ul>
+		</div> -->
+
+		<div id="sidebar" >
+			<button onclick="closeSidebar()" id="closeBtn"> &times; Close</button>
+			<h2 style="margin-top:20px;">Exalendar Menu</h2>
+			<ul id="exalendarMenu"> 
+				<li><img src="./media/50x50.png" class="menuIcon">&nbsp;&nbsp;Dashboard</li>
+				<li><img src="./media/50x50.png" class="menuIcon">&nbsp;&nbsp;Calendar</li>
+				<li><img src="./media/50x50.png" class="menuIcon">&nbsp;&nbsp;Other Page</li>
+				
+			</ul>
+			<br>
+			<br>
 			<h2>Other Menu</h2>
 			<ul>
 				<li><img src="./media/settings-icon.png" class="menuIcon">&nbsp;&nbsp;Preferences</li>
 				<li><img src="./media/signout.png" class="menuIcon">&nbsp;&nbsp;Logout</li>
-				<!--feel free to add to the list and fill with relevant links and icons to other pages-->
+				
 			</ul>
-		</div>
-		<script type="module" src="./js/sidebar.js"></script>
+			
+		</div> 
+		
+		
+		<!-- <script type="module" src="./js/sidebar.js"></script>-->
+		
+
 		<!--SIDEBAR END-->
 		<!--CALENDAR IS CORRECT, THE DAYS AND WEEK WORK CORRECTLY. DO NOT CHANGE THE JS IT WORKS PERFECTLY-->
 		<iframe class="calendar" src="./calendar" ></iframe>
@@ -120,6 +149,6 @@
 				</ul>
 				<span>&copy; 2021 | Exalendar</span>
 			</nav>
-		</footer>
+		</footer> 
 		
 </html>
