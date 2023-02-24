@@ -81,9 +81,14 @@ customElements.define('side-bar', SideBar)
 
 
 function opensideBar(){
-	document.getElementById("sidebar").style.display = "block";
+	//document.getElementById("sidebar").style.display = "block";
+	document.getElementById("sidebar").style.width = "15%";
+	document.getElementById("sidebar").style.padding = "10px";
 }
 
 function closeSidebar(){
-	document.getElementById("sidebar").style.display = "none";
+	//document.getElementById("sidebar").style.display = "none";
+	document.getElementById("sidebar").style.width = "0%";
+	document.getElementById("sidebar").style.padding = "0px";
+
 }

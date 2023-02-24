@@ -42,17 +42,18 @@
     background-color: rgba(0,0,0,0.4);
 } */
 #sidebar{
-    
-    /* margin: 10px; */
-    margin-top: 20px;
     background-color: rgb(236, 80, 80);
-    padding: 15px;
-    z-index: 2;
-    position: fixed;
-    transition: 0.4s;
-    display: none;
     height: 100%;
-    color: white;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    margin-top: 10px;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 10px;
+    
+    
+   
    
 }
 /* gets rif of the styling in the list container */
@@ -60,10 +61,18 @@
     list-style: none;
 }
 
-#closeBtn{
-    width: 100%;
-    font-size: 18px;
-
+#closebtn{
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: black;
+    text-decoration: none;
+}
+#closebtn:hover{
+    color: white;
+    transform: scale(1.5); 
 }
 
 /* 

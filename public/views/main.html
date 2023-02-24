@@ -22,7 +22,7 @@
 		<!--SIDEBAR (this contains the menus on the left)-->
 		<!--At the moment only the calendar moves, notes do not. The header with monthly/weekly etc. does not move yet-->
 		<!-- <button id="buttonForSidebar" onclick="opensideBar()" style="border-color: rgb(199, 40, 40)"> ☰ hello</button> -->
-		<button style="border-color: rgb(199, 40, 40)" onclick="opensideBar()" id="buttonBar">☰</button>
+		<button onclick="opensideBar()" id="buttonBar">☰</button>
 
 
 		<!-- <div  id="sidebarMenu">
@@ -42,7 +42,9 @@
 		</div> -->
 
 		<div id="sidebar" >
-			<button onclick="closeSidebar()" id="closeBtn"> &times; Close</button>
+			<a href="javascript:void(0)" id="closebtn" onclick="closeSidebar()">&times;</a>
+			<br>
+			<!-- <button onclick="closeSidebar()" id="closeBtn"> &times; Close</button> -->
 			<h2 style="margin-top:20px;">Exalendar Menu</h2>
 			<ul id="exalendarMenu"> 
 				<li><img src="./media/50x50.png" class="menuIcon">&nbsp;&nbsp;Dashboard</li>
