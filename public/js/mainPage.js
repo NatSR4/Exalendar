@@ -4,7 +4,10 @@
 import { displayedDate } from "./calendar_js/calendar";
 //const displayedDate = require("./calendar_js/calendar")
 const date = Date();
+const submitButton = document.querySelector('button[class=submit]');
 console.log(date);
+
+submitButton.addEventListener('click', addEvent);
 
 //Sets the header in the events sidebar to be the current date
 document.getElementById("noteDate").innerHTML = (date.getMonth()+1) + " / " +date.getDate()+" / "+date.getFullYear();
@@ -26,6 +29,13 @@ function loadMain() {
         exalendarMenu.innerHTML += `<li><img src="50x50.png"
             class="menuIcon">&nbsp;&nbsp;<a href="professors.html">Professor</a></li>`;
     }
+}
+
+function addEvent() {
+    const textAreaElement = document.querySelector('textarea[class=evenAdder');
+    const event = textAreaElement.value();  
+    const newList = document.createElement('div[class=noteList');
+    console.log(event);
 }
 
 function openAddEvent() {

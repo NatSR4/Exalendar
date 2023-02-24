@@ -104,7 +104,33 @@ h3 {
     /*box-shadow: 5px 5px 5px #E2E1E0;*/
 }
 
+.submit{
+    background-color:rgb(225, 40, 40);
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    color: white;
+    padding: 5px 10px;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+}
+
+.eventAdder{
+    height: 20px;
+    outline:red;
+    outline-width: 20px;
+    font-size: 12px;
+    color: black;
+    position: absolute;
+    resize: none;
+    overflow:hidden;
+    left: 15px;
+    bottom: 15px;
+}
+
 .noteList{
+    position: relative;
     padding-top: .5vw;
     padding-bottom: .5vw;
 }
@@ -114,8 +140,9 @@ h3 {
 }
 
 .noteLeft{
-    position:relative;
-    left: 1vw;
+    position: absolute;
+    flex-direction: column;
+    left: 2vw;
     width: calc(2.89*20.7vw/4);
 }
 

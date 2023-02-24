@@ -78,3 +78,17 @@ function opencloseNav() {
 	if (document.getElementById("buttonBar").style.color == "white") closeNav();
 	else openNav();
 }
+
+var event = {
+    text: null,
+    tier: null
+}
+var events = [];
+function openAddEvent() {
+    document.getElementById("demo").innerHTML = "Hello Dear ji!</br> We are happy that you've chosen our website to learn programming languages. We're sure you'll become one of the best programmers in your country. Good luck to you!";
+    var newEvent = new event("chicken", "low");
+    document.getElementById("demo").innerHTML = "Hello Dear nj!</br> We are happy that you've chosen our website to learn programming languages. We're sure you'll become one of the best programmers in your country. Good luck to you!";
+    events.push(newEvent);
+    console.log("A new person has been created!");
+    document.getElementById("demo").innerHTML = "Hello Dear nj!</br> We are happy that you've chosen our website to learn programming languages. We're sure you'll become one of the best programmers in your country. Good luck to you!";
+}
