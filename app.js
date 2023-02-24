@@ -57,7 +57,6 @@ app.post('/submit-event', urlencodedParser, function (req, res) {
     res.render('main.html', { data: req.body });
 });
 
-
 app.get('/contact', (req, res) => {
    res.render('contact.html')
 })
@@ -66,12 +65,33 @@ app.get('/login', (req, res) => {
     res.render('login.html')
  })
 
+app.post('/login', urlencodedParser, function (req, res) {
+	
+	var user_email = req.body.inputEmail;
+	var user_pass  = req.body.password;
+	
+	console.log(user_email,user_pass);
+	
+    res.render('main.html', { data: req.body });
+});
+
 app.get('/loginPrimary', (req, res) => {
     res.render('loginPrimary.html')
 })
 
 app.get('/signup', (req, res) => {
     res.render('signup.html')
+})
+
+app.post('/signup', urlencodedParser, function (req, res){
+	var first_name = req.body.firstname;
+	var last_name = req.body.lastname;
+	var user_email = req.body.inputEmail;
+	var user_pass = req.body.password;
+	var user_pass_confirm = req.body.password2;
+	
+	console.log(req.body)
+	
 })
 
 app.get('/calendar', (req, res) => {
