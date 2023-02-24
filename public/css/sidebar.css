@@ -1,11 +1,15 @@
 #buttonBar{
-	margin: 0;
+	margin-top: 10px;
+    margin-left: 5px;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     width: 3vw;
     height: 3vw;
-    position: fixed;
+    /* position: fixed; */
+    /* height: 30px;
+    width: 50px; */
+
     top: 0.993vw;
     left: 1vw;
     background-color: rgb(199, 40, 40);
@@ -16,13 +20,13 @@
     font-size: 1.6vw;
 }
 
-#buttonBar:hover {
+/* #buttonBar:hover {
 	background-color: var(--sidebar);
     border: .01335vw solid white;
 	color: white;
-}
+} */
 
-#modal {
+/* #modal {
 	margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -36,44 +40,70 @@
     height: 100%;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
+} */
+#sidebar{
+    
+    /* margin: 10px; */
+    margin-top: 20px;
+    background-color: rgb(236, 80, 80);
+    padding: 15px;
+    z-index: 2;
+    position: fixed;
+    transition: 0.4s;
+    display: none;
+    height: 100%;
+    color: white;
+   
+}
+/* gets rif of the styling in the list container */
+#sidebar ul{
+    list-style: none;
 }
 
+#closeBtn{
+    width: 100%;
+    font-size: 18px;
+
+}
+
+/* 
 #sidebar{
 	margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    
     position: fixed;
     left: 0;
     top: 0;
     z-index: 2;
     width: 0;
     height: 100%;
-    background-color: var(--sidebar);
-    overflow-x: hidden;
+    display: none;
     transition: 0.4s;
-}
-
+} */
+/* 
 #sidebar h2{
 	margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+   
     text-align: center;
-    color: white;
+   
     font-size: 1.335vw;
     font-weight: 100;
-}
+   
+    
+} */
 
-.menuIcon{
+/* .menuIcon{
 	margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     height: 1vw;
     width: 1vw;
-}
-
+} */
+/* 
 #sidebar li {
 	margin: 0;
     padding: 0;
@@ -82,9 +112,9 @@
     margin: 0 0 .006vw 1.5vw;
     list-style: none;
     font-size: 1vw;
-}
+} */
 
-#sidebar ul {
+/* #sidebar ul {
 	margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -94,4 +124,28 @@
 
 :root {
     --sidebar: rgb(199, 33, 33);
+} */
+
+#sidebarMenu{
+    display: none;
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    width: 0;
+    height: 100%;
+    background-color: yellow;
+   
+}
+
+.menuIcon{
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    height: 1vw;
+    width: 1vw;
 }
