@@ -44,8 +44,9 @@ app.post('/submit-event', urlencodedParser, function (req, res) {
 
     connection.query(sql_code, [class_id, event_type, event_title, event_description, event_date], function (err) {
         if (err) throw err;
-        console.log("One record inserted");
+        console.log(results);
     });
+
     res.render('main.html', { data: req.body });
 });
 
