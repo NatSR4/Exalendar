@@ -1,0 +1,45 @@
+@import "../Prototyping/css/standard.css";
+@import "../Prototyping/css/sidebar.css";
+@import "../Prototyping/css/footer.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #FFF7F5;
+	color: black;
+}
+
+h2 {
+	font-family: Arial;
+	padding-top: 40px;
+	padding-left: 150px;
+}
+
+h3 {
+	font-family: Arial;
+	padding-top: 40px;
+	padding-left: 150px;
+}
+
+p {
+	font-family: Arial;
+	padding-left: 150px;
+	padding-right: 150px;
+}
+
+.header {
+	height: 50px;
+	width: 100%;
+	z-index: -1;
+	float: center;
+	background-color: rgb(199, 33, 33);
+	font-family: Dancing Script;
+	font-weight: bold;
+	font-size: 1.3vw;
+	color:white;
+	text-align:center;
+	display:block;
+	text-align-last: center;
+}

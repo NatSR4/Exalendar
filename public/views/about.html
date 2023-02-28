@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<title>Dashboard | Exalendar</title>
+		<link href="../css/about.css" rel="stylesheet">
+		<link rel = "stylesheet" href="../css/footer.css"/>
+		<link rel = "stylesheet" href="../css/sidebar.css"/>
+	</head>
+	<body>
+		<div id="modal"></div>
+		<!--SIDEBAR (this contains the menus on the left)-->
+		<!-- NOTE: K.S. FALL 2022 -> Once custom component is working replace <div id="sidebar".... with <side-bar/> -->
+		<div id="sidebar">
+			<button id="buttonBar" onclick="opencloseNav()">☰</button>
+			<h2 style="margin-top:20px;">Exalendar Menu</h2>
+			<ul id="exalendarMenu"> 
+				<li><img src="../media/50x50.png" class="menuIcon">&nbsp;&nbsp;Dashboard</li>
+				<li><img src="../media/50x50.png" class="menuIcon">&nbsp;&nbsp;Calendar</li>
+				<li><img src="../media/50x50.png" class="menuIcon">&nbsp;&nbsp;Other Page</li>
+			</ul>
+			<h2>Other Menu</h2>
+			<ul>
+				<li><img src="../media/settings-icon.png" class="menuIcon">&nbsp;&nbsp;Preferences</li>
+				<li><img src="../media/signout.png" class="menuIcon">&nbsp;&nbsp;Logout</li>
+			</ul>
+		</div>
+		<side-bar/>
+		<script src="../js/sidebar.js"></script>
+		<!--SIDEBAR END-->
+		<!-- Extra work to make it look like the text is FULLY centered, there's probably a better way sorry, SR:its clever though lol, funny work around-->
+		<div style=" background-color: rgb(199, 33, 33);color:  rgb(199, 33, 33);">  space </div>
+		<div class="header">
+		<!--  <li><a class="active" href="#home">Home</a></li>
+			<li><a href="#news">News</a></li>
+			<li><a href="#contact">Contact</a></li>
+			<li><a href="#about">About</a></li>-->
+		Exalendar!
+		</div>
+		<!--MAIN BODY STUFF-->
+		<h2>
+            What is Exalendar?
+        </h2>
+        <p>
+            Exalender is a web application intended to help students keep track of their deadlines, 
+            exams, and other events in a convenient location. When it is completed, all events will 
+            be displayed on a monthly calendar, similar to Google Calendar. However, as this planner 
+            is primarily intended to keep track of academic-related events at RPI, it is possible to 
+            automate the logging process for the user.
+        </p>
+        <h2>
+            Adding Events   
+        </h2>
+        <p>
+            All students can freely add events to their personal calendar. However, if the student is 
+            enrolled in participating classes, the events associated with that class will be automatically 
+            added to that student's calendar. Ideally, we hope to get enough professors or at least TAs participating 
+            in this system such that there is a good chance that all significant events for a given student will 
+            be present on their calendar without having to manually add an event
+        </p>
+        <h2>
+            Not Just for Homework
+        </h2>
+        <p>
+            Exalendar is flexible enough to support non-academic events as well. Whether you are a club officer 
+            wanting to schedule an open house night or a group of students scheduling a study group, anyone can 
+            create their own group. Once a group is created, the owner can create events associated with that group, 
+            and any user subscribed to that group will have their calendar updated to include that event.
+        </p>
+        <p>
+            (The above feature is not currently implemented, check back soon for updates)
+        </p>
+		<h3>
+			Learn More <a href="https://github.com/NatSR4/Exalendar/wiki" target="_blank" title="Go to Exalendar on Github">Here</a>
+		</h3>
+    </body>
+	<footer class="footer">
+		<nav class="menu">
+			<ul>
+				<li><a href = "../profile.html">Home</a></li> <!--The home page, should be linked once finished-->
+				<li><a href="../about">About</a></li>
+				<li><a href= "https://rcos.io/" target= "_blank">RCOS</a></li> <!--If the RCOS page changes, make sure to update this-->
+				<li><a href= "https://github.com/NatSR4/Exalendar" target = "_blank" id="gitcat" title="GitHub" aria-label="GitHub"><img src="../media/gitcat.svg"/></a></li> <!--Obligitory github link :) -->
+			</ul>
+			<span>&copy; 2021 | Exalendar</span>
+		</nav>
+	</footer>
+</html>
