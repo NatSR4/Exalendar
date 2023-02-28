@@ -32,8 +32,7 @@ app.get('/', (req, res) => {
     res.render('main.html')
 })
 
-app.post('/', urlencodedParser, function (req, res) {
-    console.log(req.body);
+app.post('/submit-event', urlencodedParser, function (req, res) {
     var class_id = 1;
     var event_title = mysql.escape(req.body.ename);
     var event_type = mysql.escape(req.body.etype);
