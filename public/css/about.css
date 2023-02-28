@@ -13,7 +13,13 @@ body {
 
 h2 {
 	font-family: Arial;
-	padding-top: 50px;
+	padding-top: 40px;
+	padding-left: 150px;
+}
+
+h3 {
+	font-family: Arial;
+	padding-top: 40px;
 	padding-left: 150px;
 }
 
@@ -48,91 +54,3 @@ p {
 	font-size: 1.3vw;
 	display:block;
 }
-
-
-/* K.S. 2022 NOTES: Resize class to be smaller, text doesn't actually ellipse on overflow. */
-
-/* 
-div.class {
-	display: inline-block;
-	border-radius: .331vw;
-	background-color: white;
-	height: 9.5vw;
-	width: 15.55vw;
-	margin: .6625vw 0 0 .6625vw;
-	cursor: pointer;
-	padding: .6625vw;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	box-shadow: .331vw .331vw .331vw #E2E1E0;
-}
-
-.class:hover {
-	background-color: #c7c7c7;
-}
-
-#classes-ctn {
-	margin-bottom: 2.318vw;
-}
-
-.class h2, .class h3, .class h4, .class h5, .class h6, .class p {
-	margin: 0;
-}
-
-.course-id {
-	display: inline;
-	font-size: 1vw;
-	padding: 0;
-}
-
-.class h2 {
-	font-size: 1vw;
-}
-
-.section-num {
-	float: right;
-	font-size: .65vw !important;;
-	padding-top: 0.3vw;
-}
-
-.class h3 {
-	font-size: .8vw !important;
-	font-weight: 600;
-}
-
-.class h4 {
-	font-size: 0.6vw;
-	font-weight: 400;
-}
-
-.class h4 b {
-	font-weight: 500;
-}
-
-.option-do {
-    color: black;
-    padding-left: .6625vw;
-}
-
-.fullview {
-	height: 25.175vw;
-	width: 25.175vw;
-	position: fixed;
-	top: calc(50% - 12.5875vw);
-	left: calc(50% - 12.5875vw);
-	background-color: white;
-	z-index: 5;
-	padding: .6625vw;
-	border-radius: .6625vw;
-	display: none;
-} */
-
-/*
-body .darkmode {
-	background-color: #333
-}
-
-.option-do .darkmode {
-    color: white;
-}
-*/
