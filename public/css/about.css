@@ -44,13 +44,3 @@ p {
 	/*align-content: center;*/
 	text-align-last: center;
 }
-
-.subheader {
-	height: 50px;
-	width: 100%;
-	padding: 20px;
-	z-index: -1;
-	font-weight: bold;
-	font-size: 1.3vw;
-	display:block;
-}
