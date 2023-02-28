@@ -38,15 +38,17 @@ app.post('/', urlencodedParser, function (req, res) {
     var event_title = mysql.escape(req.body.ename);
     var event_type = mysql.escape(req.body.etype);
     var event_description = mysql.escape(req.body.edetails);
-    var event_date = `${mysql.escape(req.body.edate)} ${mysql.escape(req.body.etime)}`;
+    var event_date = mysql.escape(req.body.edate);
+var event_time = mysql.escape(req.body.etime);
+var datetime = event_date + ' ' + event_time;
 
-    const sql_code = `INSERT INTO events (class_id, event_type, event_title, event_description, event_date) 
-                      VALUES (?,?,?,?,?)`;
+const sql_code = `INSERT INTO events (class_id, event_type, event_title, event_description, event_date) 
+                  VALUES (?,?,?,?,CONCAT(?, ' ', ?))`;
 
-    connection.query(sql_code, [class_id, event_type, event_title, event_description, event_date], function (err) {
-        if (err) throw err;
-        console.log(results);
-    });
+connection.query(sql_code, [class_id, event_type, event_title, event_description, event_date, event_time], function (err) {
+    if (err) throw err;
+    console.log(results);
+});
 
     res.render('main.html', { data: req.body });
 });
