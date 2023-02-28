@@ -42,8 +42,8 @@ app.post('/', urlencodedParser, function (req, res) {
 var event_time = mysql.escape(req.body.etime);
 var datetime = event_date + ' ' + event_time;
 
-const sql_code = `INSERT INTO events (class_id, event_type, event_title, event_description, event_date) 
-                  VALUES (?,?,?,?,CONCAT(?, ' ', ?))`;
+const sql_code = INSERT INTO events (class_id, event_type, event_title, event_description, event_date) 
+VALUES (1, 'project', 'Testing', 'Testing', '2022-02-03 09:58');
 
 connection.query(sql_code, [class_id, event_type, event_title, event_description, event_date, event_time], function (err) {
     if (err) throw err;
