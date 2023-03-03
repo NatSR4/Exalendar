@@ -62,6 +62,10 @@ app.get('/contact', (req, res) => {
    res.render('contact.html')
 })
 
+app.get('createClass', (req, res) =>{
+    res.render('createClass.html')   
+})
+
 app.get('/login', (req, res) => {
     res.render('login.html')
  })
