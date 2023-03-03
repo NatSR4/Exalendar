@@ -161,10 +161,10 @@ html {
 }
 /*weekdays container*/
 .weekdays{
-    margin: 5.3vw 0 0 1vw;
-    width: calc(100% - 5vw);
-    right: 0;
-    height: 2.65vh;
+    margin: 5.2vw 0 0 0vw;
+    width: calc(100% - 6.8vw);
+    right: 1.7vw;
+    height: 4vh;
     background: rgba(199, 199, 199,0.65);
     display: flex;
     align-items: center;
