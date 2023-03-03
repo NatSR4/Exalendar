@@ -32,12 +32,16 @@ h1 {
   box-sizing: border-box;
 }
 
+label {
+  margin-top: 0.5vw;
+}
 
 .column {
   float: left;
   width: 50%;
   align-items: center;
   height: 100%;
+  margin: 1vw;
 }
 
 .row {
