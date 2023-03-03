@@ -49,12 +49,13 @@ html {
     padding-right: 6.625vw;
     padding-left: calc((5vw / 2) - 1vw); /* artificially center letter */
     margin-bottom: .331vw;
-    background-color: white;
-    color: black;
+    background-color: rgb(225, 40, 40);
+    color: rgb(255, 255, 255);
     border: inset white;
     font-size: 2.2vw;
     /*text-shadow: -4px 3px 0 grey;*/
-    border-radius: .265vw;
+    border-radius: 5vw;
+    border: 0.0vw solid rgb(255, 255, 255);
 }
 /*.tab button [title~=Darkmode]
 {
